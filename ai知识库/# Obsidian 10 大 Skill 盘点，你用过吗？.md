@@ -1,5 +1,5 @@
 ---
-title: "Obsidian 10 大 Skill 盘点，你用过吗？"
+title: "# Obsidian 10 大 Skill 盘点，你用过吗？"
 date: "2026-07-01"
 tags: [AI, AI Skill, AI工具, Claude, Obsidian, 知识管理]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # Obsidian 10 大 Skill 盘点，你用过吗？
 
 > **视频链接**: [https\://v.douyin.com/HPwo-PPeWEo/]\(https\://v.douyin.com/HPwo-PPeWEo/)
@@ -290,8 +289,11 @@ npm install @openclaw/obsidian-skills
 
 ## 双链笔记
 
-- [[Open Design AI技能探究]]
-- [[普通人也能用！Openclaw超强使用场景！]]
 - [[7.5万，AI知识库开发]]
-- [[Agent时代，项目管理别再只看Issue了]]
 - [[codex+obsidian]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
+- [[Open Design AI技能探究]]
+- [[「一人公司」可落地方案（Nelson博主体系）.docx]]
+- [[普通人也能用！Openclaw超强使用场景！]]
+- [[个人笔记/一条视频教会你写周报：4个原则让领导主动给你加薪]]
+- [[给企业和普通人的AI时代生存实战]]

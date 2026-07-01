@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # Ai 高级用法：乔哈里视窗
 
 > 📺 [视频链接](https://v.douyin.com/qycowgeHkLI/) | 👤 作者：Ai一刀梁山伯 | ⏱ 时长：4分01秒
@@ -122,8 +121,11 @@ verifier_type: "auto"
 
 ## 双链笔记
 
-- [[ai知识库/# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
-- [[ai知识库/# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[ai知识库/# OpenClaw, Hermes, Codex 横向评测]]
-- [[ai知识库/# 企业 AI 落地最优单元｜AI 时代护城河]]
-- [[ai知识库/# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 如何用 AI 帮你一天找 100 家目标客户]]
+- [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]

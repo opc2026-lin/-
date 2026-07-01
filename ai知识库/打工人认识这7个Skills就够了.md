@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 打工人认识这7个Skills就够了
 
 ## 视频信息
@@ -186,8 +185,11 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 
 ## 双链笔记
 
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[ai賦能財務]]
+- [[codex+obsidian]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
 - [[Open Design AI技能探究]]
+- [[如何用AI高效学习.docx]]
+- [[给企业和普通人的AI时代生存实战]]
 - [[让AI真正懂你：把设计做成Skill，AI的审美直接升级]]
-- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[# OpenClaw, Hermes, Codex 横向评测]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]

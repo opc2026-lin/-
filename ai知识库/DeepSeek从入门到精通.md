@@ -1,3 +1,14 @@
+---
+title: "DeepSeek从入门到精通"
+date: "2026-07-01"
+tags: [AI, 开源, 营销]
+type: "note"
+status: "draft"
+summary: "DeepSeek：从入门到精通  清华大学新闻与传播学院  新媒体研究中心 元宇宙文化实验室  @新媒沈阳  团队 ：余梦珑博士后  • Deepseek是什么？  • Deepseek能够做什么？  • 如何使用Deepseek？  DeepSeek是什么？  • Deep…"
+verified: "unverified"
+importance: 4
+verifier_type: "auto"
+---
 DeepSeek：从入门到精通
 
 清华大学新闻与传播学院
@@ -5424,3 +5435,15 @@ AI的形式知识库
 
 感谢聆听！
 
+---
+
+## 双链笔记
+
+- [[DeepSeek从入门到精通.pdf]]
+- [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 如何用 AI 帮你一天找 100 家目标客户]]
+- [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]

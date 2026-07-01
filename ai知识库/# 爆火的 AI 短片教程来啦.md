@@ -1,5 +1,5 @@
 ---
-title: "爆火的 AI 短片教程来啦"
+title: "# 爆火的 AI 短片教程来啦"
 date: "2026-07-01"
 tags: [AI, Claude]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 爆火的 AI 短片教程来啦
 
 > **视频链接**: [https\://v.douyin.com/cJGtz-588yg/]\(https\://v.douyin.com/cJGtz-588yg/)
@@ -342,8 +341,11 @@ AI 只是工具
 
 ## 双链笔记
 
-- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[5个常用插件]]
 - [[7.5万，AI知识库开发]]
 - [[Agent时代，项目管理别再只看Issue了]]
+- [[ai 核心文件claude和settings.json...]]

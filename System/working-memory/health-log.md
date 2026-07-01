@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 5
 verifier_type: "auto"
 ---
-
 <!-- EVAL_HISTORY -->
 2026-06-20 | 76 | 首次整理
 2026-06-21 | 80 | 首页接入
@@ -22,8 +21,11 @@ verifier_type: "auto"
 
 ## 双链笔记
 
+- [[candidates]]
 - [[tasks]]
 - [[Journal/2026-06-24]]
 - [[Materials/context-principles]]
-- [[Projects/dashboard-ops]]
 - [[Projects/talos-vault-migration]]
+- [[Projects/dashboard-ops]]
+- [[System/pending-approvals]]
+- [[./dashboard.html]]

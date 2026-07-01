@@ -1,7 +1,7 @@
 ---
 title: "tasks"
 date: "2026-07-01"
-tags: [opc-ai, working-memory]
+tags: [AI, Obsidian, opc-ai, working-memory, 售电, 投资, 知识管理, 综合能源]
 type: "rules"
 status: "draft"
 summary: "焦点"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 5
 verifier_type: "auto"
 ---
-
 ## 焦点
 
 - 🔴 **API 限频恢复后拉取笔记正文** — 综合能源 27 篇 + AI知识库 ~39 篇的 media_id 已还原，正文待 get_media_info 限频解除后运行 `python3 restore_notes.py` 补全
@@ -76,4 +75,11 @@ verifier_type: "auto"
 
 ## 双链笔记
 
-- [[health-log]]
+- [[System/CLAUDE]]
+- [[综合能源/AI与能源双向赋能行动方案 国能发科技〔2026〕34号.docx]]
+- [[ai知识库/# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[ai知识库/6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1]]
+- [[ai知识库/codex+obsidian]]
+- [[ai知识库/「一人公司」可落地方案（Nelson博主体系）.docx]]
+- [[ai知识库/普通人也能用！Openclaw超强使用场景！]]
+- [[收件箱/月度整理_2026-07]]

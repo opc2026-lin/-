@@ -227,7 +227,7 @@ def main():
                 pairs_found += 1
     print(f"  MarkItDown 文档: {md_count} 篇")
     print(f"  解读笔记: {int_count} 篇")
-    print(f"  检测到文档↔解读配对: {pairs_found} 对")
+    print(f"  检测到文档<->解读配对: {pairs_found} 对")
 
 if __name__ == '__main__':
     main()

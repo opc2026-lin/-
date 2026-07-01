@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 装过上百个Skill后，推荐这16个
 
 > 作者：起哥的AI实战
@@ -121,8 +120,11 @@ verifier_type: "auto"
 
 ## 双链笔记
 
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
 - [[7.5万，AI知识库开发]]
+- [[ai skill]]
+- [[ai賦能財務]]
 - [[Hermes skill]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
 - [[Open Design AI技能探究]]
 - [[一条视频搞懂API_CLI_Prompt_MCP_Skill...]]
-- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]

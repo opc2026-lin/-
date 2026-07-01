@@ -1,5 +1,5 @@
 ---
-title: "Browser Harness：592行Python代码让AI拥有浏览器完全控制权"
+title: "Browser Harness：592行Python代码让A... (1)"
 date: "2026-07-01"
 tags: [AI, AI Agent, 开源]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # Browser Harness：592行Python代码让AI拥有浏览器完全控制权
 
 ## 视频信息
@@ -135,8 +134,11 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 
 ## 双链笔记
 
+- [[Browser Harness：592行Python代码让A...]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[Agent时代，项目管理别再只看Issue了]]
-- [[Browser Harness：592行Python代码让A...]]
+- [[github新手入門]]
 - [[Hermes skill]]
+- [[Open Design AI技能探究]]
+- [[这段视频介绍了一款刚开源的AI工具项目PilotDeck，它...]]

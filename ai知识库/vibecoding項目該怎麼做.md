@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # vibecoding項目該怎麼做
 
 8.97 复制打开抖音，看看【珍妮丁丁说AI的作品】VibeCoding大赏 | 小白写代码前必做的三... [https://v.douyin.com/21sovyfObEQ/](https://v.douyin.com/21sovyfObEQ/) 06/29 [W@M.jc](mailto:W@M.jc) pDH:/ :6pm ，視頻語音原稿
@@ -130,3 +129,6 @@ MCP和Subagents正式将工程级分工这件事引入了AI编程系统。接下
 - [[Vibe Coding 02 _ 小白做产品，先跑通主线流程...]]
 - [[为什么你的 Vibe Coding 做不出高级感？]]
 - [[用Codex开发一个APP：从0到1上架APP全攻略]]
+- [[视频笔记_VibeCoding02小白做产品先跑通主线_7649038685517712694]]
+- [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]

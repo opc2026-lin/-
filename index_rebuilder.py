@@ -129,7 +129,7 @@ def main():
         content = build_index(dir_path, entries)
         index_path = dir_path / 'index.md'
         index_path.write_text(content, encoding='utf-8')
-        print(f'  ✓ {rel_dir}/index.md ({len(entries)} 篇)')
+        print(f'  [OK] {rel_dir}/index.md ({len(entries)} notes)')
         generated += 1
 
     print(f'\n共生成 {generated} 个索引')

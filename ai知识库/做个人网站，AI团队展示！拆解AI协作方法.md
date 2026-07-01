@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 做个人网站，AI团队展示！拆解AI协作方法
 
 > 作者：希尔在创造
@@ -148,5 +147,8 @@ AI 能做的是：
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[ai賦能財務]]
 - [[codex+obsidian]]
 - [[Codex执行 + Claude Code审：复杂任务这么干]]
+- [[Codex插件生态：一条视频讲透]]

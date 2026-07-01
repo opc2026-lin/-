@@ -1,5 +1,5 @@
 ---
-title: "一条视频搞懂API/CLI/Prompt/MCP/Skill/Agent"
+title: "一条视频搞懂API_CLI_Prompt_MCP_Skill..."
 date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill, Prompt]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 一条视频搞懂API/CLI/Prompt/MCP/Skill/Agent
 
 ## 视频信息
@@ -157,8 +156,11 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 
 ## 双链笔记
 
+- [[ai skill]]
+- [[表格skill]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
 - [[7.5万，AI知识库开发]]
+- [[ai賦能財務]]
 - [[Hermes skill]]
-- [[Open Design AI技能探究]]
-- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
-- [[装过上百个Skill后，推荐这16个]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
+- [[Obsidian+Claude 视频知识点整理]]

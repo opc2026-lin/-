@@ -1,5 +1,5 @@
 ---
-title: "Vibe Coding 02 | 小白做产品，先跑通主线流程！"
+title: "Vibe Coding 02 _ 小白做产品，先跑通主线流程..."
 date: "2026-07-01"
 tags: [AI, VibeCoding]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # Vibe Coding 02 | 小白做产品，先跑通主线流程！
 
 ## 视频信息
@@ -185,8 +184,11 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 
 ## 双链笔记
 
+- [[视频笔记_VibeCoding02小白做产品先跑通主线_7649038685517712694]]
 - [[# 胡彦斌 App 被拆出 5 个 Vibe Coding ...]]
 - [[Hermes skill]]
 - [[vibecoding項目該怎麼做]]
 - [[为什么你的 Vibe Coding 做不出高级感？]]
 - [[用Codex开发一个APP：从0到1上架APP全攻略]]
+- [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]

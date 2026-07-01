@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 为什么你的 Vibe Coding 做不出高级感？
 
 ## 视频信息
@@ -149,3 +148,6 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[# 胡彦斌 App 被拆出 5 个 Vibe Coding ...]]
 - [[Agent时代，项目管理别再只看Issue了]]
+- [[Browser Harness：592行Python代码让A... (1)]]
+- [[Browser Harness：592行Python代码让A...]]
+- [[codex+obsidian]]

@@ -1,5 +1,5 @@
 ---
-title: "胡彦斌 App 被拆出 5 个 Vibe Coding 上线安全坑"
+title: "# 胡彦斌 App 被拆出 5 个 Vibe Coding ..."
 date: "2026-07-01"
 tags: [AI, VibeCoding]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 胡彦斌 App 被拆出 5 个 Vibe Coding 上线安全坑
 
 > **视频链接**: [https\://v.douyin.com/3Ee1u2ti1h4/]\(https\://v.douyin.com/3Ee1u2ti1h4/)
@@ -583,3 +582,6 @@ AI能帮你把房子搭起来
 - [[vibecoding項目該怎麼做]]
 - [[为什么你的 Vibe Coding 做不出高级感？]]
 - [[用Codex开发一个APP：从0到1上架APP全攻略]]
+- [[视频笔记_VibeCoding02小白做产品先跑通主线_7649038685517712694]]
+- [[# 爆火的 AI 短片教程来啦]]
+- [[# 如何用 AI 帮你一天找 100 家目标客户]]

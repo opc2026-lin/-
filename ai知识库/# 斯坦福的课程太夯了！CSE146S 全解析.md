@@ -1,5 +1,5 @@
 ---
-title: "斯坦福的课程太夯了！CSE146S 全解析"
+title: "# 斯坦福的课程太夯了！CSE146S 全解析"
 date: "2026-07-01"
 tags: [AI, AI Agent, Claude, 开源]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 斯坦福的课程太夯了！CSE146S 全解析
 
 > **视频链接**: [https\://v.douyin.com/xcJ11UzKcs0/]\(https\://v.douyin.com/xcJ11UzKcs0/)
@@ -169,7 +168,10 @@ Anthropic 的创始人都请来了
 ## 双链笔记
 
 - [[Agent时代，项目管理别再只看Issue了]]
-- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[Open Design AI技能探究]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[5个常用插件]]
 - [[7.5万，AI知识库开发]]
 - [[Anthropic 发布动态工作流 Harness：给每个任...]]
+- [[Browser Harness：592行Python代码让A... (1)]]

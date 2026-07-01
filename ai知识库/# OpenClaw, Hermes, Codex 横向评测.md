@@ -1,5 +1,5 @@
 ---
-title: "OpenClaw, Hermes, Codex 横向评测"
+title: "# OpenClaw, Hermes, Codex 横向评测"
 date: "2026-07-01"
 tags: [AI, AI Agent, Codex, 开源]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # OpenClaw, Hermes, Codex 横向评测
 
 > **视频链接**: [https\://v.douyin.com/I5F2N5dEPeM/]\(https\://v.douyin.com/I5F2N5dEPeM/)
@@ -415,8 +414,11 @@ Hermes 的 Attribose RL
 
 ## 双链笔记
 
+- [[github新手入門]]
+- [[Open Design AI技能探究]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
 - [[Agent时代，项目管理别再只看Issue了]]
-- [[Browser Harness：592行Python代码让A... (1)]]
-- [[Browser Harness：592行Python代码让A...]]
+- [[ai賦能財務]]

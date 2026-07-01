@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 **让 AI 组成团队来干活**
 
 3.35 复制打开抖音，看看【林森夏 AI的作品】MCP和Subagents，让AI组成团队来干活 ... [https://v.douyin.com/uB154FUC5Sk/](https://v.douyin.com/uB154FUC5Sk/) Fus\:/ Z\@M.Jv :5pm 05/12 ，視頻語音原文
@@ -54,3 +53,6 @@ verifier_type: "auto"
 - [[# 企业 AI 落地最优单元｜AI 时代护城河]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]

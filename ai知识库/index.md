@@ -1,22 +1,10 @@
----
-title: "AI知识库 · 索引"
-date: "2026-07-01"
-tags: [未分类]
-type: "index"
-status: "draft"
-summary: "AI知识库 · 索引"
-verified: "unverified"
-importance: 2
-verifier_type: "auto"
----
+# ai知识库 · 索引
 
-# AI知识库 · 索引
-
-> 共 54 篇笔记
+> 共 71 篇
 
 ## 热门标签
 
-(52) (21) (15) (14) (13) (12) (7) (7)
+`#AI` (68) `#AI Agent` (31) `#AI Skill` (20) `#Codex` (20) `#Claude` (19) `#开源` (14) `#Obsidian` (11) `#知识管理` (10)
 
 ## 按标签浏览
 
@@ -26,67 +14,92 @@ verifier_type: "auto"
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 企业 AI 落地最优单元｜AI 时代护城河]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 如何用 AI 帮你一天找 100 家目标客户]]
 - [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[# 爆火的 AI 短片教程来啦]]
 - [[# 胡彦斌 App 被拆出 5 个 Vibe Coding ...]]
-- ... 等 52 篇
+- [[ai skill]]
+- ... 等 54 篇
 
 ### AI Agent
 
 - [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 企业 AI 落地最优单元｜AI 时代护城河]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]] 📄
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1]]
 - [[7.5万，AI知识库开发]]
 - [[Agent时代，项目管理别再只看Issue了]]
+- ... 等 30 篇
+
+### Claude
+
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 爆火的 AI 短片教程来啦]]
+- [[5个常用插件]]
+- [[7.5万，AI知识库开发]]
+- [[Agent时代，项目管理别再只看Issue了]]
+- [[ai 核心文件claude和settings.json...]]
 - [[Anthropic 发布动态工作流 Harness：给每个任...]]
-- [[Browser Harness：592行Python代码让A... (1)]]
-- ... 等 21 篇
+- [[Codex执行 + Claude Code审：复杂任务这么干]]
+- [[Next Codex—— 不是要替代谁，而是要和 Claud...]]
+- ... 等 16 篇
 
 ### AI Skill
 
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[7.5万，AI知识库开发]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]] 📄
+- [[ai skill]]
+- [[codex+obsidian]]
 - [[Hermes skill]]
-- [[Open Design AI技能探究]]
 - [[VibeCoding最佳实践：极简工作流]]
 - [[一个Skill文件里应该有哪些东西]]
 - [[一条视频搞懂API_CLI_Prompt_MCP_Skill...]]
+- [[如何用AI高效学习.docx]] 📄
 - [[打工人认识这7个Skills就够了]]
-- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
-- [[表格skill]]
-- ... 等 13 篇
+- ... 等 16 篇
 
 ### Codex
 
-- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[5个常用插件]]
-- [[Codex执行 + Claude Code审：复杂任务这么干]]
-- [[Codex插件生态：一条视频讲透]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]] 📄
+- [[ai賦能財務]]
 - [[codex+obsidian]]
+- [[Codex执行 + Claude Code审：复杂任务这么干]]
+- [[Obsidian+Claude 视频知识点整理.docx]] 📄
+- [[Open Design AI技能探究]]
 - [[为什么AI越强，人却越来越累？10分钟发呆工具]]
 - [[做个人网站，AI团队展示！拆解AI协作方法]]
-- [[打工人认识这7个Skills就够了]]
-- [[用Codex开发一个APP：从0到1上架APP全攻略]]
-- [[视频笔记_Codex上线3道关_7654084336207121690]]
+- ... 等 15 篇
 
-### Claude
+### 开源
 
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
-- [[# 爆火的 AI 短片教程来啦]]
-- [[Anthropic 发布动态工作流 Harness：给每个任...]]
-- [[Codex执行 + Claude Code审：复杂任务这么干]]
-- [[Next Codex—— 不是要替代谁，而是要和 Claud...]]
-- [[VibeCoding最佳实践：极简工作流]]
-- [[ai 核心文件claude和settings.json...]]
-- [[普通人也能用！Openclaw超强使用场景！]]
-- [[让AI真正懂你：把设计做成Skill，AI的审美直接升级]]
+- [[Agent时代，项目管理别再只看Issue了]]
+- [[Browser Harness：592行Python代码让A... (1)]]
+- [[Browser Harness：592行Python代码让A...]]
+- [[codex+obsidian]]
+- [[Codex插件生态：一条视频讲透]]
+- [[DeepSeek从入门到精通.pdf]] 📄
+- [[github新手入門]]
+- [[Hermes skill]]
+- ... 等 13 篇
+
+### 销售
+
+- [[# 如何用 AI 帮你一天找 100 家目标客户]]
+- [[7.5万，AI知识库开发]]
+- [[Codex插件生态：一条视频讲透]]
+- [[Excel别手搓！AI搞定表格全流程～【职场必备】]]
+- [[老板学习ai的方法论]]
+- [[能源服务公司业财一体化系统 · 需求分析与建设方案]]
 
 ### VibeCoding
 
@@ -97,53 +110,70 @@ verifier_type: "auto"
 - [[用Codex开发一个APP：从0到1上架APP全攻略]]
 - [[视频笔记_VibeCoding02小白做产品先跑通主线_7649038685517712694]]
 
-### 开源
-
-- [[Browser Harness：592行Python代码让A... (1)]]
-- [[Browser Harness：592行Python代码让A...]]
-- [[Codex插件生态：一条视频讲透]]
-- [[github新手入門]]
-- [[为什么AI越强，人却越来越累？10分钟发呆工具]]
-- [[为什么你的 Vibe Coding 做不出高级感？]]
-
-### 销售
-
-- [[# 如何用 AI 帮你一天找 100 家目标客户]]
-- [[Excel别手搓！AI搞定表格全流程～【职场必备】]]
-- [[老板学习ai的方法论]]
-- [[能源服务公司业财一体化系统 · 需求分析与建设方案]]
-
 ### 知识管理
 
-- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
 - [[ai 核心文件claude和settings.json...]]
-- [[老板ai创业思路]]
-
-### AI工具
-
-- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[Agent时代，项目管理别再只看Issue了]]
-
-### Obsidian
-
-- [[codex+obsidian]]
 - [[普通人也能用！Openclaw超强使用场景！]]
+- [[老板ai创业思路]]
 
 ### 商业思维
 
 - [[ai賦能財務]]
+- [[「一人公司」可落地方案（Nelson博主体系）]]
+- [[从 “表前资源开发” 转向 “表后的用能组织”]]
+
+### 营销
+
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[DeepSeek从入门到精通.pdf]] 📄
+
+### 照明节能
+
+- [[AI全链路自主决策工作流引擎实战课（上）]]
+- [[视频笔记_LLMWiki与Google开放标准_7654605540009479464]]
 
 ### 创业
 
+- [[「一人公司」可落地方案（Nelson博主体系）]]
 - [[老板ai创业思路]]
+
+### 售电
+
+- [[从 “表前资源开发” 转向 “表后的用能组织”]]
+- [[能源服务公司业财一体化系统 · 需求分析与建设方案]]
+
+### 商业模式
+
+- [[视频笔记_LLMWiki与Google开放标准_7654605540009479464]]
+- [[视频笔记_LoopEngineering黄仁勋新范式_7656308901680876835]]
+
+### 光伏
+
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+
+### 综合能源
+
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1]]
+
+### 投资
+
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1]]
+
+### 电力交易
+
+- [[「一人公司」可落地方案（Nelson博主体系）.docx]] 📄
+
+### 储能
+
+- [[从 “表前资源开发” 转向 “表后的用能组织”]]
+
+### Obsidian
+
+- [[普通人也能用！Openclaw超强使用场景！]]
 
 ### 节能改造
 
 - [[老板学习ai的方法论]]
-
-### 售电
-
-- [[能源服务公司业财一体化系统 · 需求分析与建设方案]]
 
 ### 招投标
 
@@ -153,7 +183,10 @@ verifier_type: "auto"
 
 - [[视频笔记_LoopEngineering黄仁勋新范式_7656308901680876835]]
 
-### Prompt
+## 类型分布
 
-- [[视频笔记_LoopEngineering黄仁勋新范式_7656308901680876835]]
+- note: 57 篇
+- file: 7 篇
+- stub: 5 篇
+- video: 2 篇
 

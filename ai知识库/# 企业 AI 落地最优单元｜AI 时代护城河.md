@@ -1,5 +1,5 @@
 ---
-title: "企业 AI 落地最优单元｜AI 时代护城河"
+title: "# 企业 AI 落地最优单元｜AI 时代护城河"
 date: "2026-07-01"
 tags: [AI, AI Agent, 知识管理, 营销]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 企业 AI 落地最优单元｜AI 时代护城河
 
 > **视频链接**: [https\://v.douyin.com/Rf-xUhMvPzk/]\(https\://v.douyin.com/Rf-xUhMvPzk/)
@@ -423,7 +422,10 @@ AI 落地单元一共三个层级
 ## 双链笔记
 
 - [[7.5万，AI知识库开发]]
+- [[ai skill]]
+- [[表格skill]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
 - [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[# OpenClaw, Hermes, Codex 横向评测]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]

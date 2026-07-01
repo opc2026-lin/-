@@ -1,7 +1,7 @@
 ---
 title: "codex+obsidian"
 date: "2026-07-01"
-tags: [AI, Codex, Obsidian, 开源, 知识管理]
+tags: [AI, AI Skill, Codex, Obsidian, 开源, 知识管理]
 type: "note"
 status: "draft"
 summary: "codex+obsidian"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # codex+obsidian
 
 9.20 复制打开抖音，看看【Xuan酱的作品】Codex联动Obsidian，搭建超强知识库，手... [https://v.douyin.com/anDxrMcNcjU/](https://v.douyin.com/anDxrMcNcjU/) :6pm 08/29 [e@O.xF](mailto:e@O.xF) PKJ:/
@@ -24,8 +23,11 @@ verifier_type: "auto"
 
 ## 双链笔记
 
-- [[# OpenClaw, Hermes, Codex 横向评测]]
-- [[Codex插件生态：一条视频讲透]]
-- [[为什么AI越强，人却越来越累？10分钟发呆工具]]
+- [[给企业和普通人的AI时代生存实战]]
+- [[ai賦能財務]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[如何用AI高效学习.docx]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[普通人也能用！Openclaw超强使用场景！]]
+- [[Open Design AI技能探究]]
+- [[收件箱/月度整理_2026-07]]

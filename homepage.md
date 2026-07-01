@@ -1,18 +1,14 @@
 ---
-title: homepage
+title: "homepage"
 date: 2026-06-17
-tags:
-  - 仪表盘
-  - 首页
-  - TALOS
-type: system
-status: draft
+tags: [AI, Obsidian, TALOS, 仪表盘, 照明节能, 首页]
+type: "system"
+status: "draft"
 summary: "```dataviewjs // === 导航桥：iframe 内卡片点击 → 在 Obsidian 内打开对应笔记/文件 === if (!window.__talosNavInstalled) { window.__talosNavInstalled = true; wind..."
-verified: unverified
+verified: "unverified"
 importance: 2
-verifier_type: auto
+verifier_type: "auto"
 ---
-
 ```dataviewjs
 // === 导航桥：iframe 内卡片点击 → 在 Obsidian 内打开对应笔记/文件 ===
 if (!window.__talosNavInstalled) {
@@ -50,3 +46,16 @@ try {
   dv.paragraph("⚠️ 无法加载 " + path + "：" + e.message + "\n请确认文件存在，且 Dataview 已开启 *Enable JavaScript Queries*。");
 }
 ```
+
+---
+
+## 双链笔记
+
+- [[.gitignore]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[AI全链路自主决策工作流引擎实战课（上）]]
+- [[ai賦能財務]]
+- [[codex+obsidian]]
+- [[Obsidian+Claude 视频知识点整理.docx]]

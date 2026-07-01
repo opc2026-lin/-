@@ -1,7 +1,7 @@
 ---
-title: "OPC AI 知识库 · Wiki Schema"
+title: "CLAUDE"
 date: "2026-07-01"
-tags: [AI, Claude, 售电, 综合能源]
+tags: [AI, Claude, 售电, 知识管理, 综合能源, 能源托管]
 type: "rules"
 status: "draft"
 summary: "OPC AI 知识库 · Wiki Schema"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 5
 verifier_type: "auto"
 ---
-
 # OPC AI 知识库 · Wiki Schema
 
 > 本文件是 LLM 操作外脑的宪法。LLM 在每次操作前必须先读取此文件。
@@ -136,8 +135,11 @@ tags: [实体类型]
 
 ## 双链笔记
 
+- [[System\working-memory/tasks]]
 - [[ai知识库/# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[ai知识库/# 几分钟教你远控家里 Mac 上的 AI Agents]]
-- [[ai知识库/# 斯坦福的课程太夯了！CSE146S 全解析]]
-- [[ai知识库/# 爆火的 AI 短片教程来啦]]
 - [[ai知识库/7.5万，AI知识库开发]]
+- [[ai知识库/ai 核心文件claude和settings.json...]]
+- [[ai知识库/「一人公司」可落地方案（Nelson博主体系）.docx]]
+- [[ai知识库/普通人也能用！Openclaw超强使用场景！]]
+- [[个人笔记/一条视频教会你写周报：4个原则让领导主动给你加薪]]
+- [[综合能源/AI与能源双向赋能行动方案 国能发科技〔2026〕34号.docx]]

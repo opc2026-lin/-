@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 普通人也能用！Openclaw超强使用场景！
 
 ## 视频信息
@@ -205,7 +204,10 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 ## 双链笔记
 
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[「一人公司」可落地方案（Nelson博主体系）.docx]]
+- [[5个常用插件]]
 - [[7.5万，AI知识库开发]]
 - [[ai 核心文件claude和settings.json...]]
 - [[codex+obsidian]]
-- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
+- [[Obsidian+Claude 视频知识点整理]]

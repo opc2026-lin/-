@@ -1,3 +1,14 @@
+---
+title: "Obsidian+Claude 视频知识点整理"
+date: "2026-07-01"
+tags: [AI, AI Agent, Claude, Obsidian, Prompt]
+type: "note"
+status: "draft"
+summary: "**Obsidian+Claude 视频知识点整理**  |  | | --- | | 对应视频：《价值 888，Claude + Obsidian 讲解最好的视频》，原教程为技术大神 McKay Wrigley 的 AI 智能体工作流分享，通过将 Obsidian 笔记软件与 …"
+verified: "unverified"
+importance: 4
+verifier_type: "auto"
+---
 **Obsidian+Claude 视频知识点整理**
 
 |  |
@@ -144,3 +155,16 @@ MCP（Model Context Protocol）是新兴的标准化协议，允许 AI 连接外
 当本地优先、用户可控的 Obsidian，与强大灵活的 Claude Agent 结合，就能打造出真正属于你的 AI 第二大脑，彻底颠覆你的知识管理和工作效率。
 
 |（注：文档部分内容可能由 AI 生成）
+
+---
+
+## 双链笔记
+
+- [[5个常用插件]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[7.5万，AI知识库开发]]
+- [[Agent时代，项目管理别再只看Issue了]]

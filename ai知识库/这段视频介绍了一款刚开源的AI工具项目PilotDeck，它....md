@@ -1,5 +1,5 @@
 ---
-title: "这段视频介绍了一款刚开源的AI工具项目PilotDeck，它由清华大学THUNLP实验室、面壁智能OpenBMB与AI9stars联合研发，可让一个人指挥一支智能体军队，适用于通用多任务场景，有以下亮点："
+title: "这段视频介绍了一款刚开源的AI工具项目PilotDeck，它..."
 date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill, 开源]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 #
 
 这段视频介绍了一款刚开源的AI工具项目PilotDeck，它由清华大学THUNLP实验室、面壁智能OpenBMB与AI9stars联合研发，可让一个人指挥一支智能体军队，适用于通用多任务场景，有以下亮点：
@@ -195,7 +194,10 @@ apiKey: sk-你的豆包APIKey
 ## 双链笔记
 
 - [[Hermes skill]]
+- [[Open Design AI技能探究]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
 - [[7.5万，AI知识库开发]]
 - [[Agent时代，项目管理别再只看Issue了]]
+- [[ai skill]]

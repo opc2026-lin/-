@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 一个Skill文件里应该有哪些东西
 
 > 作者：宇哥AI职场落地-培腾AI
@@ -124,7 +123,10 @@ verifier_type: "auto"
 ## 双链笔记
 
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
 - [[7.5万，AI知识库开发]]
+- [[ai skill]]
+- [[ai賦能財務]]
+- [[codex+obsidian]]
 - [[Hermes skill]]
-- [[Open Design AI技能探究]]
-- [[VibeCoding最佳实践：极简工作流]]
+- [[Obsidian+Claude 视频知识点整理.docx]]

@@ -1,7 +1,7 @@
 ---
 title: "dashboard-ops"
 date: "2026-07-01"
-tags: [talos, ops]
+tags: [Codex, Obsidian, ops, talos]
 type: "stub"
 status: "draft"
 summary: "运维清单 - 刷新 `dashboard.html` 的 STATS - 检查 `Homepage` 和 `Dataview` 插件状态 - 维护首页跳转入口"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 2
 verifier_type: "auto"
 ---
-
 ## 运维清单
 - 刷新 `dashboard.html` 的 STATS
 - 检查 `Homepage` 和 `Dataview` 插件状态
@@ -28,6 +27,10 @@ verifier_type: "auto"
 ## 双链笔记
 
 - [[talos-vault-migration]]
-- [[Journal/2026-06-24]]
-- [[Materials/context-principles]]
-- [[System\working-memory/health-log]]
+- [[ai知识库/5个常用插件]]
+- [[ai知识库/6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[ai知识库/ai賦能財務]]
+- [[ai知识库/codex+obsidian]]
+- [[ai知识库/Obsidian+Claude 视频知识点整理.docx]]
+- [[ai知识库/如何用AI高效学习.docx]]
+- [[ai知识库/给企业和普通人的AI时代生存实战]]

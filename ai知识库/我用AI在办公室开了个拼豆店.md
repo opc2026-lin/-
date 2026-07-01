@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 我用AI在办公室开了个拼豆店
 
 ## 视频信息
@@ -171,3 +170,6 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 企业 AI 落地最优单元｜AI 时代护城河]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 如何用 AI 帮你一天找 100 家目标客户]]
+- [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]

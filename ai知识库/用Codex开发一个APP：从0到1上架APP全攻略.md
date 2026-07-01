@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 用Codex开发一个APP：从0到1上架APP全攻略
 
 > 作者：Lala罐头
@@ -182,4 +181,7 @@ verifier_type: "auto"
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 胡彦斌 App 被拆出 5 个 Vibe Coding ...]]
 - [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
+- [[ai賦能財務]]
 - [[codex+obsidian]]
+- [[Codex执行 + Claude Code审：复杂任务这么干]]

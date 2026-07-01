@@ -1,5 +1,5 @@
 ---
-title: "我发明了让 AI 互相交流的方法—ACP 协议！"
+title: "# 我发明了让 AI 互相交流的方法—ACP 协议！"
 date: "2026-07-01"
 tags: [AI, AI Agent]
 type: "note"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 我发明了让 AI 互相交流的方法—ACP 协议！
 
 > **视频链接**: [https\://v.douyin.com/y4gWX-JAD14/]\(https\://v.douyin.com/y4gWX-JAD14/)
@@ -503,7 +502,10 @@ AI 会自己学习了
 ## 双链笔记
 
 - [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
-- [[# OpenClaw, Hermes, Codex 横向评测]]
-- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[Anthropic 发布动态工作流 Harness：给每个任...]]
+- [[5个常用插件]]

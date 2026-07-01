@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # html风格
 
 网页设计（HTML/CSS）的主流视觉风格一直在演变。当下（2026年）最流行且“好看”的网页风格，主要围绕着**提升用户体验、增强交互高级感和传递品牌个性**展开。
@@ -58,3 +57,6 @@ verifier_type: "auto"
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 企业 AI 落地最优单元｜AI 时代护城河]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 如何用 AI 帮你一天找 100 家目标客户]]
+- [[# 我发明了让 AI 互相交流的方法—ACP 协议！]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]

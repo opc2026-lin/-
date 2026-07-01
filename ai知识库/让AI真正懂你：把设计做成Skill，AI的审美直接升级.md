@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 让AI真正懂你：把设计做成Skill，AI的审美直接升级
 
 ## 视频信息
@@ -123,8 +122,11 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 
 ## 双链笔记
 
+- [[Obsidian+Claude 视频知识点整理.docx]]
 - [[Open Design AI技能探究]]
+- [[个人笔记/一条视频教会你写周报：4个原则让领导主动给你加薪]]
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[5个常用插件]]
+- [[6a1460f0378785c31db2a5e6_能源行业AI创业产品方案-深度落地版_1.docx]]
 - [[7.5万，AI知识库开发]]
-- [[Codex执行 + Claude Code审：复杂任务这么干]]

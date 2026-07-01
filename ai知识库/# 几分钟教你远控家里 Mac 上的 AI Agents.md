@@ -1,7 +1,7 @@
 ---
-title: "几分钟教你远控家里 Mac 上的 AI Agents"
+title: "# 几分钟教你远控家里 Mac 上的 AI Agents"
 date: "2026-07-01"
-tags: [AI, AI Agent, Claude, Codex]
+tags: [AI, AI Agent, Claude, Codex, 光伏]
 type: "note"
 status: "draft"
 summary: "几分钟教你远控家里 Mac 上的 AI Agents"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # 几分钟教你远控家里 Mac 上的 AI Agents
 
 > **视频链接**: [https\://v.douyin.com/ue36ZIgCn9g/]\(https\://v.douyin.com/ue36ZIgCn9g/)
@@ -402,8 +401,11 @@ Mac mini 现在不是不好买吗
 
 ## 双链笔记
 
+- [[5个常用插件]]
 - [[Next Codex—— 不是要替代谁，而是要和 Claud...]]
+- [[Obsidian+Claude 视频知识点整理.docx]]
 - [[Open Design AI技能探究]]
-- [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
-- [[7.5万，AI知识库开发]]
+- [[给企业和普通人的AI时代生存实战]]
+- [[ai賦能財務]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]

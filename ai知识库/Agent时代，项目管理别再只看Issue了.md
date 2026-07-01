@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 3
 verifier_type: "auto"
 ---
-
 # Agent时代，项目管理别再只看Issue了
 
 > 作者：一个分享AI的小土豆
@@ -138,3 +137,6 @@ verifier_type: "auto"
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[5个常用插件]]
+- [[7.5万，AI知识库开发]]
+- [[Anthropic 发布动态工作流 Harness：给每个任...]]

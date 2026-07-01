@@ -1,7 +1,7 @@
 ---
-title: "DeepSeek从入门到精通"
+title: "DeepSeek从入门到精通.pdf"
 date: "2026-07-01"
-tags: [AI, PDF]
+tags: [AI, 开源, 营销]
 type: "file"
 status: "draft"
 summary: "MarkItDown 转换自 DeepSeek从入门到精通.pdf"
@@ -9,7 +9,6 @@ verified: "unverified"
 importance: 2
 verifier_type: "auto"
 ---
-
 # DeepSeek从入门到精通
 
 > 转换自: DeepSeek从入门到精通.pdf | 工具: MarkItDown
@@ -5330,8 +5329,11 @@ AI辅助层
 
 ## 双链笔记
 
-- [[AI全链路自主决策工作流引擎实战课（上）.pdf]]
-- [[AI全链路自主决策工作流引擎实战课（下）.pdf]]
-- [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
-- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[Agent时代，项目管理别再只看Issue了]]
+- [[Browser Harness：592行Python代码让A... (1)]]
+- [[Browser Harness：592行Python代码让A...]]
+- [[codex+obsidian]]
+- [[Codex插件生态：一条视频讲透]]
