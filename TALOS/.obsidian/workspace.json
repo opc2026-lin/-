@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "homepage.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "homepage"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3df9b317ef65e10d",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a3057dd055bdf41",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c4347095a8aa2dc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "1a2c4340a21c55e5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "137b83a297a071dd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "395b05865c257692",
+    "type": "split",
+    "children": [
+      {
+        "id": "917c49f7d7c87fee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c389245daae6f564",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "欢迎.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "欢迎 的反向链接列表"
+            }
+          },
+          {
+            "id": "a99a63b033c1a149",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "欢迎.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "欢迎 的出链列表"
+            }
+          },
+          {
+            "id": "52643bb87792e15a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "2d1edc27a3cc2815",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "042dc59eeb182f9b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "欢迎.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "欢迎 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "homepage:Open homepage": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "e7a7b303c61786dc",
+  "lastOpenFiles": [
+    "example/your-project-talos.md",
+    "homepage.md",
+    "example",
+    "欢迎.md",
+    "refresh-dashboard.py",
+    "dashboard.html"
+  ]
+}
