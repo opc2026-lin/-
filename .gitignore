@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/hotkeys.json
+
+# Large data & models
+*.xlsx
+*.xls
+*.pdf
+*.pkl
+*.joblib
+*.h5
+1-2负荷预测输出/model/
+
+# Logs
+*.log
+
+# Temp
+.claudian/sessions/

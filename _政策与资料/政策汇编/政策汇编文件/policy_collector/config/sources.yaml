@@ -1,0 +1,303 @@
+# ============================================================
+# 政策采集源配置文件
+# 覆盖：国家层面 + 福建省 + 福建省9个地市
+# ============================================================
+
+# ---- 关键词配置 ----
+keywords:
+  - 新能源
+  - 虚拟电厂
+  - 零碳园区
+  - 微电网
+  - 综合能源服务
+  - 综合能源
+  - 节能降碳
+  - 节能改造
+  - 光伏
+  - 储能
+  - 充电桩
+  - 充电站
+  - 充电基础设施
+  - 能源托管
+  - 电力运维
+  - 售电
+  - 电改
+  - 电力体制改革
+  - 新型储能
+  - 源网荷储
+  - 绿电
+  - 绿证
+  - 碳达峰
+  - 碳中和
+  - 分布式能源
+  - 可再生能源
+
+# ---- 国家层面 ----
+national:
+  # 国家发改委 - 政策文件
+  - name: "国家发改委-政策通知"
+    url: "https://www.ndrc.gov.cn/xxgk/zcfb/tz/"
+    list_selector: "ul.u-list li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://www.ndrc.gov.cn"
+    encoding: "utf-8"
+    category: "国家发改委"
+
+  # 国家发改委 - 政策文件库（搜索）
+  - name: "国家发改委-文件库"
+    url: "https://www.ndrc.gov.cn/xxgk/wjk/"
+    list_selector: "ul.u-list li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://www.ndrc.gov.cn"
+    encoding: "utf-8"
+    category: "国家发改委"
+
+  # 国家能源局 - 最新文件
+  - name: "国家能源局-最新文件"
+    url: "https://www.nea.gov.cn/policy/zxwj.htm"
+    list_selector: "ul.news_list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://www.nea.gov.cn"
+    encoding: "utf-8"
+    category: "国家能源局"
+
+  # 国家能源局 - 通知
+  - name: "国家能源局-通知"
+    url: "https://www.nea.gov.cn/policy/tz.htm"
+    list_selector: "ul.news_list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://www.nea.gov.cn"
+    encoding: "utf-8"
+    category: "国家能源局"
+
+  # 国家能源局 - 公告
+  - name: "国家能源局-公告"
+    url: "https://www.nea.gov.cn/policy/gg.htm"
+    list_selector: "ul.news_list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://www.nea.gov.cn"
+    encoding: "utf-8"
+    category: "国家能源局"
+
+  # 国家能源局 - 解读
+  - name: "国家能源局-政策解读"
+    url: "https://www.nea.gov.cn/policy/jd.htm"
+    list_selector: "ul.news_list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://www.nea.gov.cn"
+    encoding: "utf-8"
+    category: "国家能源局"
+
+  # 国务院政策文件库
+  - name: "国务院-政策文件库"
+    url: "https://www.gov.cn/zhengce/zuixin.htm"
+    list_selector: "ul.list li, div.list li"
+    title_selector: "a::text, h4 a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://www.gov.cn"
+    encoding: "utf-8"
+    category: "国务院"
+
+  # 生态环境部 - 政策文件
+  - name: "生态环境部-政策文件"
+    url: "https://www.mee.gov.cn/zcwj/"
+    list_selector: "ul li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://www.mee.gov.cn"
+    encoding: "utf-8"
+    category: "生态环境部"
+
+  # 工信部 - 政策文件
+  - name: "工信部-政策文件"
+    url: "https://www.miit.gov.cn/wjfb/index.html"
+    list_selector: "ul.list li, div.news_list li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://www.miit.gov.cn"
+    encoding: "utf-8"
+    category: "工信部"
+
+# ---- 福建省层面 ----
+fujian_province:
+  # 福建省发改委 - 政策文件
+  - name: "福建省发改委-政策文件"
+    url: "https://fgw.fujian.gov.cn/zwgk/fgzd/"
+    list_selector: "ul.list li, div.list_content li, div.zwgk_list li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://fgw.fujian.gov.cn"
+    encoding: "utf-8"
+    category: "福建省发改委"
+
+  # 福建省发改委 - 通知公告
+  - name: "福建省发改委-通知公告"
+    url: "https://fgw.fujian.gov.cn/zwgk/tzgg/"
+    list_selector: "ul.list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text, span.time::text"
+    base_url: "https://fgw.fujian.gov.cn"
+    encoding: "utf-8"
+    category: "福建省发改委"
+
+  # 福建省工信厅 - 最新文件
+  - name: "福建省工信厅-最新文件"
+    url: "https://gxt.fj.gov.cn/zwgk/zxwj/"
+    list_selector: "ul.list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://gxt.fj.gov.cn"
+    encoding: "utf-8"
+    category: "福建省工信厅"
+
+  # 福建省工信厅 - 政策
+  - name: "福建省工信厅-政策"
+    url: "https://gxt.fj.gov.cn/zwgk/zfxxgk/zc/"
+    list_selector: "ul.list li, div.list_content li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://gxt.fj.gov.cn"
+    encoding: "utf-8"
+    category: "福建省工信厅"
+
+  # 福建省政府 - 政策文件
+  - name: "福建省政府-政策文件"
+    url: "https://www.fujian.gov.cn/zwgk/zfxxgk/szfwj/"
+    list_selector: "ul.list li, div.list li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://www.fujian.gov.cn"
+    encoding: "utf-8"
+    category: "福建省政府"
+
+# ---- 福建省各地市 ----
+fujian_cities:
+  # 福州市发改委 - 政务公开
+  - name: "福州市发改委"
+    url: "https://fgw.fuzhou.gov.cn/fgwzwgk/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.fuzhou.gov.cn"
+    encoding: "utf-8"
+    category: "福州市发改委"
+
+  # 福州市工信局
+  - name: "福州市工信局"
+    url: "https://www.fuzhou.gov.cn/zgfzzt/sjxw/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://www.fuzhou.gov.cn"
+    encoding: "utf-8"
+    category: "福州市工信局"
+
+  # 厦门市发改委 - 其他应主动公开信息
+  - name: "厦门市发改委"
+    url: "http://dpc.xm.gov.cn/xxgk/xxgkml/qtyzdgkxx/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "http://dpc.xm.gov.cn"
+    encoding: "utf-8"
+    category: "厦门市发改委"
+
+  # 泉州市发改委
+  - name: "泉州市发改委"
+    url: "https://fgw.quanzhou.gov.cn/zwgk/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.quanzhou.gov.cn"
+    encoding: "utf-8"
+    category: "泉州市发改委"
+
+  # 漳州市发改委
+  - name: "漳州市发改委"
+    url: "https://fgw.zhangzhou.gov.cn/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.zhangzhou.gov.cn"
+    encoding: "utf-8"
+    category: "漳州市发改委"
+
+  # 龙岩市发改委
+  - name: "龙岩市发改委"
+    url: "https://fgw.longyan.gov.cn/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.longyan.gov.cn"
+    encoding: "utf-8"
+    category: "龙岩市发改委"
+
+  # 三明市发改委
+  - name: "三明市发改委"
+    url: "https://fgw.sm.gov.cn/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.sm.gov.cn"
+    encoding: "utf-8"
+    category: "三明市发改委"
+
+  # 莆田市发改委
+  - name: "莆田市发改委"
+    url: "https://fgw.putian.gov.cn/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.putian.gov.cn"
+    encoding: "utf-8"
+    category: "莆田市发改委"
+
+  # 南平市发改委
+  - name: "南平市发改委"
+    url: "https://fgw.np.gov.cn/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.np.gov.cn"
+    encoding: "utf-8"
+    category: "南平市发改委"
+
+  # 宁德市发改委
+  - name: "宁德市发改委"
+    url: "https://fgw.ningde.gov.cn/"
+    list_selector: "ul.list li, div.list_content li, li"
+    title_selector: "a::text"
+    link_selector: "a::attr(href)"
+    date_selector: "span.date::text"
+    base_url: "https://fgw.ningde.gov.cn"
+    encoding: "utf-8"
+    category: "宁德市发改委"

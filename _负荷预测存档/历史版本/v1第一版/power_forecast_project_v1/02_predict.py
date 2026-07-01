@@ -1,0 +1,981 @@
+# -*- coding: utf-8 -*-
+
+import re
+import glob
+import pickle
+import warnings
+import calendar
+import numpy as np
+import pandas as pd
+
+from pathlib import Path
+
+warnings.filterwarnings("ignore")
+
+
+# =========================================================
+# 1. 参数配置
+# 与 01_train_single_user_v6.py 保持一致
+# =========================================================
+TARGET_USER_NAME = "福州年盛机电有限公司"
+
+PREDICT_START = "2026-05-01 00:00:00"   # 左闭
+PREDICT_END = "2026-06-01 00:00:00"     # 右开
+
+
+# =========================================================
+# 2. 路径配置
+# =========================================================
+BASE_DIR = Path(__file__).resolve().parent
+
+USER_MASTER_PATH = BASE_DIR / "input" / "user_master" / "01_用户主档案表.csv"
+WEATHER_DIR = BASE_DIR / "input" / "weather"
+
+OUTPUT_PROCESSED = BASE_DIR / "output" / "processed"
+OUTPUT_MODEL = BASE_DIR / "output" / "model"
+OUTPUT_PREDICTION = BASE_DIR / "output" / "prediction"
+OUTPUT_LOGS = BASE_DIR / "output" / "logs"
+
+for p in [OUTPUT_PROCESSED, OUTPUT_MODEL, OUTPUT_PREDICTION, OUTPUT_LOGS]:
+    p.mkdir(parents=True, exist_ok=True)
+
+
+# =========================================================
+# 3. 日志
+# =========================================================
+SAFE_USER_NAME = TARGET_USER_NAME.replace("/", "_").replace("\\", "_")
+LOG_FILE = OUTPUT_LOGS / f"02_predict_single_user_v6_{SAFE_USER_NAME}.log"
+
+
+def log(msg):
+    print(msg)
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(str(msg) + "\n")
+
+
+with open(LOG_FILE, "w", encoding="utf-8") as f:
+    f.write("=== 单用户V6预测日志 ===\n")
+
+
+# =========================================================
+# 4. 时间范围
+# =========================================================
+PREDICT_START_TS = pd.Timestamp(PREDICT_START)
+PREDICT_END_TS = pd.Timestamp(PREDICT_END)
+
+
+# =========================================================
+# 5. 节假日配置
+# =========================================================
+HOLIDAY_MAP = {
+    "2024-01-01": "元旦",
+    "2024-02-10": "春节", "2024-02-11": "春节", "2024-02-12": "春节", "2024-02-13": "春节",
+    "2024-02-14": "春节", "2024-02-15": "春节", "2024-02-16": "春节", "2024-02-17": "春节",
+    "2024-04-04": "清明节", "2024-04-05": "清明节", "2024-04-06": "清明节",
+    "2024-05-01": "劳动节", "2024-05-02": "劳动节", "2024-05-03": "劳动节", "2024-05-04": "劳动节", "2024-05-05": "劳动节",
+    "2024-06-08": "端午节", "2024-06-09": "端午节", "2024-06-10": "端午节",
+    "2024-09-15": "中秋节", "2024-09-16": "中秋节", "2024-09-17": "中秋节",
+    "2024-10-01": "国庆节", "2024-10-02": "国庆节", "2024-10-03": "国庆节", "2024-10-04": "国庆节",
+    "2024-10-05": "国庆节", "2024-10-06": "国庆节", "2024-10-07": "国庆节",
+
+    "2025-01-01": "元旦",
+    "2025-01-28": "春节", "2025-01-29": "春节", "2025-01-30": "春节", "2025-01-31": "春节",
+    "2025-02-01": "春节", "2025-02-02": "春节", "2025-02-03": "春节", "2025-02-04": "春节",
+    "2025-04-04": "清明节", "2025-04-05": "清明节", "2025-04-06": "清明节",
+    "2025-05-01": "劳动节", "2025-05-02": "劳动节", "2025-05-03": "劳动节", "2025-05-04": "劳动节", "2025-05-05": "劳动节",
+    "2025-05-31": "端午节", "2025-06-01": "端午节", "2025-06-02": "端午节",
+    "2025-10-01": "国庆节", "2025-10-02": "国庆节", "2025-10-03": "国庆节", "2025-10-04": "国庆节",
+    "2025-10-05": "国庆节", "2025-10-06": "国庆节", "2025-10-07": "国庆节", "2025-10-08": "中秋节",
+
+    "2026-01-01": "元旦",
+    "2026-02-17": "春节", "2026-02-18": "春节", "2026-02-19": "春节", "2026-02-20": "春节",
+    "2026-02-21": "春节", "2026-02-22": "春节", "2026-02-23": "春节",
+    "2026-04-04": "清明节", "2026-04-05": "清明节", "2026-04-06": "清明节",
+    "2026-05-01": "劳动节", "2026-05-02": "劳动节", "2026-05-03": "劳动节",
+    "2026-06-19": "端午节", "2026-06-20": "端午节", "2026-06-21": "端午节",
+    "2026-09-25": "中秋节", "2026-09-26": "中秋节", "2026-09-27": "中秋节",
+    "2026-10-01": "国庆节", "2026-10-02": "国庆节", "2026-10-03": "国庆节", "2026-10-04": "国庆节",
+    "2026-10-05": "国庆节", "2026-10-06": "国庆节", "2026-10-07": "国庆节",
+}
+
+ADJUST_WORKDAYS = set([
+    "2024-02-04", "2024-02-18", "2024-04-07", "2024-04-28", "2024-05-11", "2024-09-14", "2024-09-29", "2024-10-12",
+    "2025-01-26", "2025-02-08", "2025-04-27", "2025-09-28", "2025-10-11",
+    "2026-02-15", "2026-02-28", "2026-04-26", "2026-05-09", "2026-09-27", "2026-10-10",
+])
+
+
+# =========================================================
+# 6. 工具函数
+# =========================================================
+def normalize_text(x):
+    if pd.isna(x):
+        return None
+    x = str(x).strip()
+    x = x.replace("　", "").replace(" ", "")
+    return x
+
+
+def normalize_region_name(x):
+    x = normalize_text(x)
+    if x is None:
+        return None
+    x = re.sub(r"(区|县|市)$", "", x)
+    return x
+
+
+def safe_read_table(path):
+    path = str(path)
+    if path.lower().endswith(".csv"):
+        try:
+            return pd.read_csv(path, encoding="utf-8-sig")
+        except Exception:
+            try:
+                return pd.read_csv(path, encoding="gbk")
+            except Exception:
+                return pd.read_csv(path)
+    return pd.read_excel(path)
+
+
+def clean_col_name(c):
+    c = str(c).strip()
+    c = c.replace(" ", "").replace("\n", "").replace("\r", "").replace("\t", "")
+    c = c.replace("（", "(").replace("）", ")")
+    c = c.replace("：", ":")
+    return c
+
+
+def extract_city_district(region_text):
+    if pd.isna(region_text):
+        return None, None
+    txt = str(region_text).strip()
+    txt = txt.replace("―", "-").replace("－", "-").replace("C", "-")
+    parts = re.split(r"[\/\\\-\_\s]+", txt)
+    parts = [p for p in parts if p]
+
+    city, district = None, None
+    if len(parts) >= 3:
+        city = parts[-2]
+        district = parts[-1]
+    elif len(parts) == 2:
+        city = parts[-1]
+    elif len(parts) == 1:
+        city = parts[0]
+    return city, district
+
+
+def month_day_count(year, month):
+    return calendar.monthrange(year, month)[1]
+
+
+# =========================================================
+# 7. 节假日与时间特征
+# =========================================================
+def add_holiday_features(df):
+    df = df.copy()
+    ds = pd.to_datetime(df["datetime"]).dt.normalize().dt.strftime("%Y-%m-%d")
+    date_only = pd.to_datetime(df["datetime"]).dt.normalize()
+
+    df["is_holiday"] = ds.isin(HOLIDAY_MAP.keys()).astype(int)
+    df["holiday_name"] = ds.map(HOLIDAY_MAP).fillna("非节假日")
+    df["is_adjust_workday"] = ds.isin(ADJUST_WORKDAYS).astype(int)
+
+    weekend = (pd.to_datetime(df["datetime"]).dt.weekday >= 5).astype(int)
+    df["is_real_restday"] = np.where(
+        (df["is_holiday"] == 1) | ((weekend == 1) & (df["is_adjust_workday"] == 0)),
+        1, 0
+    )
+
+    df["is_month_start"] = df["datetime"].dt.day.isin([1, 2, 3]).astype(int)
+    month_end_days = df["datetime"].dt.days_in_month
+    df["is_month_end"] = ((month_end_days - df["datetime"].dt.day).isin([0, 1, 2])).astype(int)
+
+    holiday_dates = sorted(pd.to_datetime(list(HOLIDAY_MAP.keys())))
+    before_holiday_dates = set([(d - pd.Timedelta(days=1)).normalize() for d in holiday_dates])
+    after_holiday_dates = set([(d + pd.Timedelta(days=1)).normalize() for d in holiday_dates])
+
+    df["is_before_holiday"] = date_only.isin(before_holiday_dates).astype(int)
+    df["is_after_holiday"] = date_only.isin(after_holiday_dates).astype(int)
+
+    return df
+
+
+def add_time_behavior_features(df):
+    df = df.copy()
+
+    df["month"] = df["datetime"].dt.month
+    df["day"] = df["datetime"].dt.day
+    df["hour"] = df["datetime"].dt.hour
+    df["weekday"] = df["datetime"].dt.weekday + 1
+    df["is_weekend"] = (df["datetime"].dt.weekday >= 5).astype(int)
+
+    df["is_workday"] = np.where(
+        (df["is_real_restday"] == 0) | (df["is_adjust_workday"] == 1),
+        1, 0
+    )
+
+    df["is_active_hour"] = ((df["hour"] >= 8) & (df["hour"] <= 22)).astype(int)
+    df["is_workhour"] = ((df["hour"] >= 8) & (df["hour"] <= 19)).astype(int)
+    df["is_daytime_8_19"] = ((df["hour"] >= 8) & (df["hour"] <= 19)).astype(int)
+
+    def get_bias_segment(h):
+        if 8 <= h <= 10:
+            return "seg_8_10"
+        elif 11 <= h <= 13:
+            return "seg_11_13"
+        elif 14 <= h <= 17:
+            return "seg_14_17"
+        elif 18 <= h <= 19:
+            return "seg_18_19"
+        else:
+            return "seg_other"
+
+    df["bias_segment"] = df["hour"].apply(get_bias_segment)
+
+    df["is_morning_ramp"] = ((df["hour"] >= 8) & (df["hour"] <= 10)).astype(int)
+    df["is_lunch_time"] = ((df["hour"] >= 11) & (df["hour"] <= 13)).astype(int)
+    df["is_evening_peak"] = ((df["hour"] >= 18) & (df["hour"] <= 22)).astype(int)
+
+    def get_time_segment(h):
+        if 0 <= h <= 6:
+            return "night"
+        elif 7 <= h <= 10:
+            return "morning_start"
+        elif 11 <= h <= 13:
+            return "lunch"
+        elif 14 <= h <= 17:
+            return "afternoon"
+        elif 18 <= h <= 22:
+            return "evening_peak"
+        else:
+            return "late_night"
+
+    df["time_segment"] = df["hour"].apply(get_time_segment)
+
+    df["hour_sin"] = np.sin(2 * np.pi * df["hour"] / 24.0)
+    df["hour_cos"] = np.cos(2 * np.pi * df["hour"] / 24.0)
+
+    weekday0 = df["weekday"] - 1
+    df["weekday_sin"] = np.sin(2 * np.pi * weekday0 / 7.0)
+    df["weekday_cos"] = np.cos(2 * np.pi * weekday0 / 7.0)
+
+    return df
+
+
+# =========================================================
+# 8. 读取配置 / 模型 / 历史
+# =========================================================
+def load_single_user_run_config():
+    config_path = OUTPUT_MODEL / f"single_user_run_config_v6_{SAFE_USER_NAME}.csv"
+    if not config_path.exists():
+        raise FileNotFoundError(f"未找到单用户V6配置文件：{config_path.name}")
+    return pd.read_csv(config_path, encoding="utf-8-sig").iloc[0]
+
+
+def load_single_user_history():
+    history_path = OUTPUT_PROCESSED / f"single_user_history_v6_{SAFE_USER_NAME}.csv"
+    if not history_path.exists():
+        raise FileNotFoundError(f"未找到单用户历史文件：{history_path.name}")
+    hist = pd.read_csv(history_path, encoding="utf-8-sig")
+    hist["datetime"] = pd.to_datetime(hist["datetime"], errors="coerce")
+    return hist
+
+
+def load_single_user_daily_history():
+    daily_path = OUTPUT_PROCESSED / f"single_user_train_daily_dataset_v6_{SAFE_USER_NAME}.csv"
+    if not daily_path.exists():
+        raise FileNotFoundError(f"未找到单用户日级训练缓存：{daily_path.name}")
+    daily = pd.read_csv(daily_path, encoding="utf-8-sig")
+    daily["date_day"] = pd.to_datetime(daily["date_day"], errors="coerce")
+    return daily
+
+
+def load_single_user_models_and_meta():
+    day_reg_model_path = OUTPUT_MODEL / f"single_user_day_load_regressor_{SAFE_USER_NAME}.pkl"
+    day_reg_meta_path = OUTPUT_MODEL / f"single_user_day_feature_meta_{SAFE_USER_NAME}.pkl"
+    hour_model_path = OUTPUT_MODEL / f"single_user_hour_model_{SAFE_USER_NAME}.pkl"
+    hour_meta_path = OUTPUT_MODEL / f"single_user_hour_feature_meta_{SAFE_USER_NAME}.pkl"
+
+    for p in [day_reg_model_path, day_reg_meta_path, hour_model_path, hour_meta_path]:
+        if not p.exists():
+            raise FileNotFoundError(f"缺少模型或元数据文件：{p.name}")
+
+    with open(day_reg_model_path, "rb") as f:
+        day_reg_model = pickle.load(f)
+    with open(day_reg_meta_path, "rb") as f:
+        day_reg_meta = pickle.load(f)
+    with open(hour_model_path, "rb") as f:
+        hour_model = pickle.load(f)
+    with open(hour_meta_path, "rb") as f:
+        hour_meta = pickle.load(f)
+
+    return day_reg_model, day_reg_meta, hour_model, hour_meta
+
+
+# =========================================================
+# 9. 读取主档案与天气
+# =========================================================
+def load_user_master():
+    df = safe_read_table(USER_MASTER_PATH)
+    df.columns = [str(c).strip() for c in df.columns]
+    df["用户名称_norm"] = df["用户名称"].apply(normalize_text)
+    df["所在市_norm"] = df["所在市"].apply(normalize_text)
+    df["所在区_norm"] = df["所在区"].apply(normalize_region_name)
+    return df
+
+
+def hourly_weather_column_mapper(cols):
+    mapping = {}
+    for c in cols:
+        c1 = clean_col_name(c)
+        if c1 == "地区":
+            mapping[c] = "region"
+        elif c1 == "时间":
+            mapping[c] = "datetime"
+        elif c1 == "天气":
+            mapping[c] = "weather"
+        elif "温度" in c1 and "露点" not in c1 and "体感" not in c1:
+            mapping[c] = "temperature"
+        elif "降水量" in c1:
+            mapping[c] = "rainfall"
+        elif c1 == "风向":
+            mapping[c] = "wind_direction"
+        elif "风力" in c1:
+            mapping[c] = "wind_level"
+        elif "风速" in c1:
+            mapping[c] = "wind_speed"
+        elif "风向角度" in c1:
+            mapping[c] = "wind_angle"
+        elif "气压" in c1:
+            mapping[c] = "pressure"
+        elif "湿度" in c1:
+            mapping[c] = "humidity"
+        elif "空气质量" in c1:
+            mapping[c] = "air_quality"
+        elif "能见度" in c1:
+            mapping[c] = "visibility"
+        elif "云量" in c1:
+            mapping[c] = "cloud"
+        elif "露点" in c1:
+            mapping[c] = "dew_point"
+        elif "短波辐射" in c1 and "总量" not in c1:
+            mapping[c] = "shortwave_radiation"
+    return mapping
+
+
+def looks_like_hourly_weather_columns(cols):
+    cols_clean = [clean_col_name(c) for c in cols]
+    joined = "".join(cols_clean)
+    keys = ["地区", "时间", "天气", "温度", "降水量", "湿度"]
+    return sum([1 for k in keys if k in joined]) >= 4
+
+
+def smart_read_hourly_weather_file(path):
+    path = str(path)
+    if path.lower().endswith(".csv"):
+        for enc in ["utf-8-sig", "gbk", "utf-8"]:
+            try:
+                df = pd.read_csv(path, encoding=enc)
+                if looks_like_hourly_weather_columns(df.columns):
+                    return df
+            except Exception:
+                pass
+        return pd.read_csv(path)
+
+    xls = pd.ExcelFile(path)
+    for sheet_name in xls.sheet_names:
+        for header_row in [0, 1, 2, 3, 4, 5]:
+            try:
+                df = pd.read_excel(path, sheet_name=sheet_name, header=header_row)
+                if looks_like_hourly_weather_columns(df.columns):
+                    return df
+            except Exception:
+                continue
+    return pd.read_excel(path, sheet_name=0)
+
+
+def load_hourly_weather():
+    log("读取天气...")
+    weather_files = (
+        glob.glob(str(WEATHER_DIR / "*.xlsx")) +
+        glob.glob(str(WEATHER_DIR / "*.xls")) +
+        glob.glob(str(WEATHER_DIR / "*.csv"))
+    )
+    weather_files = [fp for fp in weather_files if not Path(fp).name.startswith("~$")]
+
+    if not weather_files:
+        raise FileNotFoundError("未找到任何天气文件")
+
+    weather_list = []
+    for fp in weather_files:
+        try:
+            df = smart_read_hourly_weather_file(fp)
+            df = df.rename(columns=hourly_weather_column_mapper(df.columns))
+
+            required = ["region", "datetime", "weather", "temperature", "humidity"]
+            if any([c not in df.columns for c in required]):
+                continue
+
+            df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce")
+            df = df.dropna(subset=["datetime"]).copy()
+
+            num_cols = [
+                "temperature", "rainfall", "wind_speed", "pressure",
+                "humidity", "visibility", "cloud", "dew_point",
+                "shortwave_radiation", "air_quality"
+            ]
+            for c in num_cols:
+                if c in df.columns:
+                    df[c] = pd.to_numeric(df[c], errors="coerce")
+
+            city_list, district_list = [], []
+            for x in df["region"]:
+                city, district = extract_city_district(x)
+                city_list.append(normalize_text(city))
+                district_list.append(normalize_region_name(district))
+
+            df["所在市_norm"] = city_list
+            df["所在区_norm"] = district_list
+            weather_list.append(df)
+
+            log(f"已读取天气：{Path(fp).name}")
+        except Exception as e:
+            log(f"[错误] 读取天气失败：{Path(fp).name} -> {e}")
+
+    if not weather_list:
+        raise ValueError("没有有效天气数据")
+
+    weather_df = pd.concat(weather_list, ignore_index=True)
+    weather_df["datetime"] = pd.to_datetime(weather_df["datetime"]).dt.floor("h")
+    weather_df = (
+        weather_df.sort_values("datetime")
+        .drop_duplicates(subset=["所在市_norm", "所在区_norm", "datetime"], keep="last")
+        .reset_index(drop=True)
+    )
+    return weather_df
+
+
+# =========================================================
+# 10. 构造预测骨架
+# =========================================================
+def build_single_user_predict_skeleton(cfg):
+    time_range = pd.date_range(start=PREDICT_START_TS, end=PREDICT_END_TS, freq="h", inclusive="left")
+
+    df = pd.DataFrame({"datetime": time_range})
+    df["用户编号"] = cfg["用户编号"]
+    df["用户名称"] = cfg["TARGET_USER_NAME"]
+    df["户号"] = cfg["户号"]
+    df["所在市"] = cfg["所在市"]
+    df["所在区"] = cfg["所在区"]
+
+    df["所在市_norm"] = df["所在市"].apply(normalize_text)
+    df["所在区_norm"] = df["所在区"].apply(normalize_region_name)
+    df["day_key"] = df["datetime"].dt.date
+    df["date_day"] = df["datetime"].dt.normalize()
+
+    return df
+
+
+# =========================================================
+# 11. 匹配预测天气（天气修正版）
+# =========================================================
+def merge_predict_weather(predict_df, weather_df):
+    log("为单用户V6预测骨架匹配小时气象（天气修正版）...")
+
+    df = predict_df.copy()
+    df["datetime"] = pd.to_datetime(df["datetime"], errors="coerce").dt.floor("h")
+    if "day_key" not in df.columns:
+        df["day_key"] = df["datetime"].dt.date
+    if "date_day" not in df.columns:
+        df["date_day"] = df["datetime"].dt.normalize()
+
+    w = weather_df.copy()
+    w["datetime"] = pd.to_datetime(w["datetime"], errors="coerce").dt.floor("h")
+
+    merged = df.merge(
+        w,
+        on=["所在市_norm", "所在区_norm", "datetime"],
+        how="left",
+        suffixes=("", "_w")
+    )
+
+    numeric_weather_cols = [
+        c for c in [
+            "temperature", "rainfall", "wind_level", "wind_speed", "wind_angle",
+            "pressure", "humidity", "air_quality", "visibility", "cloud",
+            "dew_point", "shortwave_radiation"
+        ] if c in w.columns
+    ]
+
+    city_numeric = (
+        w.groupby(["所在市_norm", "datetime"], as_index=False)[numeric_weather_cols]
+        .mean()
+    )
+
+    def mode_or_nan(x):
+        x = x.dropna()
+        if x.empty:
+            return np.nan
+        m = x.mode()
+        if m.empty:
+            return np.nan
+        return m.iloc[0]
+
+    city_cate_cols = [c for c in ["weather", "wind_direction"] if c in w.columns]
+    if city_cate_cols:
+        city_cate = (
+            w.groupby(["所在市_norm", "datetime"], as_index=False)[city_cate_cols]
+            .agg(mode_or_nan)
+        )
+        weather_city = city_numeric.merge(city_cate, on=["所在市_norm", "datetime"], how="left")
+    else:
+        weather_city = city_numeric.copy()
+
+    if "temperature" in merged.columns:
+        miss_mask = merged["temperature"].isna()
+    else:
+        miss_mask = pd.Series(False, index=merged.index)
+
+    if miss_mask.any():
+        retry_base = merged.loc[miss_mask, ["所在市_norm", "datetime"]].reset_index(drop=True)
+        retry = retry_base.merge(weather_city, on=["所在市_norm", "datetime"], how="left")
+
+        for c in numeric_weather_cols + city_cate_cols:
+            if c in retry.columns:
+                merged.loc[miss_mask, c] = retry[c].values
+
+        merged.loc[miss_mask, "weather_match_level"] = "city_agg"
+
+    if "weather_match_level" not in merged.columns:
+        merged["weather_match_level"] = "district_exact"
+    else:
+        merged["weather_match_level"] = merged["weather_match_level"].fillna("district_exact")
+
+    merged = add_holiday_features(merged)
+    merged = add_time_behavior_features(merged)
+
+    for c in ["rainfall", "wind_speed", "pressure", "visibility", "cloud", "dew_point", "shortwave_radiation", "air_quality"]:
+        if c not in merged.columns:
+            merged[c] = np.nan
+
+    merged["cooling_degree"] = np.maximum(merged["temperature"] - 24, 0)
+    merged["heating_degree"] = np.maximum(18 - merged["temperature"], 0)
+
+    day_ok = (
+        merged.groupby(["用户编号", "day_key"])["temperature"]
+        .apply(lambda x: x.notna().all())
+        .reset_index(name="weather_day_complete")
+    )
+    merged = merged.merge(day_ok, on=["用户编号", "day_key"], how="left")
+
+    for c in ["weather", "time_segment", "wind_direction", "holiday_name", "bias_segment"]:
+        if c in merged.columns:
+            merged[c] = merged[c].astype(str).str.strip()
+
+    log("预测天气匹配来源统计：")
+    log(merged["weather_match_level"].value_counts(dropna=False).to_dict())
+    log("weather_day_complete 统计：")
+    log(merged["weather_day_complete"].value_counts(dropna=False).to_dict())
+
+    return merged
+
+
+# =========================================================
+# 12. 单步特征准备
+# =========================================================
+def prepare_single_step_features(step_df, feature_meta):
+    df = step_df.copy()
+    use_features = feature_meta["use_features"]
+    cat_cols = feature_meta["cat_cols"]
+    num_cols = feature_meta["num_cols"]
+    train_columns = feature_meta["train_columns"]
+    num_fill_values = feature_meta["num_fill_values"]
+
+    for col in cat_cols:
+        if col not in df.columns:
+            df[col] = "未知"
+        df[col] = df[col].fillna("未知").astype(str)
+
+    for col in num_cols:
+        if col not in df.columns:
+            df[col] = num_fill_values.get(col, 0)
+        df[col] = df[col].fillna(num_fill_values.get(col, 0))
+
+    X = df[use_features].copy()
+    X = pd.get_dummies(X, columns=cat_cols, dummy_na=False)
+
+    for c in train_columns:
+        if c not in X.columns:
+            X[c] = 0
+
+    extra_cols = [c for c in X.columns if c not in train_columns]
+    if extra_cols:
+        X = X.drop(columns=extra_cols)
+
+    X = X[train_columns].copy()
+    return X
+
+
+# =========================================================
+# 13. 构造未来日级特征（使用训练缓存）
+# =========================================================
+def build_daily_features_from_cached_history(current_day, daily_hist_df):
+    hist = daily_hist_df.copy()
+    hist["date_day"] = pd.to_datetime(hist["date_day"], errors="coerce")
+    hist = hist.dropna(subset=["date_day"]).sort_values("date_day").reset_index(drop=True)
+
+    hist_before = hist[hist["date_day"] < pd.Timestamp(current_day)].copy()
+    hist_before = hist_before.sort_values("date_day")
+
+    one_day = pd.DataFrame({"date_day": [pd.Timestamp(current_day)]})
+
+    tmp = pd.DataFrame({"datetime": [pd.Timestamp(current_day)]})
+    tmp = add_holiday_features(tmp)
+
+    one_day["day_is_workday"] = np.where(
+        (tmp["is_real_restday"].iloc[0] == 0) | (tmp["is_adjust_workday"].iloc[0] == 1),
+        1, 0
+    )
+    one_day["day_is_holiday"] = tmp["is_holiday"].iloc[0]
+    one_day["day_is_before_holiday"] = tmp["is_before_holiday"].iloc[0]
+    one_day["day_is_after_holiday"] = tmp["is_after_holiday"].iloc[0]
+    one_day["day_is_month_start"] = tmp["is_month_start"].iloc[0]
+    one_day["day_is_month_end"] = tmp["is_month_end"].iloc[0]
+
+    weather_cols = [
+        "temp_mean", "temp_max", "temp_min",
+        "humidity_mean", "rainfall_total",
+        "radiation_total", "radiation_mean", "radiation_max"
+    ]
+    for c in weather_cols:
+        if c in hist_before.columns and not hist_before.empty:
+            one_day[c] = hist_before[c].tail(7).mean()
+        else:
+            one_day[c] = np.nan
+
+    if not hist_before.empty:
+        one_day["daily_total_load_lag_1"] = hist_before["daily_total_load"].iloc[-1]
+        one_day["daily_total_load_roll_mean_3"] = hist_before["daily_total_load"].tail(3).mean()
+        one_day["daily_total_load_roll_mean_7"] = hist_before["daily_total_load"].tail(7).mean()
+
+        one_day["daytime_total_load_lag_1"] = hist_before["daytime_total_load"].iloc[-1]
+        one_day["daytime_total_load_roll_mean_3"] = hist_before["daytime_total_load"].tail(3).mean()
+        one_day["daytime_total_load_roll_mean_7"] = hist_before["daytime_total_load"].tail(7).mean()
+    else:
+        one_day["daily_total_load_lag_1"] = np.nan
+        one_day["daily_total_load_roll_mean_3"] = np.nan
+        one_day["daily_total_load_roll_mean_7"] = np.nan
+        one_day["daytime_total_load_lag_1"] = np.nan
+        one_day["daytime_total_load_roll_mean_3"] = np.nan
+        one_day["daytime_total_load_roll_mean_7"] = np.nan
+
+    return one_day
+
+
+# =========================================================
+# 14. 小时历史特征构造
+# =========================================================
+def build_hour_features_from_history(current_time, row, user_hist):
+    user_hist = user_hist.copy()
+    user_hist["datetime"] = pd.to_datetime(user_hist["datetime"], errors="coerce")
+    user_hist = user_hist.dropna(subset=["datetime"]).sort_values("datetime").reset_index(drop=True)
+
+    def get_lag(hours_back):
+        target_time = current_time - pd.Timedelta(hours=hours_back)
+        hit = user_hist[user_hist["datetime"] == target_time]
+        if hit.empty:
+            return np.nan
+        return hit["load"].iloc[-1]
+
+    hist_before = user_hist[user_hist["datetime"] < current_time].copy()
+    hist_before = hist_before.sort_values("datetime")
+
+    row["load_lag_24"] = get_lag(24)
+    row["load_lag_48"] = get_lag(48)
+    row["load_lag_168"] = get_lag(168)
+
+    last_24 = hist_before.tail(24)["load"]
+    last_168 = hist_before.tail(168)["load"]
+
+    row["load_roll_mean_24"] = last_24.mean() if len(last_24) > 0 else np.nan
+    row["load_roll_std_24"] = last_24.std() if len(last_24) > 1 else 0
+    row["load_roll_mean_168"] = last_168.mean() if len(last_168) > 0 else np.nan
+
+    if not hist_before.empty:
+        same_hour_hist = hist_before[hist_before["datetime"].dt.hour == current_time.hour].sort_values("datetime")
+        row["load_same_hour_mean_3d"] = same_hour_hist.tail(3)["load"].mean() if len(same_hour_hist) > 0 else np.nan
+        row["load_same_hour_mean_7d"] = same_hour_hist.tail(7)["load"].mean() if len(same_hour_hist) > 0 else np.nan
+    else:
+        row["load_same_hour_mean_3d"] = np.nan
+        row["load_same_hour_mean_7d"] = np.nan
+
+    if not hist_before.empty:
+        same_weekday_hour_hist = hist_before[
+            (hist_before["datetime"].dt.weekday == current_time.weekday()) &
+            (hist_before["datetime"].dt.hour == current_time.hour)
+        ].sort_values("datetime")
+        row["load_same_weekday_hour_mean_4"] = same_weekday_hour_hist.tail(4)["load"].mean() if len(same_weekday_hour_hist) > 0 else np.nan
+        row["load_same_weekday_hour_mean_8"] = same_weekday_hour_hist.tail(8)["load"].mean() if len(same_weekday_hour_hist) > 0 else np.nan
+    else:
+        row["load_same_weekday_hour_mean_4"] = np.nan
+        row["load_same_weekday_hour_mean_8"] = np.nan
+
+    is_workday_now = row["is_workday"]
+    if not hist_before.empty:
+        hist_tmp = hist_before.copy()
+        hist_tmp["weekday"] = hist_tmp["datetime"].dt.weekday + 1
+        hist_tmp["is_weekend"] = (hist_tmp["datetime"].dt.weekday >= 5).astype(int)
+
+        hist_ds = hist_tmp["datetime"].dt.normalize().dt.strftime("%Y-%m-%d")
+        hist_tmp["is_holiday"] = hist_ds.isin(HOLIDAY_MAP.keys()).astype(int)
+        hist_tmp["is_adjust_workday"] = hist_ds.isin(ADJUST_WORKDAYS).astype(int)
+        hist_tmp["is_real_restday"] = np.where(
+            (hist_tmp["is_holiday"] == 1) | ((hist_tmp["is_weekend"] == 1) & (hist_tmp["is_adjust_workday"] == 0)),
+            1, 0
+        )
+        hist_tmp["is_workday"] = np.where(
+            (hist_tmp["is_real_restday"] == 0) | (hist_tmp["is_adjust_workday"] == 1),
+            1, 0
+        )
+
+        same_daytype_hour_hist = hist_tmp[
+            (hist_tmp["is_workday"] == is_workday_now) &
+            (hist_tmp["datetime"].dt.hour == current_time.hour)
+        ].sort_values("datetime")
+
+        daytype_mean = same_daytype_hour_hist.tail(5)["load"].mean() if len(same_daytype_hour_hist) > 0 else np.nan
+        row["workday_same_hour_mean_5"] = daytype_mean if is_workday_now == 1 else np.nan
+        row["restday_same_hour_mean_5"] = daytype_mean if is_workday_now == 0 else np.nan
+    else:
+        row["workday_same_hour_mean_5"] = np.nan
+        row["restday_same_hour_mean_5"] = np.nan
+
+    if not hist_before.empty:
+        hist_tmp = hist_before.copy()
+        hist_tmp["hour"] = hist_tmp["datetime"].dt.hour
+        workhour_hist = hist_tmp[(hist_tmp["hour"] >= 8) & (hist_tmp["hour"] <= 19)].sort_values("datetime")
+        row["recent_workhour_mean_3d"] = workhour_hist.tail(36)["load"].mean() if len(workhour_hist) > 0 else np.nan
+        row["recent_workhour_mean_7d"] = workhour_hist.tail(84)["load"].mean() if len(workhour_hist) > 0 else np.nan
+    else:
+        row["recent_workhour_mean_3d"] = np.nan
+        row["recent_workhour_mean_7d"] = np.nan
+
+    return row
+
+
+# =========================================================
+# 15. 递归预测（先预测日级白天总量，再映射 day_type，再小时预测）
+# =========================================================
+def recursive_predict(day_reg_model, day_reg_meta, hour_model, hour_meta, history_df, daily_hist_df, pred_df, q30, q70):
+    log("开始单用户V6递归预测...")
+
+    hist = history_df.copy()
+    hist["datetime"] = pd.to_datetime(hist["datetime"], errors="coerce")
+    hist = hist.dropna(subset=["datetime", "load"]).copy()
+    hist = hist[["datetime", "load"]].sort_values("datetime").reset_index(drop=True)
+
+    pred_df = pred_df.copy()
+    pred_df["datetime"] = pd.to_datetime(pred_df["datetime"], errors="coerce")
+    pred_df = pred_df.sort_values("datetime").reset_index(drop=True)
+    pred_df["predicted_load"] = np.nan
+    pred_df["pred_daytime_total_load"] = np.nan
+    pred_df["pred_day_type"] = np.nan
+    pred_df["predict_status"] = ""
+
+    log(f"预测输入记录数: {len(pred_df)}")
+
+    result_rows = []
+
+    pred_days = sorted(pred_df["date_day"].dropna().unique())
+    pred_day_dict = {}
+
+    def map_day_type(x):
+        if pd.isna(x):
+            return "mid_day"
+        elif x <= q30:
+            return "low_day"
+        elif x <= q70:
+            return "mid_day"
+        else:
+            return "high_day"
+
+    for day in pred_days:
+        one_day_feat = build_daily_features_from_cached_history(day, daily_hist_df)
+        X_day = prepare_single_step_features(one_day_feat, day_reg_meta)
+        pred_day_load = day_reg_model.predict(X_day)[0]
+        pred_day_load = max(pred_day_load, 0)
+
+        pred_daytype = map_day_type(pred_day_load)
+
+        pred_day_dict[pd.Timestamp(day)] = {
+            "pred_daytime_total_load": pred_day_load,
+            "pred_day_type": pred_daytype
+        }
+
+    all_times = sorted(pred_df["datetime"].dropna().unique())
+
+    for current_time in all_times:
+        step_rows = pred_df[pred_df["datetime"] == current_time].copy()
+        feature_rows = []
+
+        for _, row in step_rows.iterrows():
+            if not bool(row.get("weather_day_complete", False)):
+                row["predicted_load"] = np.nan
+                row["predict_status"] = "天气缺失未预测"
+                feature_rows.append(row)
+                continue
+
+            row = build_hour_features_from_history(pd.to_datetime(current_time), row, hist)
+
+            date_day = pd.Timestamp(row["date_day"])
+            row["pred_daytime_total_load"] = pred_day_dict.get(date_day, {}).get("pred_daytime_total_load", np.nan)
+            row["day_type"] = pred_day_dict.get(date_day, {}).get("pred_day_type", "mid_day")
+            row["pred_day_type"] = row["day_type"]
+
+            row["predict_status"] = "已预测"
+            feature_rows.append(row)
+
+        step_feature_df = pd.DataFrame(feature_rows)
+
+        pred_mask = step_feature_df["predict_status"] == "已预测"
+        if pred_mask.any():
+            X_hour = prepare_single_step_features(step_feature_df.loc[pred_mask], hour_meta)
+            step_pred = hour_model.predict(X_hour)
+            step_pred = np.where(step_pred < 0, 0, step_pred)
+            step_feature_df.loc[pred_mask, "predicted_load"] = step_pred
+
+        result_rows.append(step_feature_df.copy())
+
+        append_rows = step_feature_df.dropna(subset=["predicted_load"])
+        for _, r in append_rows.iterrows():
+            add_row = pd.DataFrame({
+                "datetime": [pd.to_datetime(r["datetime"], errors="coerce")],
+                "load": [r["predicted_load"]]
+            })
+            hist = pd.concat([hist, add_row], ignore_index=True)
+            hist = hist.drop_duplicates(subset=["datetime"], keep="last")
+            hist = hist.sort_values("datetime").reset_index(drop=True)
+
+    final_pred = pd.concat(result_rows, ignore_index=True)
+    final_pred = final_pred.sort_values("datetime").reset_index(drop=True)
+
+    log("单用户V6递归预测完成")
+    return final_pred
+
+
+# =========================================================
+# 16. 导出预测结果
+# =========================================================
+def build_output_sheet_like_original(one_user_pred_df, account_value):
+    pred_start = PREDICT_START_TS.normalize()
+    pred_end = PREDICT_END_TS.normalize()
+
+    if PREDICT_END_TS != pred_end:
+        day_range_end = pred_end
+    else:
+        day_range_end = pred_end - pd.Timedelta(days=1)
+
+    day_range = pd.date_range(start=pred_start, end=day_range_end, freq="D")
+
+    day_rows = []
+    for day in day_range:
+        row = {
+            "电量年月日": day.strftime("%Y%m%d"),
+            "户号": account_value
+        }
+
+        day_slice = one_user_pred_df.copy()
+        day_slice["base_date"] = np.where(
+            day_slice["datetime"].dt.hour == 0,
+            (day_slice["datetime"] - pd.Timedelta(days=1)).dt.normalize(),
+            day_slice["datetime"].dt.normalize()
+        )
+        day_slice["base_date"] = pd.to_datetime(day_slice["base_date"])
+
+        one_day = day_slice[day_slice["base_date"] == day]
+
+        all_empty = True
+        total_value = 0.0
+
+        for h in range(1, 25):
+            target_dt = day + pd.Timedelta(days=1) if h == 24 else day + pd.Timedelta(hours=h)
+            hit = one_day[one_day["datetime"] == target_dt]
+
+            if not (PREDICT_START_TS <= target_dt < PREDICT_END_TS):
+                v = np.nan
+            elif hit.empty or pd.isna(hit["predicted_load"].iloc[0]):
+                v = np.nan
+            else:
+                v = float(hit["predicted_load"].iloc[0])
+                all_empty = False
+                total_value += v
+
+            row[f"{h}:00"] = v
+
+        row["合计"] = np.nan if all_empty else total_value
+        day_rows.append(row)
+
+    final_cols = ["电量年月日", "户号"] + [f"{h}:00" for h in range(1, 25)] + ["合计"]
+    return pd.DataFrame(day_rows)[final_cols]
+
+
+def export_prediction_excel(final_pred, account_value):
+    log("导出单用户V6预测 Excel ...")
+
+    out_sheet = build_output_sheet_like_original(final_pred, account_value)
+    sheet_name = f"{str(PREDICT_START_TS.year)[2:]}.{PREDICT_START_TS.month}"
+
+    out_path = OUTPUT_PREDICTION / f"{SAFE_USER_NAME}_single_user_v6_prediction.xlsx"
+
+    with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
+        out_sheet.to_excel(writer, sheet_name=sheet_name[:31], index=False)
+
+    log(f"已导出：{out_path.name}")
+
+
+# =========================================================
+# 17. 主流程
+# =========================================================
+def main():
+    log("=== 开始单用户V6预测 ===")
+    log(f"目标用户 = {TARGET_USER_NAME}")
+    log(f"PREDICT_START = {PREDICT_START_TS}")
+    log(f"PREDICT_END   = {PREDICT_END_TS}")
+
+    cfg = load_single_user_run_config()
+    q30 = float(cfg["DAYTYPE_Q30"])
+    q70 = float(cfg["DAYTYPE_Q70"])
+
+    day_reg_model, day_reg_meta, hour_model, hour_meta = load_single_user_models_and_meta()
+    history_df = load_single_user_history()
+    daily_hist_df = load_single_user_daily_history()
+
+    weather_df = load_hourly_weather()
+    predict_skeleton = build_single_user_predict_skeleton(cfg)
+    predict_base_df = merge_predict_weather(predict_skeleton, weather_df)
+
+    final_pred = recursive_predict(
+        day_reg_model=day_reg_model,
+        day_reg_meta=day_reg_meta,
+        hour_model=hour_model,
+        hour_meta=hour_meta,
+        history_df=history_df,
+        daily_hist_df=daily_hist_df,
+        pred_df=predict_base_df,
+        q30=q30,
+        q70=q70
+    )
+
+    final_pred.to_csv(
+        OUTPUT_PREDICTION / f"single_user_predict_long_v6_{SAFE_USER_NAME}.csv",
+        index=False,
+        encoding="utf-8-sig"
+    )
+
+    export_prediction_excel(final_pred, cfg["户号"])
+
+    log("=== 单用户V6预测完成 ===")
+
+
+if __name__ == "__main__":
+    main()

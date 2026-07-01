@@ -1,0 +1,69 @@
+{
+  "target_start": "2026-06-28 00:00:00",
+  "target_end": "2026-07-01 00:00:00",
+  "load_dir": "D:\\亿云能源科技售电交易数据库\\负荷预测",
+  "weather_dir": "D:\\亿云能源科技售电交易数据库\\天气",
+  "project_dir": "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本",
+  "report_dir": "D:\\亿云能源科技售电交易数据库\\负荷预测分析报告",
+  "input_backup_dir": "D:\\亿云能源科技售电交易数据库\\负荷预测分析报告\\backup\\input_20260625_135602",
+  "load_sync": {
+    "master_rows": 18,
+    "converted_load_files": [
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福建俊杰新材料科技股份有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福建省莆田市新兴达饲料有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州超库鲜生供应链管理有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福建省德化圣光工艺有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\泉州南岛新材料科技有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\泉州市泉港区昌玉汽车零件厂.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州信青源家具有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州年盛机电有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州至和玻璃有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州雅赛诺家居有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\闽侯县天泽工艺品有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\津太新能源科技（福建）有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\泉州市鲤城三清工艺品有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州市晋安区象园街道办事处.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福州市鼓楼区元兴物业有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福建安捷物业管理有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福建运杰物流有限公司.xlsx",
+      "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\load\\福建省元乐达工贸有限公司.xlsx"
+    ],
+    "missing_load_users": []
+  },
+  "weather_sync": {
+    "converted_weather_file": "D:\\亿云能源科技售电交易数据库\\power_forecast_project（第1次） - 副本\\input\\weather\\外部同步_福建小时天气_202606.xlsx",
+    "weather_rows": 16900,
+    "target_weather_rows": 288,
+    "target_weather_cities": [
+      "福建/宁德/蕉城",
+      "福建/泉州/鲤城",
+      "福建/福州/鼓楼",
+      "福建/莆田/城厢"
+    ]
+  },
+  "inactive_weather_files": [],
+  "py_compile": {
+    "returncode": 0,
+    "stderr": ""
+  },
+  "target_actual_available": false,
+  "target_actual_missing_dates": [
+    "20260628",
+    "20260629",
+    "20260630"
+  ],
+  "runs": [
+    {
+      "script": "01_train.py",
+      "returncode": 0,
+      "stdout": "厂.xlsx - 26.2\n已读取负荷：泉州市泉港区昌玉汽车零件厂.xlsx - 26.3\n已读取负荷：泉州市泉港区昌玉汽车零件厂.xlsx - 26.4\n已读取负荷：泉州市泉港区昌玉汽车零件厂.xlsx - 26.5\n已读取负荷：泉州市泉港区昌玉汽车零件厂.xlsx - 26.6\n已读取负荷：泉州市鲤城三清工艺品有限公司.xlsx - 26.1\n已读取负荷：泉州市鲤城三清工艺品有限公司.xlsx - 26.2\n已读取负荷：泉州市鲤城三清工艺品有限公司.xlsx - 26.3\n已读取负荷：泉州市鲤城三清工艺品有限公司.xlsx - 26.4\n已读取负荷：泉州市鲤城三清工艺品有限公司.xlsx - 26.5\n已读取负荷：泉州市鲤城三清工艺品有限公司.xlsx - 26.6\n已读取负荷：津太新能源科技（福建）有限公司.xlsx - 26.1\n已读取负荷：津太新能源科技（福建）有限公司.xlsx - 26.2\n已读取负荷：津太新能源科技（福建）有限公司.xlsx - 26.3\n已读取负荷：津太新能源科技（福建）有限公司.xlsx - 26.4\n已读取负荷：津太新能源科技（福建）有限公司.xlsx - 26.5\n已读取负荷：津太新能源科技（福建）有限公司.xlsx - 26.6\n已读取负荷：福州信青源家具有限公司.xlsx - 24.12\n已读取负荷：福州信青源家具有限公司.xlsx - 25.1\n已读取负荷：福州信青源家具有限公司.xlsx - 25.2\n已读取负荷：福州信青源家具有限公司.xlsx - 25.3\n已读取负荷：福州信青源家具有限公司.xlsx - 25.11\n已读取负荷：福州信青源家具有限公司.xlsx - 25.12\n已读取负荷：福州信青源家具有限公司.xlsx - 26.1\n已读取负荷：福州信青源家具有限公司.xlsx - 26.2\n已读取负荷：福州信青源家具有限公司.xlsx - 26.3\n已读取负荷：福州信青源家具有限公司.xlsx - 26.4\n已读取负荷：福州信青源家具有限公司.xlsx - 26.5\n已读取负荷：福州信青源家具有限公司.xlsx - 26.6\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 25.8\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 25.9\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 25.10\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 25.11\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 25.12\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 26.1\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 26.2\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 26.3\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 26.4\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 26.5\n已读取负荷：福州市晋安区象园街道办事处.xlsx - 26.6\n已读取负荷：福州市鼓楼区元兴物业有限公司.xlsx - 26.1\n已读取负荷：福州市鼓楼区元兴物业有限公司.xlsx - 26.2\n已读取负荷：福州市鼓楼区元兴物业有限公司.xlsx - 26.3\n已读取负荷：福州市鼓楼区元兴物业有限公司.xlsx - 26.4\n已读取负荷：福州市鼓楼区元兴物业有限公司.xlsx - 26.5\n已读取负荷：福州市鼓楼区元兴物业有限公司.xlsx - 26.6\n已读取负荷：福州年盛机电有限公司.xlsx - 24.11\n已读取负荷：福州年盛机电有限公司.xlsx - 24.12\n已读取负荷：福州年盛机电有限公司.xlsx - 25.1\n已读取负荷：福州年盛机电有限公司.xlsx - 25.2\n已读取负荷：福州年盛机电有限公司.xlsx - 25.3\n已读取负荷：福州年盛机电有限公司.xlsx - 25.4\n已读取负荷：福州年盛机电有限公司.xlsx - 25.5\n已读取负荷：福州年盛机电有限公司.xlsx - 25.6\n已读取负荷：福州年盛机电有限公司.xlsx - 25.7\n已读取负荷：福州年盛机电有限公司.xlsx - 25.8\n已读取负荷：福州年盛机电有限公司.xlsx - 25.9\n已读取负荷：福州年盛机电有限公司.xlsx - 25.10\n已读取负荷：福州年盛机电有限公司.xlsx - 25.11\n已读取负荷：福州年盛机电有限公司.xlsx - 25.12\n已读取负荷：福州年盛机电有限公司.xlsx - 26.1\n已读取负荷：福州年盛机电有限公司.xlsx - 26.2\n已读取负荷：福州年盛机电有限公司.xlsx - 26.3\n已读取负荷：福州年盛机电有限公司.xlsx - 26.4\n已读取负荷：福州年盛机电有限公司.xlsx - 26.5\n已读取负荷：福州年盛机电有限公司.xlsx - 26.6\n已读取负荷：福州至和玻璃有限公司.xlsx - 24.12\n已读取负荷：福州至和玻璃有限公司.xlsx - 25.1\n已读取负荷：福州至和玻璃有限公司.xlsx - 25.2\n已读取负荷：福州至和玻璃有限公司.xlsx - 25.3\n已读取负荷：福州至和玻璃有限公司.xlsx - 25.11\n已读取负荷：福州至和玻璃有限公司.xlsx - 25.12\n已读取负荷：福州至和玻璃有限公司.xlsx - 26.1\n已读取负荷：福州至和玻璃有限公司.xlsx - 26.2\n已读取负荷：福州至和玻璃有限公司.xlsx - 26.3\n已读取负荷：福州至和玻璃有限公司.xlsx - 26.4\n已读取负荷：福州至和玻璃有限公司.xlsx - 26.5\n已读取负荷：福州至和玻璃有限公司.xlsx - 26.6\n[警告] 未匹配到主档案：福州超库鲜生\n已读取负荷：福州超库鲜生供应链管理有限公司.xlsx - 26.2\n已读取负荷：福州超库鲜生供应链管理有限公司.xlsx - 26.3\n已读取负荷：福州超库鲜生供应链管理有限公司.xlsx - 26.4\n已读取负荷：福州超库鲜生供应链管理有限公司.xlsx - 26.5\n已读取负荷：福州超库鲜生供应链管理有限公司.xlsx - 26.6\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 25.2\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 25.11\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 25.12\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 26.1\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 26.2\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 26.3\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 26.4\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 26.5\n已读取负荷：福州雅赛诺家居有限公司.xlsx - 26.6\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 24.11\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 24.12\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.1\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.2\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.3\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.4\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.5\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.6\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.7\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.8\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.9\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.10\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.11\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 25.12\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 26.1\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 26.2\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 26.3\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 26.4\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 26.5\n已读取负荷：福建俊杰新材料科技股份有限公司.xlsx - 26.6\n已读取负荷：福建安捷物业管理有限公司.xlsx - 26.1\n已读取负荷：福建安捷物业管理有限公司.xlsx - 26.2\n已读取负荷：福建安捷物业管理有限公司.xlsx - 26.3\n已读取负荷：福建安捷物业管理有限公司.xlsx - 26.4\n已读取负荷：福建安捷物业管理有限公司.xlsx - 26.5\n已读取负荷：福建安捷物业管理有限公司.xlsx - 26.6\n已读取负荷：福建省元乐达工贸有限公司.xlsx - 26.5\n已读取负荷：福建省元乐达工贸有限公司.xlsx - 26.6\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 24.12\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.1\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.2\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.3\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.4\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.5\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.6\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.7\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.8\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.9\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.10\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.11\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 25.12\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.1\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.2\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.3\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.4\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.5\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.6\n已读取负荷：福建省德化圣光工艺有限公司.xlsx - 26.4 \n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.1\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.2\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.3\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.4\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.5\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.6\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.7\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.8\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.9\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.10\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.11\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 25.12\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 26.1\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 26.2\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 26.3\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 26.4\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 26.5\n已读取负荷：福建省莆田市新兴达饲料有限公司.xlsx - 26.6\n已读取负荷：福建运杰物流有限公司.xlsx - 24.12\n已读取负荷：福建运杰物流有限公司.xlsx - 25.1\n已读取负荷：福建运杰物流有限公司.xlsx - 25.2\n已读取负荷：福建运杰物流有限公司.xlsx - 25.3\n已读取负荷：福建运杰物流有限公司.xlsx - 25.11\n已读取负荷：福建运杰物流有限公司.xlsx - 25.12\n已读取负荷：福建运杰物流有限公司.xlsx - 26.1\n已读取负荷：福建运杰物流有限公司.xlsx - 26.2\n已读取负荷：福建运杰物流有限公司.xlsx - 26.3\n已读取负荷：福建运杰物流有限公司.xlsx - 26.4\n已读取负荷：福建运杰物流有限公司.xlsx - 26.5\n已读取负荷：福建运杰物流有限公司.xlsx - 26.6\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 24.12\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 25.1\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 25.2\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 25.3\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 25.11\n[错误] 读取失败：闽侯县天泽工艺品有限公司.xlsx - 25.12 -> 未识别到负荷表头（电量年月日/户号）\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 26.1\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 26.2\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 26.3\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 26.4\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 26.5\n已读取负荷：闽侯县天泽工艺品有限公司.xlsx - 26.6\n训练负荷合并完成，共 141816 条\n读取所有小时气象文件...\n已读取小时气象：外部同步_福建小时天气_202606.xlsx，记录数 16900\n小时气象合并完成，共 16900 条\n合并训练负荷与小时气象（天气修正版）...\n训练数据合并完成，共 71579 条\nweather_match_level 统计：\n{'district_exact': 71579}\n生成V2.5_WeatherFix训练特征...\nV2.5_WeatherFix训练特征生成完成\n样本权重统计： min=0.1980, max=1.9500, mean=0.5275\n开始训练低负荷分类模型：lightgbm\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] Number of positive: 35725, number of negative: 32830\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.005809 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 6142\n[LightGBM] [Info] Number of data points in the train set: 68555, number of used features: 81\n[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.466340 -> initscore=-0.134844\n[LightGBM] [Info] Start training from score -0.134844\n低负荷分类模型 Accuracy: 0.9687\n低负荷分类模型 F1: 0.9698\n开始训练回归模型 low_load_regressor：lightgbm\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.008843 seconds.\nYou can set `force_col_wise=true` to remove the overhead.\n[LightGBM] [Info] Total Bins 6123\n[LightGBM] [Info] Number of data points in the train set: 35725, number of used features: 80\n[LightGBM] [Info] Start training from score 17.998876\ntrain_metrics_low_regressor_v2_5_weatherfix.csv -> MAE: 2.8363, RMSE: 4.3949\n开始训练回归模型 normal_load_regressor：lightgbm\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.002814 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 6109\n[LightGBM] [Info] Number of data points in the train set: 32830, number of used features: 81\n[LightGBM] [Info] Start training from score 273.323150\ntrain_metrics_normal_regressor_v2_5_weatherfix.csv -> MAE: 29.0563, RMSE: 48.9943\n分类样本数: 68555\n低负荷样本数: 35725\n普通样本数: 32830\n=== V2.5_WeatherFix训练完成 ===\n",
+      "stderr": ""
+    },
+    {
+      "script": "02_predict.py",
+      "returncode": 0,
+      "stdout": "=== 开始V2.5_WeatherFix预测 ===\nPREDICT_START = 2026-06-28 00:00:00\nPREDICT_END   = 2026-07-01 00:00:00\nLOW_LOAD_THRESHOLD = 50.0\nLOW_LOAD_PROBA_THRESHOLD = 0.4\n读取小时气象...\n已读取气象：外部同步_福建小时天气_202606.xlsx\n[警告] 预测骨架未匹配主档案：福州超库鲜生\n预测骨架生成完成，总记录数: 1296\n为预测骨架匹配小时气象（天气修正版）...\n预测骨架总记录数: 1296\n天气表总记录数: 16900\nmerge 后 temperature 为空数: 0\n预测天气匹配来源统计：\n{'district_exact': 1296}\nweather_day_complete 统计：\n{True: 1296}\n开始递归预测...\n预测输入记录数: 1296\n预测用户数: 18\n低负荷概率阈值: 0.4\n递归预测完成：低负荷模型使用次数=556，普通模型使用次数=740\n导出预测 Excel ...\n已导出：津太新能源科技（福建）有限公司_v2_5_weatherfix.xlsx\n已导出：福州市晋安区象园街道办事处_v2_5_weatherfix.xlsx\n已导出：福州市鼓楼区元兴物业有限公司_v2_5_weatherfix.xlsx\n已导出：福建安捷物业管理有限公司_v2_5_weatherfix.xlsx\n已导出：福建运杰物流有限公司_v2_5_weatherfix.xlsx\n已导出：福建省元乐达工贸有限公司_v2_5_weatherfix.xlsx\n已导出：福州信青源家具有限公司_v2_5_weatherfix.xlsx\n已导出：福州年盛机电有限公司_v2_5_weatherfix.xlsx\n已导出：福州至和玻璃有限公司_v2_5_weatherfix.xlsx\n已导出：福州雅赛诺家居有限公司_v2_5_weatherfix.xlsx\n已导出：闽侯县天泽工艺品有限公司_v2_5_weatherfix.xlsx\n已导出：福州超库鲜生供应链管理有限公司_v2_5_weatherfix.xlsx\n已导出：福建俊杰新材料科技股份有限公司_v2_5_weatherfix.xlsx\n已导出：福建省莆田市新兴达饲料有限公司_v2_5_weatherfix.xlsx\n已导出：泉州南岛新材料科技有限公司_v2_5_weatherfix.xlsx\n已导出：泉州市泉港区昌玉汽车零件厂_v2_5_weatherfix.xlsx\n已导出：泉州市鲤城三清工艺品有限公司_v2_5_weatherfix.xlsx\n已导出：福建省德化圣光工艺有限公司_v2_5_weatherfix.xlsx\n=== V2.5_WeatherFix预测完成 ===\n",
+      "stderr": ""
+    }
+  ]
+}

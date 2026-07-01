@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf \"D:/opc-ai知识库\" && echo \"已删除 opc-ai知识库，原始两个库未动\")"
+    ]
+  }
+}

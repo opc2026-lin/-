@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "D:\移动\power_forecast_project（第1次）\03_validate.py", line 955, in <module>
+    main()
+    ~~~~^^
+  File "D:\移动\power_forecast_project（第1次）\03_validate.py", line 948, in main
+    export_bias_usage_metrics(validation_df)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\移动\power_forecast_project（第1次）\03_validate.py", line 606, in export_bias_usage_metrics
+    by_user.columns = ["用户编号", "用户名称", "mean_bias_factor", "min_bias_factor", "max_bias_factor", "median_bias_factor", "count"]
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\23154\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py", line 6220, in __setattr__
+    return object.__setattr__(self, name, value)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/properties.pyx", line 69, in pandas._libs.properties.AxisProperty.__set__
+  File "C:\Users\23154\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py", line 766, in _set_axis
+    self._mgr.set_axis(axis, labels)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\23154\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 273, in set_axis
+    self._validate_set_axis(axis, new_labels)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\23154\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 288, in _validate_set_axis
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Length mismatch: Expected axis has 8 elements, new values have 7 elements

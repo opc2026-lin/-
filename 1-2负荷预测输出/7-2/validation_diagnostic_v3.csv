@@ -1,0 +1,2 @@
+﻿date,total_users,pv_users,total_samples,low_pred_count,normal_pred_count,total_predicted_mwh,total_pv_estimated_mwh,mean_pred_net_kW,median_pred_net_kW,std_pred_net_kW,min_pred_net_kW,max_pred_net_kW
+2026-07-01,18,4,432,220,212,85.23853908878432,7.592847131999999,197.31143307588968,69.26692057818184,305.3533196235138,0.0,1532.0329234755636

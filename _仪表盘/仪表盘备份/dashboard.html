@@ -1,0 +1,749 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>亿云售电控制台</title>
+<style>
+:root{
+  --bg:#08101a;
+  --surface:rgba(15,21,34,.92);
+  --surface-2:rgba(22,30,48,.88);
+  --line:rgba(125,145,220,.16);
+  --line-strong:rgba(125,145,220,.28);
+  --ink:#eef3ff;
+  --muted:#97a4c7;
+  --faint:#6f7ea5;
+  --blue:#5b89ff;
+  --cyan:#4be0ff;
+  --violet:#a78bfa;
+  --pink:#f472b6;
+  --rose:#fb7185;
+  --amber:#fbbf24;
+  --green:#34d399;
+  --radius:16px;
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:
+    linear-gradient(90deg,rgba(125,145,220,.05) 1px,transparent 1px),
+    linear-gradient(rgba(125,145,220,.05) 1px,transparent 1px),
+    radial-gradient(circle at 14% 10%,rgba(91,137,255,.14),transparent 22%),
+    radial-gradient(circle at 82% 12%,rgba(167,139,250,.11),transparent 24%),
+    radial-gradient(circle at 48% 86%,rgba(75,224,255,.08),transparent 26%),
+    var(--bg);
+  background-size:34px 34px,34px 34px,auto,auto,auto,auto;
+}
+.fx{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;mix-blend-mode:screen}
+.o1{width:520px;height:520px;left:-12%;top:-10%;background:radial-gradient(circle,#245aff,transparent 66%)}
+.o2{width:440px;height:440px;right:-10%;top:8%;background:radial-gradient(circle,#8b5cf6,transparent 66%)}
+.o3{width:560px;height:560px;left:34%;bottom:-34%;background:radial-gradient(circle,#0ea5a0,transparent 66%)}
+.app{
+  width:min(1560px,100vw);
+  height:100vh;
+  margin:0 auto;
+  padding:10px 14px;
+  display:grid;
+  grid-template-columns:270px minmax(0,1fr);
+  gap:10px;
+  overflow:hidden;
+}
+.sidebar,.main{min-width:0;overflow:hidden}
+.sidebar{overflow-y:auto}
+.main{overflow-y:hidden}
+.sidebar{
+  display:grid;
+  grid-template-rows:min-content min-content min-content;
+  gap:10px;
+  align-content:start;
+}
+.main{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:auto minmax(0,1fr) auto;
+  gap:8px;
+}
+.card,.panel,.hero{
+  --ac:#5b89ff;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 18px 42px rgba(0,0,0,.42);
+  backdrop-filter:blur(12px);
+  position:relative;
+  overflow:hidden;
+}
+.card::before,.panel::before,.hero::before{
+  content:"";
+  position:absolute;left:12px;right:12px;top:0;height:2px;border-radius:0 0 4px 4px;
+  background:linear-gradient(90deg,transparent,var(--ac),transparent);
+  opacity:.75;pointer-events:none
+}
+.card,.panel{padding:11px}
+.hero{
+  grid-column:1 / -1;
+  padding:16px;
+  border:none;
+}
+.title-line{display:flex;align-items:center;gap:8px;margin:0 0 8px}
+.title-line::before{content:"";width:8px;height:8px;border:2px solid var(--ac);border-radius:50%;box-shadow:0 0 10px var(--ac);flex:0 0 auto}
+.title-line h2{margin:0;font-size:12px;letter-spacing:.08em}
+.title-line small{margin-left:auto;font-size:10px;color:var(--faint);font-family:var(--mono);letter-spacing:.04em}
+.stack{display:flex;flex-direction:column;gap:7px}
+.nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.nav a,.action{
+  display:flex;align-items:flex-start;gap:8px;
+  border:1px solid var(--line);
+  background:var(--surface-2);
+  border-radius:10px;
+  padding:6px 8px;
+  transition:.15s ease;
+  color:inherit;text-decoration:none;cursor:pointer
+}
+.nav a:hover,.action:hover{
+  border-color:var(--ac);
+  box-shadow:0 0 14px color-mix(in srgb,var(--ac) 22%,transparent);
+  transform:translateX(2px)
+}
+.mark{
+  width:18px;height:18px;border-radius:6px;
+  display:grid;place-items:center;
+  background:color-mix(in srgb,var(--ac) 16%,transparent);
+  border:1px solid color-mix(in srgb,var(--ac) 32%,transparent);
+  color:var(--ac);font-size:10px;font-weight:800;font-family:var(--mono);flex:0 0 auto
+}
+.clock{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
+.time{
+  font-size:31px;line-height:1;font-weight:800;font-family:var(--mono);
+  background:linear-gradient(90deg,#4be0ff,#5b89ff,#a78bfa);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent
+}
+.date{text-align:right;font-size:10px;color:var(--muted);font-family:var(--mono)}
+.date span{display:block}
+.month-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-top:6px}
+.month-cal .wd{font-size:8px;color:var(--faint);text-align:center;padding:2px 0;font-family:var(--mono)}
+.mcal-day{border:1px solid var(--line);border-radius:5px;background:var(--surface-2);padding:2px 1px;text-align:center;font-size:9px;font-family:var(--mono);color:var(--muted);position:relative;min-height:28px;cursor:default}
+.mcal-day.today{background:linear-gradient(160deg,#245aff,#8b5cf6);color:#fff;font-weight:800;border-color:transparent}
+.mcal-day.other{opacity:.3}
+.mcal-day .dot{display:block;width:4px;height:4px;border-radius:50%;background:var(--cyan);margin:1px auto 0}
+.mcal-day .marker{position:absolute;top:-2px;right:-2px;font-size:7px;line-height:1}
+.mcal-day .ev{font-size:6.5px;line-height:1.15;color:#fbbf24;margin-top:1px;display:block}
+.progress-list{display:flex;flex-direction:column;gap:6px}
+.progress-line b{display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px}
+.progress-line b span:last-child{font-family:var(--mono);color:#a7d0ff}
+.bar{height:6px;border-radius:999px;background:rgba(146,168,255,.1);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--pc1,#5b89ff),var(--pc2,#4be0ff));box-shadow:0 0 10px color-mix(in srgb,var(--pc2) 45%,transparent)}
+.countdown{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  border:1px solid var(--line-strong);border-radius:12px;padding:8px 10px;margin-top:8px;
+  background:linear-gradient(120deg,rgba(36,90,255,.18),rgba(139,92,246,.15),rgba(219,39,119,.11))
+}
+.countdown b{font-size:20px;font-family:var(--mono)}
+.countdown span{font-size:10px;color:rgba(235,240,255,.77)}
+.health{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.stat{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:7px 8px}
+.stat b{display:block;font-size:15px;line-height:1.02;font-family:var(--mono);font-weight:800;color:var(--sc,#5b89ff)}
+.stat span{font-size:10px;color:var(--muted)}
+.hero-brand{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.logo{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#0a45d6,#7c3aed);box-shadow:0 0 20px rgba(124,58,237,.34);flex:0 0 auto}
+.logo svg{width:34px;height:34px}
+.eyebrow{
+  display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.22em;font-weight:800;font-family:var(--mono);text-transform:uppercase;
+  background:linear-gradient(90deg,#fb7185,#fb923c,#fbbf24,#34d399,#4be0ff,#5b89ff,#a78bfa,#f472b6);
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent
+}
+.eyebrow .live{-webkit-text-fill-color:var(--green);display:inline-flex;align-items:center;gap:4px}
+.eyebrow .live i{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.hero h1{margin:1px 0 3px;font-size:24px;line-height:1.14}
+.sub{font-size:12px;color:var(--muted)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:10px;margin-top:10px}
+.timeline{
+  border:1px solid rgba(75,224,255,.18);
+  border-left:3px solid var(--cyan);
+  background:linear-gradient(180deg,rgba(75,224,255,.08),rgba(91,137,255,.04)),rgba(10,16,27,.24);
+  border-radius:0 12px 12px 0;
+  padding:10px 12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.timeline-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.timeline-kicker{font-size:9px;letter-spacing:.18em;font-family:var(--mono);color:#7ee7ff;text-transform:uppercase}
+.timeline h3{margin:2px 0 0;font-size:15px;line-height:1.15;color:#fff}
+.timeline-file{font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:3px}
+.timeline-list{display:flex;flex-direction:column;gap:4px;max-height:180px;overflow-y:auto}
+.timeline-item{
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:5px 8px;
+}
+.timeline-item b{font-size:10px;line-height:1.2;color:#fff;font-weight:600}
+.timeline-item span{font-size:9px;line-height:1.3;color:var(--muted)}
+.timeline-item.tl-urgent{
+  background:linear-gradient(135deg,rgba(251,114,133,.18),rgba(251,146,60,.12));
+  border-color:rgba(251,114,133,.4);
+  box-shadow:0 0 12px rgba(251,114,133,.15);
+}
+.timeline-item.tl-urgent b{font-size:12px;color:#fda4af}
+.timeline-item.tl-urgent span{font-size:10px;color:#fecdd3}
+.tl-star{color:#fbbf24;margin-right:3px;font-size:11px}
+.tl-alerts{margin-bottom:6px}
+.tl-alert-empty{font-size:10px;color:var(--muted);padding:4px 0;font-family:var(--mono)}
+.timeline-note{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:var(--muted);font-family:var(--mono)}
+.mini{
+  border:1px solid var(--line-strong);
+  background:linear-gradient(135deg,rgba(91,137,255,.18),rgba(167,139,250,.18));
+  color:#fff;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:800;
+  cursor:pointer;white-space:nowrap
+}
+.status-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.status-row .stat:nth-child(1){--sc:#34d399}
+.status-row .stat:nth-child(2){--sc:#fb7185}
+.status-row .stat:nth-child(3){--sc:#fbbf24}
+.workflow-grid{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.workflow-card{min-height:132px;display:flex;flex-direction:column}
+.workflow-card.big{min-height:118px}
+.workflow-title{font-size:13px;font-weight:800;color:#fff;margin-bottom:4px}
+.workflow-desc{font-size:10px;color:var(--muted);margin-bottom:8px}
+.panel-card{padding:11px;display:flex;flex-direction:column;min-height:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.panel-head h2{margin:0;font-size:12px;letter-spacing:.08em}
+.panel-head small{font-size:10px;color:var(--faint);font-family:var(--mono)}
+.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.metric{
+  background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:9px 10px;min-height:58px
+}
+.metric .k{font-size:10px;color:var(--muted);margin-bottom:4px}
+.metric .v{font-size:22px;font-family:var(--mono);font-weight:800;line-height:1;color:#7eb7ff}
+.metric .s{font-size:10px;color:var(--faint);margin-top:4px}
+.chart-box{flex:1;min-height:0;display:flex;flex-direction:column}
+.chart-meta{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:7px}
+.svg-wrap{position:relative;flex:1;min-height:0}
+.axis-x,.axis-y{font-family:var(--mono);fill:var(--faint);font-size:8.5px}
+.point-label,.bar-label{font-family:var(--mono);font-size:8.5px;font-weight:800;paint-order:stroke;stroke:#fff;stroke-width:2px;stroke-linejoin:round}
+.line-dot{stroke:#08101a;stroke-width:2}
+.prob-list{display:flex;flex-direction:column;gap:8px}
+.prob-row b{display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px}
+.prob-row b span:last-child{font-family:var(--mono);color:#c7d3ff}
+.prob-bar{height:8px;border-radius:999px;background:rgba(146,168,255,.1);overflow:hidden}
+.prob-bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--pc1),var(--pc2))}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;font-size:10px;color:var(--muted);font-family:var(--mono)}
+.legend span{display:inline-flex;align-items:center;gap:4px}
+.legend i{width:8px;height:8px;border-radius:50%}
+.weather-strip{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.weather-strip .ws-item{
+  background:var(--surface-2);border:1px solid var(--line);border-radius:8px;
+  padding:6px 7px;text-align:center;
+}
+.ws-item .ws-city{font-size:10px;font-weight:800;margin-bottom:3px}
+.ws-item .ws-city .ws-dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:3px;vertical-align:middle}
+.ws-item .ws-val{font-family:var(--mono);font-size:13px;font-weight:800;line-height:1.15}
+.ws-item .ws-label{font-size:8.5px;color:var(--muted);margin-top:1px}
+.footer{grid-column:1 / -1;color:var(--faint);font-size:9.5px;text-align:center;font-family:var(--mono);padding-top:1px}
+.toast{
+  position:fixed;left:50%;bottom:12px;transform:translateX(-50%) translateY(12px);
+  background:rgba(10,14,24,.92);border:1px solid var(--line-strong);color:var(--ink);
+  padding:9px 12px;border-radius:999px;opacity:0;pointer-events:none;transition:.2s;
+  box-shadow:0 16px 36px rgba(0,0,0,.35)
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (max-width: 1280px){
+  .app{grid-template-columns:1fr}
+  .sidebar,.main{grid-template-rows:auto;grid-auto-rows:min-content}
+  .main{grid-template-columns:1fr}
+  .hero,.footer{grid-column:1 / -1}
+}
+</style>
+</head>
+<body>
+<div class="fx" aria-hidden="true">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <section class="card" style="--ac:#5B89FF">
+      <div class="clock">
+        <div class="time" id="time">--:--</div>
+        <div class="date" id="date"><span>ASIA/SHANGHAI</span><span>--</span></div>
+      </div>
+      <div class="month-cal" id="monthCal"></div>
+    </section>
+
+    <section class="card" style="--ac:#A78BFA">
+      <div class="title-line"><h2>导航栏</h2><small>OBSIDIAN</small></div>
+      <nav class="nav" id="quick"></nav>
+    </section>
+
+    <section class="card" style="--ac:#F472B6">
+      <div class="title-line"><h2>快捷入口</h2><small>ACTIONS</small></div>
+      <div class="stack" id="actions"></div>
+    </section>
+  </aside>
+
+  <main class="main">
+    <!-- 第1行：总览（品牌 + 时序 + 状态） -->
+    <section class="panel panel-card" style="--ac:#4BE0FF; grid-column:1 / -1;">
+      <div class="hero-brand">
+        <div class="logo" aria-label="亿云">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+            <path fill="#FFFFFF" d="M14 14h11v20h14V14h11l-18 36H32L14 14z"/>
+            <path fill="#4BE0FF" d="M22 24h20v6H22z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="eyebrow">YIYUN POWER TRADING OS <span class="live"><i></i>ONLINE</span></div>
+          <h1 style="margin:1px 0 3px;font-size:20px;line-height:1.14;">亿云售电交易控制台</h1>
+          <div class="sub">负荷预测 · 电价预测 · 交易执行 · 清分复盘</div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.35fr .65fr; gap:10px; margin-top:10px;">
+        <div class="timeline" id="timelineCard">
+          <div class="timeline-top">
+            <div>
+              <div class="timeline-kicker">TRADE TIMELINE</div>
+              <h3 id="timelineTitle" style="margin:2px 0 0;font-size:15px;line-height:1.15;color:#fff;">本月交易时序</h3>
+              <div class="timeline-file" id="timelineFile">等待读取最新 PDF</div>
+            </div>
+            <button class="mini" id="timelineOpen">打开 PDF</button>
+          </div>
+          <div class="tl-alerts" id="timelineAlerts"></div>
+          <div class="timeline-list" id="timelineList"></div>
+          <div class="timeline-note">
+            <span id="timelineSource">来源：_运营数据/交易时序/</span>
+            <span id="timelineUpdate">PDF已解析</span>
+          </div>
+        </div>
+        <div class="status-row" style="grid-template-columns:1fr;">
+          <div class="stat" style="--sc:#5b89ff;text-align:left;">
+            <div class="title-line" style="margin-bottom:4px"><h2>今日天气</h2><small>6月30日</small></div>
+            <b>宁德28.2° 🌧 ｜ 莆田30.6° 🌧</b>
+            <b>福州33.8° 🌧 ｜ 泉州27.2° 🌧</b>
+          </div>
+          <div class="stat" style="--sc:#fb7185;text-align:left;">
+            <div class="title-line" style="margin-bottom:4px"><h2>重点交易提醒</h2><small>7月</small></div>
+            <b>⚠ 7/14 挂牌交易 9:00-17:00</b>
+            <b>⚠ 7/21 月度集中竞价 9:00-11:00</b>
+          </div>
+          <div class="stat" style="--sc:#fbbf24;text-align:left;">
+            <div class="title-line" style="margin-bottom:4px"><h2>高优先级待办</h2><small>TODO</small></div>
+            <b style="cursor:pointer" data-path="_交易运营/日滚搓申报/日滚撮申报数据/xx-xx日日滚撮申报.xlsx">📋 连续滚动撮合模版填写</b>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+        <div class="panel-head" style="margin-bottom:0"><h2>四地光伏气象</h2><small>7月2日 D+2</small></div>
+      </div>
+      <div class="weather-strip" id="weatherStrip"></div>
+    </section>
+
+    <!-- 日持仓量 / 预估用电量 24h折线图 -->
+    <section class="panel panel-card" style="--ac:#F472B6;grid-column:1/-1;cursor:pointer" data-path="3-1日滚搓申报/2026年7月日持仓量明细.xlsx">
+      <div class="panel-head"><h2>日持仓量 / 预估用电量</h2><small>7月2日 D+2 · 点击打开明细表</small></div>
+      <div class="chart-box" style="position:relative">
+        <div class="chart-meta"><span>单位：MWh/h</span><span>24时段 · 悬停看详情</span></div>
+        <svg id="holdingChart" viewBox="0 0 420 210" width="100%" height="100%" preserveAspectRatio="none"></svg>
+        <div id="chartTip" style="position:absolute;top:0;left:0;background:rgba(10,16,27,.95);border:1px solid var(--line-strong);border-radius:8px;padding:6px 9px;font-family:var(--mono);font-size:10px;color:#fff;pointer-events:none;opacity:0;transition:opacity .12s;z-index:10;white-space:nowrap"></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:#5b89ff"></i>持仓量 3.35</span>
+        <span><i style="background:#34d399"></i>预估用电 D+2</span>
+        <span style="color:var(--faint);font-size:9px">双边1.09+年挂牌≈0+月挂牌2.26+月竞价0</span>
+      </div>
+    </section>
+
+    <!-- 价差方向概率 -->
+    <section class="panel panel-card" style="--ac:#FBBF24;grid-column:1/-1;">
+      <div class="panel-head"><h2>价差方向概率</h2><small>%</small></div>
+      <div class="prob-list" id="probList"></div>
+      <div class="legend">
+        <span><i style="background:#34d399"></i>看涨</span>
+        <span><i style="background:#fb7185"></i>看跌</span>
+        <span><i style="background:#5b89ff"></i>震荡</span>
+      </div>
+    </section>
+
+    <div class="footer" style="grid-column:1 / -1;">YIYUN POWER TRADING CONSOLE · 数据刷新 <span id="dataStamp">—</span></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const TIMELINE_PDF_PATH = "_运营数据/交易时序/2026年7月份中长期交易工作时序安排表.pdf";
+const TRADE_EVENTS = [
+  {d:"07-06",cat:"月度",name:"合同调整",time:"9:00-11:00",scope:"8月及后续月份"},
+  {d:"07-09",cat:"月度",name:"月度绿电交易",time:"9:00-17:00",scope:"8月1-31日"},
+  {d:"07-09",cat:"月内",name:"中旬绿电交易",time:"9:00-11:00",scope:"7月11-20日"},
+  {d:"07-09",cat:"月内",name:"中旬代理购电",time:"8:00-11:30",scope:"7月11-20日"},
+  {d:"07-14",cat:"月度",name:"挂牌交易",time:"9:00-17:00",scope:"8月1-31日"},
+  {d:"07-16",cat:"月内",name:"下旬绿电交易",time:"9:00-11:00",scope:"7月21-31日"},
+  {d:"07-16",cat:"月内",name:"下旬代理购电",time:"8:00-11:30",scope:"7月21-31日"},
+  {d:"07-17",cat:"月度",name:"合同电量转让",time:"9:00-11:00",scope:"8月1-31日"},
+  {d:"07-21",cat:"月度",name:"月度集中竞价",time:"9:00-11:00",scope:"8月1-31日"},
+  {d:"07-28",cat:"月内",name:"上旬绿电交易",time:"9:00-11:00",scope:"8月1-10日"},
+  {d:"07-28",cat:"月内",name:"上旬代理购电",time:"8:00-11:30",scope:"8月1-10日"}
+];
+
+const NAV = [
+  ["入","负荷预测输入","1-1负荷预测输入/"],
+  ["出","负荷预测输出","1-2负荷预测输出/"],
+  ["知","TALOS知识库","_TALOS知识库/外脑总览.md"],
+  ["交","交易运营","_交易运营/交易记录/"],
+  ["价","价格预测","_价格预测/输入数据/"],
+  ["运","运营数据","_运营数据/日清分/"],
+  ["策","政策与资料","_政策与资料/"],
+  ["表","仪表盘","_仪表盘/"]
+];
+const BAT = window.__BAT_SCRIPTS__ || {};
+const ACTIONS = [
+  ["日滚撮策略","盘中交易策略记录", "_TALOS知识库/Insights/日滚撮盘中策略.md"],
+  ["交易思路","随时记录策略想法", "_TALOS知识库/Insights/交易思路.md"],
+  ["负荷训练+预测","模型训练 → 日前预测", BAT.train || "_负荷预测存档/调试脚本/train_forecast.lnk"],
+  ["负荷预测回测","历史回测对比", BAT.backtest || "_负荷预测存档/调试脚本/backtest_forecast.lnk"],
+  ["负荷预测系统校验","校验_v*.bat", BAT.verify || "_负荷预测存档/调试脚本/verify_forecast.lnk"],
+  ["价格训练+预测","模型训练 → 电价预测", "_TALOS知识库/Projects/亿云售电预测项目/专题/价格预测-index.md"],
+  ["价格预测效验","价格输出验证", "_价格预测/输出数据/index.md"],
+  ["复盘报告","进入复盘目录", "_交易运营/复盘报告/"]
+];
+const HOLDING_DAY = [4.732,4.398,4.240,4.160,4.195,4.596,6.020,6.633,12.351,14.644,15.386,18.962,16.340,10.853,11.495,12.193,13.163,13.410,10.355,7.624,6.189,5.179,4.347,3.541];
+const LOAD_DAY = [0.12,0.15,0.14,0.14,0.14,0.15,0.20,0.22,0.40,0.48,0.50,0.61,0.53,0.35,0.37,0.39,0.42,0.43,0.34,0.25,0.20,0.17,0.14,0.11];
+const SPLIT_DAY = [0.01,0.02,0.02,0.02,0.02,0.03,0.05,0.06,0.06,0.07,0.07,0.06,0.05,0.04,0.03,0.05,0.06,0.06,0.07,0.06,0.04,0.02,0.02,0.01];
+const PROB = [
+  ["看涨", 58, "#34d399"],
+  ["看跌", 24, "#fb7185"],
+  ["震荡", 18, "#5b89ff"]
+];
+const WEATHER = [
+  {city:"宁德",cap:"2000kW",temp:30.8,rad:604, pv:5.967, dot:"#5b89ff", w:"☁ 阴", cloud:83},
+  {city:"莆田",cap:"900kW", temp:32.7,rad:954, pv:4.008, dot:"#f472b6", w:"⛅ 多云", cloud:51},
+  {city:"福州",cap:"400kW", temp:37.5,rad:990, pv:1.903, dot:"#fbbf24", w:"⛅ 多云", cloud:44},
+  {city:"泉州",cap:"400kW", temp:31.2,rad:793, pv:1.457, dot:"#34d399", w:"☁ 阴", cloud:69}
+];
+
+const openPath = path => {
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({type:"yiyun-open", path}, "*");
+    return;
+  }
+  window.open(path, "_blank");
+};
+
+function showToast(text){
+  const toast = document.getElementById("toast");
+  toast.textContent = text;
+  toast.classList.add("show");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => toast.classList.remove("show"), 1400);
+}
+
+function copyText(value){
+  if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(value);
+  const t = document.createElement("textarea");
+  t.value = value;
+  document.body.appendChild(t);
+  t.select();
+  document.execCommand("copy");
+  t.remove();
+  return Promise.resolve();
+}
+
+document.addEventListener("click", event => {
+  const item = event.target.closest("[data-path]");
+  if (!item) return;
+  event.preventDefault();
+  openPath(item.dataset.path);
+});
+
+function tick(){
+  const d = new Date();
+  document.getElementById("time").textContent = `${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`;
+  const wd = ["日","一","二","三","四","五","六"][d.getDay()];
+  document.getElementById("date").innerHTML = `<span>ASIA/SHANGHAI</span><span>${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()} 周${wd}</span>`;
+  const target = new Date(d.getFullYear(), d.getMonth() + 1, 1);
+  document.getElementById("dataStamp").textContent = `${d.getHours()}:${String(d.getMinutes()).padStart(2,"0")}`;
+  document.getElementById("timelineUpdate").textContent = `月度窗口 · ${Math.max(0, Math.ceil((target - d) / 86400000))} 天后切换`;
+}
+tick();
+setInterval(tick, 30000);
+
+// === 月度日历：显示7月整月，标注挂牌交易/月度集中竞价 ===
+(function renderMonthCal(){
+  const now = new Date(); now.setHours(0,0,0,0);
+  const today = now.getDate();
+  const thisMonth = now.getMonth(); // 6 = July (0-indexed)
+  const thisYear = now.getFullYear();
+  // First day of month
+  const firstDay = new Date(thisYear, thisMonth, 1);
+  const startDow = (firstDay.getDay() + 6) % 7; // Monday=0
+  const daysInMonth = new Date(thisYear, thisMonth + 1, 0).getDate();
+
+  // Event markers: date -> label
+  const EVENTS = {};
+  TRADE_EVENTS.forEach(e => {
+    const d = parseInt(e.d.split('-')[1]);
+    if (!EVENTS[d]) EVENTS[d] = [];
+    if (e.name.includes('挂牌') || e.name.includes('集中竞价') || e.name.includes('合同调整')) {
+      EVENTS[d].push('🔴'+e.name);
+    } else {
+      EVENTS[d].push(e.name);
+    }
+  });
+
+  const wdLabels = ['一','二','三','四','五','六','日'];
+  let html = wdLabels.map(w => `<div class="wd">${w}</div>`).join('');
+
+  // Empty cells before month start
+  for (let i = 0; i < startDow; i++) {
+    html += `<div class="mcal-day other"></div>`;
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const isToday = (d === today && thisMonth === now.getMonth());
+    const cls = isToday ? 'mcal-day today' : 'mcal-day';
+    const evs = EVENTS[d] || [];
+    const markers = evs.filter(e => e.startsWith('🔴'));
+    const dots = evs.filter(e => !e.startsWith('🔴'));
+    const markerHTML = markers.length ? `<span class="marker">${markers[0].charAt(0)}</span>` : '';
+    const dotHTML = dots.length ? `<span class="dot"></span>` : '';
+    const evLabel = markers.length ? `<span class="ev">${markers[0].replace('🔴','')}</span>` : '';
+    html += `<div class="${cls}">${markerHTML}${d}${dotHTML}${evLabel}</div>`;
+    // Line break after Sunday for visual grouping (optional, CSS grid handles it)
+  }
+  document.getElementById("monthCal").innerHTML = html;
+})();
+
+document.getElementById("quick").innerHTML = NAV.map(([s,l,p]) =>
+  `<a href="#" data-path="${p}"><i class="mark">${s}</i><span>${l}</span></a>`
+).join("");
+
+document.getElementById("actions").innerHTML = ACTIONS.map(([label,desc,path]) =>
+  `<div class="action" data-path="${path}"><i class="mark">→</i><span><b style="display:block;font-size:11px">${label}</b><small style="display:block;color:var(--muted);font-size:9.5px">${desc}</small></span></div>`
+).join("");
+
+// 交易日历渲染：5天内 ⭐标记 + 大字提醒
+(function renderTimeline(){
+  const today = new Date(); today.setHours(0,0,0,0);
+  const cutoff = new Date(today); cutoff.setDate(cutoff.getDate() + 5);
+  const urgent = [], normal = [];
+  TRADE_EVENTS.forEach(e => {
+    const ed = new Date(today.getFullYear(), parseInt(e.d.split('-')[0])-1, parseInt(e.d.split('-')[1]));
+    e._date = ed; e._days = Math.ceil((ed - today) / 86400000);
+    (ed <= cutoff ? urgent : normal).push(e);
+  });
+  // 星级提醒区
+  document.getElementById("timelineAlerts").innerHTML = urgent.length
+    ? urgent.map(e => `<div class="timeline-item tl-urgent"><span class="tl-star">⭐</span><b>${e.d} ${e.cat}·${e.name}</b> <span>${e.time} | ${e.scope} | ${e._days}天后</span></div>`).join("")
+    : `<div class="tl-alert-empty">✅ 暂无5天内特别提醒（最近：${normal[0].d} ${normal[0].name}，${normal[0]._days}天后）</div>`;
+  // 全部时序
+  document.getElementById("timelineList").innerHTML = TRADE_EVENTS.map(e => `
+    <div class="timeline-item${urgent.includes(e)?' tl-urgent':''}">
+      ${urgent.includes(e)?'<span class="tl-star">⭐</span>':''}<b>${e.d} ${e.cat}·${e.name}</b> <span>${e.time} · ${e.scope}</span>
+    </div>
+  `).join("");
+  // 更新文件信息
+  document.getElementById("timelineFile").textContent = "2026年7月份中长期交易工作时序安排表.pdf";
+  document.getElementById("timelineOpen").onclick = () => openPath(TIMELINE_PDF_PATH);
+})();
+
+function hourLabels(){
+  return Array.from({length:24}, (_,i) => `${String(i).padStart(2,"0")}:00-${String((i+1)%24).padStart(2,"0")}:00`);
+}
+
+function renderLineChart(svg, values, opts){
+  const {
+    stroke = "#5b89ff",
+    fill = "#5b89ff",
+    minPad = 0.08,
+    decimals = 2,
+    yTicks = [],
+    yFormat = v => v.toFixed(decimals),
+    xLabels = hourLabels(),
+    showBar = false,
+    barWidth = 10
+  } = opts || {};
+  const w = 420, h = 150, padL = 34, padR = 12, padT = 16, padB = 24;
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = (max - min) || 1;
+  const lo = min - range * minPad;
+  const hi = max + range * minPad;
+  const xs = values.map((_, i) => padL + i * (w - padL - padR) / (values.length - 1));
+  const ys = values.map(v => h - padB - ((v - lo) / (hi - lo)) * (h - padT - padB));
+  const line = xs.map((x, i) => `${x.toFixed(1)},${ys[i].toFixed(1)}`).join(" ");
+  const area = `${padL},${h-padB} ${line} ${(w-padR).toFixed(1)},${h-padB}`;
+  const ticks = (yTicks.length ? yTicks : Array.from({length:6}, (_,i)=>lo + (hi-lo) * (5-i) / 5))
+    .map(v => {
+      const y = h - padB - ((v - lo) / (hi - lo)) * (h - padT - padB);
+      return `<text class="axis-y" x="2" y="${y.toFixed(1)}">${yFormat(v)}</text>`;
+    }).join("");
+  const xEvery = values.length <= 12 ? 1 : 2;
+  const xAxis = values.map((_, i) => {
+    if (i % xEvery) return "";
+    const x = xs[i];
+    return `<text class="axis-x" transform="translate(${x.toFixed(1)} ${h-6}) rotate(-45)">${xLabels[i]}</text>`;
+  }).join("");
+  const valueLabels = xs.map((x, i) => {
+    const y = ys[i] - 5;
+    return `<text class="point-label" text-anchor="middle" x="${x.toFixed(1)}" y="${y.toFixed(1)}" fill="${stroke}">${yFormat(values[i])}</text>`;
+  }).join("");
+  const dots = xs.map((x, i) => `<circle class="line-dot" cx="${x.toFixed(1)}" cy="${ys[i].toFixed(1)}" r="${i===values.length-1 ? 4 : 2.6}" fill="${i===values.length-1 ? stroke : fill}"></circle>`).join("");
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="${svg.id}g" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="${fill}" stop-opacity=".35"></stop>
+        <stop offset="1" stop-color="${fill}" stop-opacity="0"></stop>
+      </linearGradient>
+    </defs>
+    <line x1="${padL}" y1="${h-padB}" x2="${w-padR}" y2="${h-padB}" stroke="rgba(146,168,255,.18)"></line>
+    ${ticks}
+    ${showBar ? xs.map((x, i) => {
+      const barTop = ys[i];
+      const barH = h - padB - barTop;
+      const x0 = x - barWidth/2;
+      return `<rect x="${x0.toFixed(1)}" y="${barTop.toFixed(1)}" width="${barWidth}" height="${barH.toFixed(1)}" rx="2" fill="${stroke}"></rect>
+              <text class="bar-label" text-anchor="middle" x="${x.toFixed(1)}" y="${(barTop - 3).toFixed(1)}" fill="${stroke}">${yFormat(values[i])}</text>`;
+    }).join("") : `
+      <polygon points="${area}" fill="url(#${svg.id}g)"></polygon>
+      <polyline points="${line}" fill="none" stroke="${stroke}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
+      ${dots}
+      ${valueLabels}
+    `}
+    ${xAxis}
+  `;
+}
+// === 日持仓量 24h 多线图 ===
+// 持仓总量 = 年度双边(1.09) + 年度挂牌(≈0) + 月度挂牌(2.26) = 3.35, 月竞价=0
+const HOLD_TOTAL = Array(24).fill(1.09 + 2.26);      // 3.35 MWh/h
+const LOAD_D2 = [2.49,2.91,2.53,2.27,2.07,2.09,2.31,2.37,2.95,3.79,5.12,4.81,4.75,4.52,4.44,4.44,4.61,4.79,4.45,4.44,3.97,3.52,2.83,2.77];
+
+(function renderHoldingMulti(){
+  const svg = document.getElementById("holdingChart");
+  const w=420,h=210,padL=38,padR=16,padT=8,padB=34;
+  const allVals = [...HOLD_TOTAL, ...LOAD_D2];
+  const maxV = Math.max(...allVals), minV = 0;
+  const hi = maxV * 1.2;
+  const barW = (w-padL-padR)/24 * 0.85;
+  const barGap = (w-padL-padR)/24 * 0.15;
+  const xC = i => padL + i*(w-padL-padR)/24 + (w-padL-padR)/48; // bar center
+  const xL = i => padL + i*(w-padL-padR)/24 + barGap/2; // bar left
+  const yS = v => h-padB - (v/hi)*(h-padT-padB);
+
+  // Y-axis ticks (more granular)
+  const yTicks = [0,1,2,3,4,5,6];
+  const ticksHTML = yTicks.map(v => {
+    const y = yS(v);
+    return `<line x1="${padL}" y1="${y}" x2="${w-padR}" y2="${y}" stroke="rgba(146,168,255,.08)"/><text class="axis-y" x="2" y="${y+3}">${v}</text>`;
+  }).join('');
+
+  // X-axis: all 24 hours
+  const xAxis = Array.from({length:24},(_,i)=>{
+    return `<text class="axis-x" transform="translate(${xC(i)} ${h-4}) rotate(-90)" font-size="6">段${i+1} ${String(i).padStart(2,'0')}:00</text>`;
+  }).join('');
+
+  // Draw bars + difference fill
+  let barsHTML = '';
+  for(let i=0;i<24;i++){
+    const holdY = yS(HOLD_TOTAL[i]);
+    const loadY = yS(LOAD_D2[i]);
+    const x0 = xL(i);
+    const barH = h-padB - loadY;
+    const surplus = HOLD_TOTAL[i] > LOAD_D2[i];
+    const diff = (HOLD_TOTAL[i] - LOAD_D2[i]).toFixed(2);
+    const cx = xC(i).toFixed(1);
+    const tipData = `段${i+1} ${String(i).padStart(2,'0')}:00|持仓${HOLD_TOTAL[i].toFixed(2)}|预估${LOAD_D2[i].toFixed(2)}|${surplus?'盈余':'缺口'}${Math.abs(diff)}`;
+
+    // Background area for hover detection (invisible, 24px wide)
+    barsHTML += `<rect x="${(x0-2).toFixed(1)}" y="${padT}" width="${(barW+4).toFixed(1)}" height="${(h-padT-padB).toFixed(1)}" fill="transparent" data-tip="${tipData}" class="bar-zone"/>`;
+
+    // 预估用电量 bar
+    barsHTML += `<rect x="${x0.toFixed(1)}" y="${loadY.toFixed(1)}" width="${barW.toFixed(1)}" height="${Math.max(1,barH).toFixed(1)}" rx="1" fill="#34d399" opacity="0.3" data-tip="${tipData}" class="bar-load"/>`;
+
+
+    // 持仓量 segment
+    const segX1 = padL + i*(w-padL-padR)/24;
+    const segX2 = padL + (i+1)*(w-padL-padR)/24;
+    barsHTML += `<line x1="${segX1.toFixed(1)}" y1="${holdY.toFixed(1)}" x2="${segX2.toFixed(1)}" y2="${holdY.toFixed(1)}" stroke="#5b89ff" stroke-width="2.5" data-tip="${tipData}" class="bar-hold"/>`;
+
+    // Surplus/deficit fill
+    const fillColor = surplus ? '#34d399' : '#fb7185';
+    const fillY = surplus ? loadY : holdY;
+    const fillH = Math.max(1, Math.abs(holdY - loadY));
+    barsHTML += `<rect x="${x0.toFixed(1)}" y="${fillY.toFixed(1)}" width="${barW.toFixed(1)}" height="${fillH.toFixed(1)}" rx="0" fill="${fillColor}" opacity="0.22" data-tip="${tipData}" class="bar-fill"/>`;
+  }
+
+  // 持仓量 full line on top (continuous)
+  const holdPts = HOLD_TOTAL.map((v,i) => `${xC(i).toFixed(1)},${yS(v).toFixed(1)}`).join(' ');
+
+  svg.innerHTML = `
+    <line x1="${padL}" y1="${h-padB}" x2="${w-padR}" y2="${h-padB}" stroke="rgba(146,168,255,.18)"/>
+    ${ticksHTML}
+    ${barsHTML}
+    <polyline points="${holdPts}" fill="none" stroke="#5b89ff" stroke-width="2.5" stroke-linejoin="round"/>
+    ${xAxis}
+  `;
+
+  // Hover tooltip
+  const tip = document.getElementById('chartTip');
+  svg.addEventListener('mousemove', function(e){
+    const el = e.target.closest('[data-tip]');
+    if(!el){ tip.style.opacity='0'; return; }
+    const d = el.dataset.tip.split('|');
+    const rect = svg.parentElement.getBoundingClientRect();
+    const x = e.clientX - rect.left + 12;
+    const y = e.clientY - rect.top - 40;
+    tip.innerHTML = `<b>${d[0]}</b> 持仓<span style="color:#5b89ff">${d[1]}</span> 预估<span style="color:#34d399">${d[2]}</span> <span style="color:${parseFloat(d[3])>=0?'#34d399':'#fb7185'}">${d[3]}</span>MWh`;
+    tip.style.left = Math.min(x, rect.width-130)+'px';
+    tip.style.top = Math.max(4, y)+'px';
+    tip.style.opacity='1';
+  });
+  svg.addEventListener('mouseleave', function(){ tip.style.opacity='0'; });
+})();
+
+
+document.getElementById("probList").innerHTML = PROB.map(([name, value, color]) => `
+  <div class="prob-row">
+    <b><span>${name}</span><span>${value}%</span></b>
+    <div class="prob-bar"><i data-w="${value}%" style="--pc1:${color};--pc2:${color}"></i></div>
+  </div>
+`).join("");
+
+document.getElementById("weatherStrip").innerHTML = WEATHER.map(w => `
+  <div class="ws-item">
+    <div class="ws-city"><span class="ws-dot" style="background:${w.dot};box-shadow:0 0 5px ${w.dot}"></span>${w.city}</div>
+    <div class="ws-val">${w.temp}° <span style="font-size:13px;">${w.w.split(' ')[0]}</span></div>
+    <div class="ws-label">${w.w}</div>
+    <div class="ws-val" style="font-size:11px;color:#7eb7ff;">${w.rad}</div>
+    <div class="ws-label">辐射 W/m²</div>
+    <div class="ws-val" style="font-size:11px;color:#fbbf24;">${w.pv}</div>
+    <div class="ws-label">日发电 MWh</div>
+  </div>
+`).join("");
+
+document.querySelectorAll("[data-w]").forEach(el => {
+  requestAnimationFrame(() => requestAnimationFrame(() => { el.style.width = el.dataset.w; }));
+});
+
+document.querySelectorAll("[data-count]").forEach(el => {
+  const end = +el.dataset.count;
+  const dur = 800, t0 = performance.now();
+  (function step(t){
+    const k = Math.min(1, (t - t0) / dur);
+    const e = 1 - Math.pow(1 - k, 3);
+    el.textContent = Math.round(end * e);
+    if (k < 1) requestAnimationFrame(step);
+  })(t0);
+});
+</script>
+</body>
+</html>
+

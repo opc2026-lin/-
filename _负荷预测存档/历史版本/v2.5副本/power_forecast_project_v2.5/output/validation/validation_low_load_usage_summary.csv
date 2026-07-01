@@ -1,0 +1,2 @@
+﻿total_count,pred_low_count,actual_low_count,tp,fp,tn,fn,pred_low_ratio,actual_low_ratio,low_load_threshold,low_load_proba_threshold
+9659,5361,5121,4628,733,3805,493,0.5550264002484729,0.5301791075680712,50.0,0.4

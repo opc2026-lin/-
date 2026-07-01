@@ -1,0 +1,135 @@
+=== V3.1 预测日志 ===
+=== 开始V3.1预测：非递归并行预测 + 光伏逆向扣减 ===
+预测区间: 2026-06-27 00:00:00 to 2026-06-28 00:00:00
+加载训练好的模型...
+模型加载完成
+读取历史负荷，共 70168 条
+读取用户主档案表...
+用户主档案表读取完成，共 18 条
+读取预测天气...
+  解析预测天气: 6月30日 -> 96 条
+  解析预测天气: 7月1日 -> 96 条
+  解析预测天气: 7月2日 -> 96 条
+  解析预测天气: 7月3日 -> 96 条
+  解析预测天气: 7月4日 -> 96 条
+  解析预测天气: 6月26日 -> 96 条
+  解析预测天气: 6月27日 -> 96 条
+  解析预测天气: 6月28日 -> 96 条
+  解析预测天气: 6月29日 -> 96 条
+  解析预测天气: 6月26日 -> 96 条
+  解析预测天气: 6月27日 -> 96 条
+  解析预测天气: 6月28日 -> 96 条
+  解析预测天气: 6月29日 -> 96 条
+  解析预测天气: 6月30日 -> 96 条
+  解析预测天气: 6月27日 -> 96 条
+  解析预测天气: 6月28日 -> 96 条
+  解析预测天气: 6月29日 -> 96 条
+  解析预测天气: 6月30日 -> 96 条
+  解析预测天气: 7月1日 -> 96 条
+  解析预测天气: 6月28日 -> 96 条
+  解析预测天气: 6月29日 -> 96 条
+  解析预测天气: 6月30日 -> 96 条
+  解析预测天气: 7月1日 -> 96 条
+  解析预测天气: 7月2日 -> 96 条
+  解析预测天气: 6月29日 -> 96 条
+  解析预测天气: 6月30日 -> 96 条
+  解析预测天气: 7月1日 -> 96 条
+  解析预测天气: 7月2日 -> 96 条
+  解析预测天气: 7月3日 -> 96 条
+  解析预测天气: 6月30日 -> 96 条
+  解析预测天气: 7月1日 -> 96 条
+  解析预测天气: 7月2日 -> 96 条
+  解析预测天气: 7月3日 -> 96 条
+  解析预测天气: 7月4日 -> 96 条
+预测天气读取完成，共 96 条（在预测区间内）
+天气去重后实际采用文件: ['fujian_pv_daily_20260627-20260701.xlsx']
+构建预测骨架...
+预测骨架构建完成，共 432 条
+生成预测特征（V3.1）...
+读取用户主档案表...
+用户主档案表读取完成，共 18 条
+V3.1预测特征生成完成
+第一步：全量低负荷分类...
+低负荷保护生效：15 个时段改走普通负荷模型
+分类完成：预测低负荷 228 个 (52.8%)，普通负荷 204 个 (47.2%)
+第二步：低负荷回归...
+完成低负荷回归：228 时段
+第三步：普通负荷按小时路由到独立模型...
+  Hour 00:00 | energy -> energy_hour_0
+  Hour 00:00 | industrial -> hour_0
+  Hour 00:00 | property -> property_hour_0
+  Hour 01:00 | energy -> energy_hour_1
+  Hour 01:00 | industrial -> hour_1
+  Hour 01:00 | property -> property_hour_1
+  Hour 02:00 | energy -> energy_hour_2
+  Hour 02:00 | industrial -> hour_2
+  Hour 02:00 | property -> property_hour_2
+  Hour 03:00 | energy -> energy_hour_3
+  Hour 03:00 | industrial -> hour_3
+  Hour 03:00 | property -> property_hour_3
+  Hour 04:00 | industrial -> hour_4
+  Hour 04:00 | property -> property_hour_4
+  Hour 05:00 | industrial -> hour_5
+  Hour 05:00 | property -> property_hour_5
+  Hour 06:00 | energy -> energy_hour_6
+  Hour 06:00 | industrial -> hour_6
+  Hour 06:00 | property -> property_hour_6
+  Hour 07:00 | energy -> energy_hour_7
+  Hour 07:00 | industrial -> hour_7
+  Hour 07:00 | property -> property_hour_7
+  Hour 08:00 | energy -> energy_hour_8
+  Hour 08:00 | industrial -> hour_8
+  Hour 08:00 | property -> property_hour_8
+  Hour 09:00 | energy -> energy_hour_9
+  Hour 09:00 | industrial -> hour_9
+  Hour 09:00 | property -> property_hour_9
+  Hour 10:00 | industrial -> hour_10
+  Hour 10:00 | property -> property_hour_10
+  Hour 11:00 | industrial -> hour_11
+  Hour 11:00 | property -> property_hour_11
+  Hour 12:00 | industrial -> hour_12
+  Hour 12:00 | property -> property_hour_12
+  Hour 13:00 | energy -> energy_hour_13
+  Hour 13:00 | industrial -> hour_13
+  Hour 13:00 | property -> property_hour_13
+  Hour 14:00 | energy -> energy_hour_14
+  Hour 14:00 | industrial -> hour_14
+  Hour 14:00 | property -> property_hour_14
+  Hour 15:00 | energy -> energy_hour_15
+  Hour 15:00 | industrial -> hour_15
+  Hour 15:00 | property -> property_hour_15
+  Hour 16:00 | energy -> energy_hour_16
+  Hour 16:00 | industrial -> hour_16
+  Hour 16:00 | property -> property_hour_16
+  Hour 17:00 | energy -> energy_hour_17
+  Hour 17:00 | industrial -> hour_17
+  Hour 17:00 | property -> property_hour_17
+  Hour 18:00 | industrial -> hour_18
+  Hour 18:00 | property -> property_hour_18
+  Hour 19:00 | industrial -> hour_19
+  Hour 19:00 | property -> property_hour_19
+  Hour 20:00 | energy -> energy_hour_20
+  Hour 20:00 | industrial -> hour_20
+  Hour 20:00 | property -> property_hour_20
+  Hour 21:00 | energy -> energy_hour_21
+  Hour 21:00 | industrial -> hour_21
+  Hour 21:00 | property -> property_hour_21
+  Hour 22:00 | energy -> energy_hour_22
+  Hour 22:00 | industrial -> hour_22
+  Hour 22:00 | property -> property_hour_22
+  Hour 23:00 | energy -> energy_hour_23
+  Hour 23:00 | industrial -> hour_23
+  Hour 23:00 | property -> property_hour_23
+第四步：光伏逆向扣减生成最终关口预测...
+预测结果长表已保存：prediction_result_v3_long.csv | 432 条
+生成预测宽表...
+预测宽表已保存：prediction_2026-06-27_v3.csv
+总预测电量: 70.17 MWh
+
+=== 预测摘要 ===
+全网总关口电量: 70.17 MWh
+低负荷分类占比: 228/432 = 52.8%
+光伏总估算: 13.22 MWh
+预测总需求均值: 192.77 kW
+预测关口均值: 162.44 kW
+=== V3.1 预测完成 ===

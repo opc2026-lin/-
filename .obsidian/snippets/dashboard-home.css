@@ -1,0 +1,23 @@
+.dashboard-home.is-readable-line-width .metadata-container,
+.dashboard-home .metadata-container {
+  display: none;
+}
+
+.dashboard-home.markdown-reading-view .markdown-preview-sizer,
+.dashboard-home .markdown-preview-sizer {
+  max-width: 1100px;
+  padding-top: 0;
+}
+
+.dashboard-home h1 {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.dashboard-home table {
+  width: 100%;
+}
+
+.dashboard-home .callout[data-callout="summary"] {
+  margin: 16px 0 24px;
+}

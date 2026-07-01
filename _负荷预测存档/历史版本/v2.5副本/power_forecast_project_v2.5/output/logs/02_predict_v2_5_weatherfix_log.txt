@@ -1,0 +1,43 @@
+=== V2.5_WeatherFix预测日志 ===
+=== 开始V2.5_WeatherFix预测 ===
+PREDICT_START = 2026-06-28 00:00:00
+PREDICT_END   = 2026-07-01 00:00:00
+LOW_LOAD_THRESHOLD = 50.0
+LOW_LOAD_PROBA_THRESHOLD = 0.4
+读取小时气象...
+已读取气象：外部同步_福建小时天气_202606.xlsx
+[警告] 预测骨架未匹配主档案：福州超库鲜生
+预测骨架生成完成，总记录数: 1296
+为预测骨架匹配小时气象（天气修正版）...
+预测骨架总记录数: 1296
+天气表总记录数: 16900
+merge 后 temperature 为空数: 0
+预测天气匹配来源统计：
+{'district_exact': 1296}
+weather_day_complete 统计：
+{True: 1296}
+开始递归预测...
+预测输入记录数: 1296
+预测用户数: 18
+低负荷概率阈值: 0.4
+递归预测完成：低负荷模型使用次数=556，普通模型使用次数=740
+导出预测 Excel ...
+已导出：津太新能源科技（福建）有限公司_v2_5_weatherfix.xlsx
+已导出：福州市晋安区象园街道办事处_v2_5_weatherfix.xlsx
+已导出：福州市鼓楼区元兴物业有限公司_v2_5_weatherfix.xlsx
+已导出：福建安捷物业管理有限公司_v2_5_weatherfix.xlsx
+已导出：福建运杰物流有限公司_v2_5_weatherfix.xlsx
+已导出：福建省元乐达工贸有限公司_v2_5_weatherfix.xlsx
+已导出：福州信青源家具有限公司_v2_5_weatherfix.xlsx
+已导出：福州年盛机电有限公司_v2_5_weatherfix.xlsx
+已导出：福州至和玻璃有限公司_v2_5_weatherfix.xlsx
+已导出：福州雅赛诺家居有限公司_v2_5_weatherfix.xlsx
+已导出：闽侯县天泽工艺品有限公司_v2_5_weatherfix.xlsx
+已导出：福州超库鲜生供应链管理有限公司_v2_5_weatherfix.xlsx
+已导出：福建俊杰新材料科技股份有限公司_v2_5_weatherfix.xlsx
+已导出：福建省莆田市新兴达饲料有限公司_v2_5_weatherfix.xlsx
+已导出：泉州南岛新材料科技有限公司_v2_5_weatherfix.xlsx
+已导出：泉州市泉港区昌玉汽车零件厂_v2_5_weatherfix.xlsx
+已导出：泉州市鲤城三清工艺品有限公司_v2_5_weatherfix.xlsx
+已导出：福建省德化圣光工艺有限公司_v2_5_weatherfix.xlsx
+=== V2.5_WeatherFix预测完成 ===

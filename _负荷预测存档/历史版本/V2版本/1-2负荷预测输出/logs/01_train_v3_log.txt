@@ -1,0 +1,7 @@
+=== V3.0 训练日志 ===
+=== 开始V3.0训练：光伏分解+24小时独立模型+验证集 Early Stopping ===
+PREDICT_START = 2026-07-02 00:00:00
+PREDICT_END   = 2026-07-03 00:00:00
+TRAIN_MONTHS  = 24
+LOW_LOAD_THRESHOLD = 80
+读取用户主档案表...

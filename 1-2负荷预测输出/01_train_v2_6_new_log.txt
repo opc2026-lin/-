@@ -1,0 +1,71 @@
+=== V2.6_Adapted 训练日志 ===
+=== 开始 V2.6_Adapted 训练 ===
+PREDICT_START = 2026-06-27 01:00:00
+PREDICT_END   = 2026-06-28 01:00:00
+TRAIN_START   = 2024-06-27 01:00:00
+TRAIN_END     = 2026-06-27 01:00:00
+LOW_LOAD_THRESHOLD = 80
+VAL_SPLIT_DATE     = 2026-05-28 01:00:00
+读取用户主档案表...
+用户主档案读取完成，共 18 条，光伏用户 4 家
+读取所有月度负荷文件...
+  读取: 1月-24时段分时段历史用电信息.xlsx
+  读取: 2月-24时段分时段历史用电信息.xlsx
+  读取: 3月-24时段分时段历史用电信息.xlsx
+  读取: 4月-24时段分时段历史用电信息.xlsx
+  读取: 5月-24时段分时段历史用电信息.xlsx
+  读取: 6-23至6-26分时段历史用电信息.xlsx
+  读取: 6-27分时段历史用电信息.xlsx
+  读取: 6月-24时段分时段历史用电信息1-22号.xlsx
+训练负荷合并完成，共 73248 条，18 个用户
+读取小时气象数据...
+  读取: 福建四地区历史天气数据_1-5月.xlsx
+  读取: 福建四地区历史天气数据_6月1-22日.xlsx
+气象数据解析完成，共 16608 条，覆盖 4 个城市
+合并训练负荷与小时气象...
+训练数据合并完成，共 73248 条
+生成V2.6训练特征（光伏解耦版）...
+正在进行光伏净负荷解耦...
+V2.6训练特征生成完成
+样本权重: min=0.198, max=1.950, mean=0.548
+使用特征数: 58
+
+[阶段1] 训练低负荷分类器...
+分类模型 Accuracy: 0.9755, F1: 0.9792
+分类样本: 69816, 低负荷: 41144
+
+[阶段2] 训练低负荷回归器...
+train_metrics_low_regressor_v2_6.csv -> MAE:4.43, RMSE:8.10
+
+[阶段3] 训练24个独立小时回归器...
+普通负荷样本(全局): 29915
+Hour 24:00 (dt=0) best_iter=236, val_mae=65.63
+Hour 1:00 (dt=1) best_iter=136, val_mae=88.96
+Hour 2:00 (dt=2) best_iter=183, val_mae=77.27
+Hour 3:00 (dt=3) best_iter=299, val_mae=71.50
+Hour 4:00 (dt=4) best_iter=267, val_mae=77.16
+Hour 5:00 (dt=5) best_iter=317, val_mae=85.28
+Hour 6:00 (dt=6) best_iter=304, val_mae=84.18
+Hour 7:00 (dt=7) best_iter=165, val_mae=74.63
+Hour 8:00 (dt=8) best_iter=149, val_mae=71.31
+Hour 9:00 (dt=9) best_iter=195, val_mae=69.69
+Hour 10:00 (dt=10) best_iter=153, val_mae=68.35
+Hour 11:00 (dt=11) best_iter=174, val_mae=81.68
+Hour 12:00 (dt=12) best_iter=156, val_mae=78.67
+Hour 13:00 (dt=13) best_iter=176, val_mae=85.93
+Hour 14:00 (dt=14) best_iter=165, val_mae=72.28
+Hour 15:00 (dt=15) best_iter=168, val_mae=61.67
+Hour 16:00 (dt=16) best_iter=124, val_mae=71.82
+Hour 17:00 (dt=17) best_iter=156, val_mae=64.38
+Hour 18:00 (dt=18) best_iter=166, val_mae=67.63
+Hour 19:00 (dt=19) best_iter=217, val_mae=63.71
+Hour 20:00 (dt=20) best_iter=270, val_mae=60.54
+Hour 21:00 (dt=21) best_iter=174, val_mae=65.48
+Hour 22:00 (dt=22) best_iter=361, val_mae=62.48
+Hour 23:00 (dt=23) best_iter=150, val_mae=70.29
+历史负荷已导出: 72840 条（含total_load列）
+
+=== V2.6 训练完成 ===
+分类样本: 69816 (低负荷:41144)
+低负荷回归样本: 41144
+24小时模型数: 24
