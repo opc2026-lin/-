@@ -281,8 +281,8 @@ npm install @openclaw/obsidian-skills
 
 ## 双链笔记
 
-- [[7.5万，AI知识库开发]]
 - [[Open Design AI技能探究]]
+- [[7.5万，AI知识库开发]]
 - [[普通人也能用！Openclaw超强使用场景！]]
-- [[VibeCoding最佳实践：极简工作流]]
-- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
+- [[Agent时代，项目管理别再只看Issue了]]
+- [[ai 核心文件claude和settings.json...]]

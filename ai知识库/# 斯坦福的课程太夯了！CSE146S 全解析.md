@@ -160,7 +160,7 @@ Anthropic 的创始人都请来了
 ## 双链笔记
 
 - [[Agent时代，项目管理别再只看Issue了]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
-- [[7.5万，AI知识库开发]]
-- [[Anthropic 发布动态工作流 Harness：给每个任...]]
-- [[Next Codex—— 不是要替代谁，而是要和 Claud...]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[Browser Harness：592行Python代码让A... (1)]]
+- [[Browser Harness：592行Python代码让A...]]
+- [[Hermes skill]]

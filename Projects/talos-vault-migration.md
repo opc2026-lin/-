@@ -19,3 +19,4 @@ status: active
 - [[dashboard-ops]]
 - [[Journal/2026-06-24]]
 - [[Materials/context-principles]]
+- [[System\working-memory/health-log]]

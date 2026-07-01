@@ -1,3 +1,6 @@
+---
+tags: [AI, AI Agent, AI Skill]
+---
 # ai skill
 
 * Skill Cleaner（AI瘦身体检）：全面体检所有skill，计算token预算占比，清理重复或闲置技能，精简冗长描述，提升AI调用准确率。

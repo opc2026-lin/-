@@ -1,3 +1,6 @@
+---
+tags: [AI, Claude, 售电, 综合能源]
+---
 # OPC AI 知识库 · Wiki Schema
 
 > 本文件是 LLM 操作外脑的宪法。LLM 在每次操作前必须先读取此文件。
@@ -51,13 +54,15 @@ vault/
 
 ### Ingest（摄入）
 输入：收件箱中的新文件
-动作：
+动作（按顺序自动执行）：
 1. 读取文件内容
 2. 判断归属目录（见路由表）
-3. 打上标签（见标签体系）
-4. 移动到目标目录
-5. 更新目标目录的 index.md
-6. 级联更新相关笔记的 [[相关笔记]] 链接
+3. 移动到目标目录
+4. 打上标签 `bash: python3 tag_notes.py`
+5. 建立双链 `bash: python3 -c "..."` (基于标签相似度)
+6. 更新目标目录的 index.md
+7. 刷新仪表盘 `python3 refresh-dashboard.py`
+8. Git 提交 `git add -A && git commit -m "Ingest: ..." && git push`
 
 ### Query（查询）
 输入：用户问题

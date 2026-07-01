@@ -46,7 +46,7 @@ tags: [AI, AI Agent, AI Skill, VibeCoding, 开源]
 ## 双链笔记
 
 - [[这段视频介绍了一款刚开源的AI工具项目PilotDeck，它...]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[7.5万，AI知识库开发]]
-- [[Open Design AI技能探究]]
-- [[一条视频搞懂API_CLI_Prompt_MCP_Skill...]]
-- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
+- [[Agent时代，项目管理别再只看Issue了]]

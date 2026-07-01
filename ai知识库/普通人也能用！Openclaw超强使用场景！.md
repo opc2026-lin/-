@@ -196,7 +196,7 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 ## 双链笔记
 
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[codex+obsidian]]
 - [[7.5万，AI知识库开发]]
 - [[ai 核心文件claude和settings.json...]]
-- [[codex+obsidian]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]

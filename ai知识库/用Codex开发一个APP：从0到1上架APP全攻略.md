@@ -169,8 +169,8 @@ tags: [AI, Codex, VibeCoding]
 
 ## 双链笔记
 
-- [[# OpenClaw, Hermes, Codex 横向评测]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 胡彦斌 App 被拆出 5 个 Vibe Coding ...]]
-- [[5个常用插件]]
-- [[codex+obsidian]]
+- [[Hermes skill]]
+- [[Vibe Coding 02 _ 小白做产品，先跑通主线流程...]]
+- [[vibecoding項目該怎麼做]]
+- [[为什么你的 Vibe Coding 做不出高级感？]]

@@ -1,3 +1,6 @@
+---
+tags: [AI]
+---
 # Ai 高级用法：乔哈里视窗
 
 > 📺 [视频链接](https://v.douyin.com/qycowgeHkLI/) | 👤 作者：Ai一刀梁山伯 | ⏱ 时长：4分01秒

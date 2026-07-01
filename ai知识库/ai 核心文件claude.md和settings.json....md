@@ -185,5 +185,5 @@ CLAUDE.md已经很强大，但它还有一个“双子星”伙伴—— settin
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
 - [[7.5万，AI知识库开发]]
 - [[普通人也能用！Openclaw超强使用场景！]]
-- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
-- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[codex+obsidian]]

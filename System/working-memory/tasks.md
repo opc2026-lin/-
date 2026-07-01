@@ -64,3 +64,9 @@ tags: [opc-ai, working-memory]
 - 将 `AI知识库/` 作为唯一入口
 - 将 `System/` 作为规则中心
 - 将 `Insights/` 作为方法沉淀中心
+
+---
+
+## 双链笔记
+
+- [[health-log]]
