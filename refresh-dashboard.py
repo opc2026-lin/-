@@ -235,10 +235,10 @@ def main(argv: Iterable[str] | None = None) -> int:
     dashboard: Path = args.dashboard.resolve()
 
     if not dashboard.exists():
-        print(f"✗ 找不到 dashboard.html：{dashboard}", file=sys.stderr)
+        print(f"[ERR] 找不到 dashboard.html：{dashboard}", file=sys.stderr)
         return 1
     if not vault.exists():
-        print(f"✗ 找不到 vault 目录：{vault}", file=sys.stderr)
+        print(f"[ERR] 找不到 vault 目录：{vault}", file=sys.stderr)
         return 1
 
     stats = build_stats(vault)
@@ -247,7 +247,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     html = dashboard.read_text(encoding="utf-8")
     if "/*STATS:START*/" not in html:
         print(
-            "✗ dashboard.html 中未找到 /*STATS:START*/ 标记，无法写入。",
+            "[ERR] dashboard.html 中未找到 /*STATS:START*/ 标记，无法写入。",
             file=sys.stderr,
         )
         return 1
@@ -259,7 +259,7 @@ def main(argv: Iterable[str] | None = None) -> int:
     )
     dashboard.write_text(html, encoding="utf-8")
 
-    print(f"✓ 已刷新 {dashboard.name} @ {stats['generatedAt']}")
+    print(f"[OK] Refreshed {dashboard.name} @ {stats['generatedAt']}")
     print(
         f"  vault = {vault}\n"
         f"  知识笔记 {stats['totalNotes']} · 收件箱 {stats['inbox']} "
