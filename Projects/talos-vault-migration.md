@@ -11,3 +11,11 @@ status: active
 ## 当前状态
 - Obsidian 首页已接入。
 - 统计数据需要定期刷新。
+
+---
+
+## 双链笔记
+
+- [[dashboard-ops]]
+- [[Journal/2026-06-24]]
+- [[Materials/context-principles]]

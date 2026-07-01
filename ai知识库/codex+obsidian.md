@@ -1,5 +1,22 @@
+---
+tags: [AI, Codex, Obsidian, 开源, 知识管理]
+---
 # codex+obsidian
 
-- 📄 类型: NOTE
-- 🆔 media_id: `note_49da155ac76e661d6a6ad4e4810c46a6_74661044483593357465578767847881`
-- 🔗 [在 IMA 中查看](https://ima.qq.com/wiki/?media_id=note_49da155ac76e661d6a6ad4e4810c46a6_74661044483593357465578767847881)
+9.20 复制打开抖音，看看【Xuan酱的作品】Codex联动Obsidian，搭建超强知识库，手... [https://v.douyin.com/anDxrMcNcjU/](https://v.douyin.com/anDxrMcNcjU/) :6pm 08/29 [e@O.xF](mailto:e@O.xF) PKJ:/
+
+7.61 复制打开抖音，看看【Next蔡蔡的作品】怎么用好Obsidian插件来武装自己的知识库？ ... https\://v.douyin.com/Cr8M1aisPH0/ :6pm h\@b.Ag 03/19 KJI:/&#x20;
+
+9.74 复制打开抖音，看看【月明水清深的作品】我把自己的知识库系统开源了 以前知识库是文件夹，现... [https://v.douyin.com/OTfHA--PpWY/](https://v.douyin.com/OTfHA--PpWY/) 08/05 [F@U.YZ](mailto:F@U.YZ) AgB:/ :5pm
+
+7.41 复制打开抖音，看看【廖定强的作品】VibeCoding大赏，我的第一个项目核心功能介... [https://v.douyin.com/kaJyG9Sfb78/](https://v.douyin.com/kaJyG9Sfb78/) [o@q.Rx](mailto:o@q.Rx) :4pm 12/02 FhO:/
+
+---
+
+## 双链笔记
+
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[Codex插件生态：一条视频讲透]]
+- [[为什么AI越强，人却越来越累？10分钟发呆工具]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[普通人也能用！Openclaw超强使用场景！]]

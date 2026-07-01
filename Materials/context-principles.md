@@ -9,3 +9,11 @@ tags: [talos, context]
 
 ## 备注
 - 仪表盘只是索引层，不是内容终点。
+
+---
+
+## 双链笔记
+
+- [[Journal/2026-06-24]]
+- [[Projects/dashboard-ops]]
+- [[Projects/talos-vault-migration]]

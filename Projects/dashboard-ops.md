@@ -15,3 +15,11 @@ tags: [talos, ops]
 - 原始资料放 `Materials`
 - 系统规则只保留最少量，避免层级膨胀
 - Codex 负责搬运、整理、生成草稿，人负责判断和收口
+
+---
+
+## 双链笔记
+
+- [[talos-vault-migration]]
+- [[Journal/2026-06-24]]
+- [[Materials/context-principles]]

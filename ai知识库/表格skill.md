@@ -1,5 +1,16 @@
+---
+tags: [AI Agent, AI Skill]
+---
 # 表格skill
 
-- 📄 类型: NOTE
-- 🆔 media_id: `note_49da155ac76e661d6a6ad4e4810c46a6_74665451690681037465578767847881`
-- 🔗 [在 IMA 中查看](https://ima.qq.com/wiki/?media_id=note_49da155ac76e661d6a6ad4e4810c46a6_74665451690681037465578767847881)
+9.25 复制打开抖音，看看【🍥的作品】让Agent安全处理几十万行表格的Skill # ... https\://v.douyin.com/iShH5Ka-lcU/ H\@i.pq 03/05 AGV:/ :9pm&#x20;
+
+---
+
+## 双链笔记
+
+- [[7.5万，AI知识库开发]]
+- [[Hermes skill]]
+- [[Open Design AI技能探究]]
+- [[一条视频搞懂API_CLI_Prompt_MCP_Skill...]]
+- [[终于找到了免费的AI大模型，文字_图片_视频都能生成]]
