@@ -1,7 +1,13 @@
 ---
-title: TALOS 仪表盘迁移
+title: "talos-vault-migration"
+date: "2026-07-01"
 tags: [talos, migration]
-status: active
+type: "stub"
+status: "draft"
+summary: "目标 - 把项目整理成可复制的 vault 资产。 - 保持 `dashboard.html`、`homepage.md` 和刷新脚本同步。"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 ## 目标

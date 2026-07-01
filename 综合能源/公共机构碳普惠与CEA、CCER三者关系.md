@@ -1,6 +1,15 @@
 ---
+title: "公共机构碳普惠与CEA、CCER三者关系"
+date: "2026-07-01"
 tags: [光伏, 公共机构, 双碳, 碳交易, 综合能源, 节能改造]
+type: "note"
+status: "draft"
+summary: "公共机构碳普惠与CEA、CCER三者关系"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 公共机构碳普惠与CEA、CCER三者关系
 
 > 作者：综合能源 老张

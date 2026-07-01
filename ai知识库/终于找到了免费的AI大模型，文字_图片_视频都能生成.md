@@ -1,6 +1,15 @@
 ---
+title: "终于找到了免费的AI大模型，文字/图片/视频都能生成"
+date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill, Claude]
+type: "note"
+status: "draft"
+summary: "终于找到了免费的AI大模型，文字/图片/视频都能生成"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 终于找到了免费的AI大模型，文字/图片/视频都能生成
 
 > **视频链接**: [https://v.douyin.com/4xfMw59dH1g/](https://v.douyin.com/4xfMw59dH1g/)\

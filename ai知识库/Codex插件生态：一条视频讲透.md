@@ -1,6 +1,15 @@
 ---
+title: "Codex插件生态：一条视频讲透"
+date: "2026-07-01"
 tags: [AI, Codex, 开源, 销售]
+type: "note"
+status: "draft"
+summary: "Codex插件生态：一条视频讲透"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Codex插件生态：一条视频讲透
 
 > 作者：文走走的Ai分享

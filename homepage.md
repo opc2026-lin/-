@@ -1,12 +1,18 @@
 ---
-title: TALOS 仪表盘首页
+title: homepage
 date: 2026-06-17
-tags: [仪表盘, 首页, TALOS]
-status: active
+tags:
+  - 仪表盘
+  - 首页
+  - TALOS
 type: system
-summary: "Obsidian 启动首页：用 Dataview JS 内联 TALOS 控制台，整页铺满、卡片点击经 postMessage 在库内直达笔记。"
-cssclasses: [dashboard-home]
+status: draft
+summary: "```dataviewjs // === 导航桥：iframe 内卡片点击 → 在 Obsidian 内打开对应笔记/文件 === if (!window.__talosNavInstalled) { window.__talosNavInstalled = true; wind..."
+verified: unverified
+importance: 2
+verifier_type: auto
 ---
+
 ```dataviewjs
 // === 导航桥：iframe 内卡片点击 → 在 Obsidian 内打开对应笔记/文件 ===
 if (!window.__talosNavInstalled) {

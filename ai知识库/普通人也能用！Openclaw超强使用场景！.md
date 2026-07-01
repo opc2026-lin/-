@@ -1,6 +1,15 @@
 ---
+title: "普通人也能用！Openclaw超强使用场景！"
+date: "2026-07-01"
 tags: [AI, Claude, Obsidian, 知识管理]
+type: "note"
+status: "draft"
+summary: "普通人也能用！Openclaw超强使用场景！"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 普通人也能用！Openclaw超强使用场景！
 
 ## 视频信息

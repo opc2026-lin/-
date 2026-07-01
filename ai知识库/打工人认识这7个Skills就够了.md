@@ -1,6 +1,15 @@
 ---
+title: "打工人认识这7个Skills就够了"
+date: "2026-07-01"
 tags: [AI, AI Skill, Codex]
+type: "note"
+status: "draft"
+summary: "打工人认识这7个Skills就够了"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 打工人认识这7个Skills就够了
 
 ## 视频信息

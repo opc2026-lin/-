@@ -1,6 +1,15 @@
 ---
+title: "ai 核心文件claude.md和settings.json还有知识库灵魂文件"
+date: "2026-07-01"
 tags: [AI, Claude, 知识管理]
+type: "note"
+status: "draft"
+summary: "ai 核心文件claude.md和settings.json还有知识库灵魂文件"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # ai 核心文件claude.md和settings.json还有知识库灵魂文件
 
 1.71 复制打开抖音，看看【林森夏 AI的作品】CLAUDE.md是给AI的项目记忆 CLAUDE... [https://v.douyin.com/np620-kRExQ/](https://v.douyin.com/np620-kRExQ/) T\@l.Px :6pm cNj:/ 08/02，以下是视频中的语音内容整理：

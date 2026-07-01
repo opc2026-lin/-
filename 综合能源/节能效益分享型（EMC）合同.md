@@ -1,6 +1,15 @@
 ---
+title: "节能效益分享型（EMC）合同"
+date: "2026-07-01"
 tags: [合同能源管理, 投资, 暖通节能, 节能改造]
+type: "note"
+status: "draft"
+summary: "节能效益分享型（EMC）合同"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 节能效益分享型（EMC）合同
 
 #

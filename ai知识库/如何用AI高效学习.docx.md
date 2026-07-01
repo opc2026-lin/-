@@ -1,6 +1,13 @@
 ---
+title: "如何用AI高效学习.docx"
+date: "2026-07-01"
 tags: [AI, Word]
-type: file
+type: "file"
+status: "draft"
+summary: "如何用AI高效学习.docx"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # 如何用AI高效学习.docx

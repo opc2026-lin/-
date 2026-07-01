@@ -1,6 +1,13 @@
 ---
-tags: []
-type: file
+title: "dashboard.html"
+date: "2026-07-01"
+tags: [未分类]
+type: "file"
+status: "draft"
+summary: "dashboard.html"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # dashboard.html

@@ -1,6 +1,13 @@
 ---
-title: Dashboard Ops
+title: "dashboard-ops"
+date: "2026-07-01"
 tags: [talos, ops]
+type: "stub"
+status: "draft"
+summary: "运维清单 - 刷新 `dashboard.html` 的 STATS - 检查 `Homepage` 和 `Dataview` 插件状态 - 维护首页跳转入口"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 ## 运维清单

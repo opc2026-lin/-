@@ -1,6 +1,15 @@
 ---
+title: "Next Codex—— 不是要替代谁，而是要和 Claud..."
+date: "2026-07-01"
 tags: [AI, AI Agent, Claude, Codex]
+type: "note"
+status: "draft"
+summary: "Next Codex—— 不是要替代谁，而是要和 Claude Code 形成 “双引擎”"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 Next Codex—— 不是要替代谁，而是要和 Claude Code 形成 “双引擎”
 
 ​[https://v.douyin.com/aGx36cVl5Fc/](https://v.douyin.com/aGx36cVl5Fc/) :7pm Xzt:/ H\@v.Fu 07/21，

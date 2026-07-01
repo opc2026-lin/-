@@ -1,6 +1,15 @@
 ---
+title: "我用AI在办公室开了个拼豆店"
+date: "2026-07-01"
 tags: [AI]
+type: "note"
+status: "draft"
+summary: "我用AI在办公室开了个拼豆店"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 我用AI在办公室开了个拼豆店
 
 ## 视频信息

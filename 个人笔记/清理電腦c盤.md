@@ -1,6 +1,15 @@
 ---
+title: "清理電腦c盤"
+date: "2026-07-01"
 tags: [AI]
+type: "stub"
+status: "draft"
+summary: "清理電腦c盤"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
+
 # 清理電腦c盤
 
 1.56 复制打开抖音，看看【老李的AI工坊的作品】三招教你清理c盘空间 # # ai  https\://v.douyin.com/VaGTGCi-2Po/ qeB:/ M\@J.vF 11/01 :8pm&#x20;

@@ -1,6 +1,13 @@
 ---
-title: Projects Index
+title: "index"
+date: "2026-06-30"
 tags: [talos, projects]
+type: "index"
+status: "draft"
+summary: "当前项目 - TALOS 仪表盘迁移 - Dashboard 运维清单"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 ## 当前项目

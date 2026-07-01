@@ -1,6 +1,15 @@
 ---
+title: "Excel别手搓！AI搞定表格全流程～【职场必备】"
+date: "2026-07-01"
 tags: [AI, 销售]
+type: "note"
+status: "draft"
+summary: "Excel别手搓！AI搞定表格全流程～【职场必备】"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Excel别手搓！AI搞定表格全流程～【职场必备】
 
 ## 视频信息

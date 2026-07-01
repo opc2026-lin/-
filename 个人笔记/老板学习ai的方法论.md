@@ -1,6 +1,15 @@
 ---
+title: "老板学习ai的方法论"
+date: "2026-07-01"
 tags: [AI, 节能改造, 销售]
+type: "note"
+status: "draft"
+summary: "老板学习ai的方法论"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 老板学习ai的方法论
 
 好的，根据您提供的抖音视频链接及相关搜索结果，我将为您系统性地总结出老板学习AI并将企业AI化真正落地的方法论。

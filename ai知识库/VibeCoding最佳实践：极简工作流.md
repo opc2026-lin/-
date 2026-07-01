@@ -1,6 +1,15 @@
 ---
+title: "VibeCoding最佳实践：极简工作流"
+date: "2026-07-01"
 tags: [AI, AI Skill, Claude]
+type: "note"
+status: "draft"
+summary: "VibeCoding最佳实践：极简工作流"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # VibeCoding最佳实践：极简工作流
 
 > 作者：Edward\_ai

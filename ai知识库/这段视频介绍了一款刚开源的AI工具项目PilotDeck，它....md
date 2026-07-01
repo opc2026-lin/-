@@ -1,6 +1,15 @@
 ---
+title: "这段视频介绍了一款刚开源的AI工具项目PilotDeck，它由清华大学THUNLP实验室、面壁智能OpenBMB与AI9stars联合研发，可让一个人指挥一支智能体军队，适用于通用多任务场景，有以下亮点："
+date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill, 开源]
+type: "note"
+status: "draft"
+summary: "这段视频介绍了一款刚开源的AI工具项目PilotDeck，它由清华大学THUNLP实验室、面壁智能OpenBMB与AI9stars联合研发，可让一个人指挥一支智能体军队，适用于通用多任务场景，有以下亮点："
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 #
 
 这段视频介绍了一款刚开源的AI工具项目PilotDeck，它由清华大学THUNLP实验室、面壁智能OpenBMB与AI9stars联合研发，可让一个人指挥一支智能体军队，适用于通用多任务场景，有以下亮点：

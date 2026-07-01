@@ -1,6 +1,13 @@
 ---
+title: "LightGBM 负荷预测模型解析——底层逻辑与误差优化实战指南.docx"
+date: "2026-07-01"
 tags: [Word, 电力交易]
-type: file
+type: "file"
+status: "draft"
+summary: "LightGBM 负荷预测模型解析——底层逻辑与误差优化实战指南.docx"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # LightGBM 负荷预测模型解析——底层逻辑与误差优化实战指南.docx

@@ -1,6 +1,13 @@
 ---
+title: "飞书Lark-CLI从零配置+全套实用用法+核心价值完整版手册.docx"
+date: "2026-07-01"
 tags: [Word, 飞书]
-type: file
+type: "file"
+status: "draft"
+summary: "飞书Lark-CLI从零配置+全套实用用法+核心价值完整版手册.docx"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # 飞书Lark-CLI从零配置+全套实用用法+核心价值完整版手册.docx

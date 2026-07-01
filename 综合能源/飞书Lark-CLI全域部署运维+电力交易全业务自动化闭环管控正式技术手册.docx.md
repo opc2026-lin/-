@@ -1,6 +1,13 @@
 ---
+title: "飞书Lark-CLI全域部署运维+电力交易全业务自动化闭环管控正式技术手册.docx"
+date: "2026-07-01"
 tags: [Word, 电力交易, 飞书]
-type: file
+type: "file"
+status: "draft"
+summary: "飞书Lark-CLI全域部署运维+电力交易全业务自动化闭环管控正式技术手册.docx"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # 飞书Lark-CLI全域部署运维+电力交易全业务自动化闭环管控正式技术手册.docx

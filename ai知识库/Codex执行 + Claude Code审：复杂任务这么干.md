@@ -1,6 +1,15 @@
 ---
+title: "Codex执行 + Claude Code审：复杂任务这么干"
+date: "2026-07-01"
 tags: [AI, Claude, Codex]
+type: "note"
+status: "draft"
+summary: "Codex执行 + Claude Code审：复杂任务这么干"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Codex执行 + Claude Code审：复杂任务这么干
 
 > 作者：FredTalk

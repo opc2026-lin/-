@@ -1,0 +1,233 @@
+.markitdown-importer-shell {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1120px, calc(100vw - 48px));
+  height: min(680px, calc(100vh - 48px));
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  min-width: min(680px, calc(100vw - 24px));
+  min-height: min(460px, calc(100vh - 24px));
+  resize: both;
+  overflow: auto;
+}
+
+.markitdown-importer-shell .modal-content {
+  overflow: visible;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.markitdown-importer-shell .modal-close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  margin: 0;
+  float: none;
+}
+
+.markitdown-importer-modal {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  padding-top: 2px;
+}
+
+.markitdown-importer-header {
+  padding-right: 42px;
+  cursor: move;
+  user-select: none;
+}
+
+.markitdown-importer-header h2 {
+  margin-top: 0;
+}
+
+.markitdown-importer-header p {
+  cursor: move;
+}
+
+.markitdown-importer-modal p {
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+.markitdown-importer-controls {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.55fr) minmax(260px, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+  margin: 12px 0;
+}
+
+.markitdown-importer-field {
+  display: grid;
+  gap: 6px;
+}
+
+.markitdown-importer-field label {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+.markitdown-importer-field input,
+.markitdown-importer-field select {
+  width: 100%;
+}
+
+.markitdown-importer-url-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.markitdown-importer-url-row textarea {
+  min-height: 58px;
+  resize: vertical;
+}
+
+.markitdown-importer-url-row button {
+  align-self: stretch;
+}
+
+.markitdown-importer-dropzone {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  min-height: 170px;
+  border: 2px dashed var(--background-modifier-border);
+  background: var(--background-secondary);
+  padding: 18px;
+  text-align: center;
+}
+
+.markitdown-importer-dropzone.is-dragging {
+  border-color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+
+.markitdown-importer-drop-title {
+  font-size: 20px;
+  font-weight: var(--font-bold);
+}
+
+.markitdown-importer-drop-copy {
+  color: var(--text-muted);
+}
+
+.markitdown-importer-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.markitdown-importer-dropzone input[type="file"] {
+  display: none;
+}
+
+.markitdown-importer-status {
+  min-height: 28px;
+  margin: 14px 0 8px;
+  color: var(--text-muted);
+}
+
+.markitdown-importer-results {
+  display: grid;
+  gap: 8px;
+  max-height: min(220px, 24vh);
+  overflow: auto;
+}
+
+.markitdown-importer-result {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+}
+
+.markitdown-importer-badge {
+  align-self: start;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+.markitdown-importer-badge.is-error {
+  background: var(--text-error);
+  color: var(--text-on-accent);
+}
+
+.markitdown-importer-result-name {
+  font-weight: var(--font-semibold);
+  overflow-wrap: anywhere;
+}
+
+.markitdown-importer-result-detail {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  overflow-wrap: anywhere;
+}
+
+.markitdown-importer-dragging {
+  user-select: none;
+}
+
+.markitdown-importer-setting-note {
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+.markitdown-importer-env-status {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-small);
+  overflow-wrap: anywhere;
+}
+
+.markitdown-importer-env-status.is-error {
+  border-color: var(--text-error);
+  color: var(--text-error);
+}
+
+@media (max-width: 720px) {
+  .markitdown-importer-shell {
+    width: calc(100vw - 16px);
+    height: min(680px, calc(100vh - 16px));
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .markitdown-importer-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .markitdown-importer-url-row {
+    grid-template-columns: 1fr;
+  }
+
+  .markitdown-importer-result {
+    grid-template-columns: 1fr;
+  }
+
+  .markitdown-importer-badge {
+    justify-self: start;
+  }
+}

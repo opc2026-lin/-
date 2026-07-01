@@ -56,18 +56,45 @@ def get_tags(title, content):
     return sorted(tags)[:6]
 
 def add_frontmatter(fpath, tags):
+    """保留所有已有 frontmatter 字段，仅更新 tags（修复覆盖 bug）"""
+    import yaml
     text = fpath.read_text(encoding='utf-8')
+    existing = {}
+    fm_end = 0
     if text.startswith('---\n'):
         fm_end = text.find('\n---\n', 4)
         if fm_end > 0:
-            body = text[fm_end+4:].lstrip('\n')
+            try:
+                existing = yaml.safe_load(text[4:fm_end]) or {}
+            except:
+                pass
+            fm_end += 4
         else:
-            body = text
+            existing = {}
     else:
-        body = text
-    tag_str = ', '.join(tags)
-    fm = f'---\ntags: [{tag_str}]\n---\n'
-    fpath.write_text(fm + body, encoding='utf-8')
+        existing = {}
+
+    # 合并标签
+    old_tags = existing.get('tags', [])
+    if isinstance(old_tags, str):
+        old_tags = [old_tags]
+    existing['tags'] = sorted(set(list(old_tags) + list(tags)))
+
+    # 重建 frontmatter
+    fm = '---\n'
+    for k, v in existing.items():
+        if k == 'tags':
+            fm += f'tags: [{", ".join(v)}]\n'
+        elif isinstance(v, str):
+            fm += f'{k}: "{v}"\n'
+        elif isinstance(v, list):
+            fm += f'{k}: [{", ".join(str(x) for x in v)}]\n'
+        else:
+            fm += f'{k}: {v}\n'
+    fm += '---\n'
+
+    body = text[fm_end:] if fm_end > 0 else text
+    fpath.write_text(fm + body.lstrip('\n'), encoding='utf-8')
 
 # ========== Run ==========
 print("Step 1: 收件箱整理...")
@@ -109,56 +136,12 @@ for root, dirs, files in os.walk(VAULT):
         notes[title] = {'dir': rd, 'tags': tset, 'file': f}
 print(f"  已打标签 {tagged} 篇")
 
-print("Step 3: 建双链...")
-tag_index = defaultdict(list)
-for title, info in notes.items():
-    for t in info['tags']:
-        tag_index[t].append(title)
+print("Step 3: 建双链（link_builder.py）...")
+subprocess.run([sys.executable, 'link_builder.py'], cwd=str(VAULT))
+print("  双链已更新")
 
-links_added = 0
-for title, info in notes.items():
-    if not info['tags']: continue
-    fpath = VAULT / info['dir'] / info['file']
-    if not fpath.exists(): continue  # 跳过不存在的路径
-    text = fpath.read_text(encoding='utf-8')
-    scores = defaultdict(int)
-    for t in info['tags']:
-        for other in tag_index[t]:
-            if other == title: continue
-            w = 3 if notes[other]['dir'] == info['dir'] else 1
-            scores[other] += w
-    top5 = sorted(scores.items(), key=lambda x: -x[1])[:5]
-    if not top5: continue
-    text = re.sub(r'\n\n---\n\n## 双链笔记\n\n.*$', '', text, flags=re.DOTALL)
-    new_links = []
-    for ot, sc in top5:
-        od = notes[ot]['dir']
-        new_links.append(f"- [[{ot}]]" if od == info['dir'] else f"- [[{od}/{ot}]]")
-    text = text.rstrip() + '\n\n---\n\n## 双链笔记\n\n' + '\n'.join(new_links) + '\n'
-    fpath.write_text(text, encoding='utf-8')
-    links_added += 1
-print(f"  已建双链 {links_added} 篇")
-
-print("Step 4: 重建索引...")
-for d in ['综合能源', 'AI知识库', '个人笔记', '售电业务', 'Insights']:
-    dp = VAULT / d
-    if not dp.exists() or d not in [n.get('dir','') for n in notes.values()]: continue
-    entries = [(t, i['tags'], f) for t, i in notes.items() if i['dir'] == d]
-    by_tag = defaultdict(list)
-    for t, tags, f in entries:
-        for tg in list(tags)[:3]: by_tag[tg].append((t, f))
-    tc = Counter()
-    for _, tags, _ in entries:
-        for tg in tags: tc[tg] += 1
-    top = tc.most_common(6)
-    idx = f'# {d} · 索引\n\n> 共 {len(entries)} 篇\n\n## 热门标签\n\n'
-    idx += ' '.join(f'`#{t}`({c})' for t,c in top) + '\n\n## 按标签浏览\n\n'
-    for tag, items in sorted(by_tag.items(), key=lambda x: -len(x[1])):
-        idx += f'### {tag}\n\n'
-        for t, f in items[:8]: idx += f'- [[{t}]]\n'
-        if len(items) > 8: idx += f'- ... 等 {len(items)} 篇\n'
-        idx += '\n'
-    (dp / 'index.md').write_text(idx, encoding='utf-8')
+print("Step 4: 重建索引（index_rebuilder.py）...")
+subprocess.run([sys.executable, 'index_rebuilder.py'], cwd=str(VAULT))
 print("  索引已更新")
 
 print("Step 5: 刷新仪表盘...")

@@ -1,13 +1,22 @@
 ---
+title: "Vibe Coding 02 | 小白做产品，先跑通主线流程！"
+date: "2026-07-01"
 tags: [AI, VibeCoding]
+type: "note"
+status: "draft"
+summary: "Vibe Coding 02 | 小白做产品，先跑通主线流程！"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Vibe Coding 02 | 小白做产品，先跑通主线流程！
 
 ## 视频信息
 
 | **项目**   | **内容**                           |
 | -------- | -------------------------------- |
-| **标题**   | Vibe Coding 02 \| 小白做产品，先跑通主线流程！ |
+| **标题**   | Vibe Coding 02 | 小白做产品，先跑通主线流程！ |
 | **作者**   | 珍妮丁丁说AI                          |
 | **视频ID** | 7649038685517712694              |
 | **时长**   | 约9分20秒                           |

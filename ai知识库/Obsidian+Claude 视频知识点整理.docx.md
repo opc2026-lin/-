@@ -1,6 +1,13 @@
 ---
+title: "Obsidian+Claude 视频知识点整理.docx"
+date: "2026-07-01"
 tags: [Claude, Obsidian, Word]
-type: file
+type: "file"
+status: "draft"
+summary: "Obsidian+Claude 视频知识点整理.docx"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # Obsidian+Claude 视频知识点整理.docx

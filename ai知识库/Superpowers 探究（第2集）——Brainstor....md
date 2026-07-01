@@ -1,6 +1,15 @@
 ---
+title: "Superpowers 探究（第2集）——Brainstorming头脑风暴技能"
+date: "2026-07-01"
 tags: [AI]
+type: "note"
+status: "draft"
+summary: "Superpowers 探究（第2集）——Brainstorming头脑风暴技能"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Superpowers 探究（第2集）——Brainstorming头脑风暴技能
 
 ## 视频信息

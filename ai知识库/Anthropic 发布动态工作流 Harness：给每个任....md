@@ -1,6 +1,15 @@
 ---
+title: "Anthropic 发布动态工作流 Harness：给每个任务自动配套 Harness！"
+date: "2026-07-01"
 tags: [AI, AI Agent, Claude]
+type: "note"
+status: "draft"
+summary: "Anthropic 发布动态工作流 Harness：给每个任务自动配套 Harness！"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Anthropic 发布动态工作流 Harness：给每个任务自动配套 Harness！
 
 > **视频链接**: [https://v.douyin.com/ZSUFZ8EtBdA/](https://v.douyin.com/ZSUFZ8EtBdA/)\

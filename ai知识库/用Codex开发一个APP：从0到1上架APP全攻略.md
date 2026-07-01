@@ -1,6 +1,15 @@
 ---
+title: "用Codex开发一个APP：从0到1上架APP全攻略"
+date: "2026-07-01"
 tags: [AI, Codex, VibeCoding]
+type: "note"
+status: "draft"
+summary: "用Codex开发一个APP：从0到1上架APP全攻略"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 用Codex开发一个APP：从0到1上架APP全攻略
 
 > 作者：Lala罐头

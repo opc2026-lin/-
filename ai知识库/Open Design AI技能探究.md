@@ -1,6 +1,15 @@
 ---
+title: "Open Design AI技能探究"
+date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill, AI工具, Claude, Codex]
+type: "note"
+status: "draft"
+summary: "Open Design AI技能探究"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Open Design AI技能探究
 
 > 作者：全栈观察员

@@ -1,6 +1,15 @@
 ---
+title: "老板ai创业思路"
+date: "2026-07-01"
 tags: [AI, 创业, 知识管理]
+type: "note"
+status: "draft"
+summary: "老板ai创业思路"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 老板ai创业思路
 
 好的，我已经理解了你的需求。你希望我基于你提供的多个搜索结果，对抖音博主【Super Arche】关于“MVP（最小可行性产品）”的视频内容进行核心思路的整理和总结，并将其结构化地存入知识库。

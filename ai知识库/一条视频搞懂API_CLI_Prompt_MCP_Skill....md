@@ -1,6 +1,15 @@
 ---
+title: "一条视频搞懂API/CLI/Prompt/MCP/Skill/Agent"
+date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill, Prompt]
+type: "note"
+status: "draft"
+summary: "一条视频搞懂API/CLI/Prompt/MCP/Skill/Agent"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 一条视频搞懂API/CLI/Prompt/MCP/Skill/Agent
 
 ## 视频信息

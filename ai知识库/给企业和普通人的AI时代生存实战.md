@@ -1,6 +1,15 @@
 ---
+title: "给企业和普通人的AI时代生存实战"
+date: "2026-07-01"
 tags: [AI]
+type: "stub"
+status: "draft"
+summary: "给企业和普通人的AI时代生存实战"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
+
 # 给企业和普通人的AI时代生存实战
 
 4.35 复制打开抖音，看看【程泓宁\_宇宙ebike的作品】清华讲课实录 | 给企业和普通人的AI时代生存实战... [~https://v.douyin.com/djL7Z1OvirM/~](https://v.douyin.com/djL7Z1OvirM/) :8pm jPK:/ [~S@Y.MW~](mailto:S@Y.MW) 04/02

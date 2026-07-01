@@ -1,6 +1,15 @@
 ---
+title: "让AI真正懂你：把设计做成Skill，AI的审美直接升级"
+date: "2026-07-01"
 tags: [AI, AI Skill, Claude, Codex]
+type: "note"
+status: "draft"
+summary: "让AI真正懂你：把设计做成Skill，AI的审美直接升级"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 让AI真正懂你：把设计做成Skill，AI的审美直接升级
 
 ## 视频信息

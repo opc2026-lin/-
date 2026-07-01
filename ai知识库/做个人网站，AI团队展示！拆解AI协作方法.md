@@ -1,6 +1,15 @@
 ---
+title: "做个人网站，AI团队展示！拆解AI协作方法"
+date: "2026-07-01"
 tags: [AI, Codex]
+type: "note"
+status: "draft"
+summary: "做个人网站，AI团队展示！拆解AI协作方法"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 做个人网站，AI团队展示！拆解AI协作方法
 
 > 作者：希尔在创造

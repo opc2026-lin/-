@@ -1,6 +1,13 @@
 ---
+title: "泉州市各区县售电公司&能源托管公司全覆盖对照表（2026最新·可直接打印Excel版）.pdf"
+date: "2026-07-01"
 tags: [PDF, 售电, 能源托管]
-type: file
+type: "file"
+status: "draft"
+summary: "泉州市各区县售电公司&能源托管公司全覆盖对照表（2026最新·可直接打印Excel版）.pdf"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # 泉州市各区县售电公司&能源托管公司全覆盖对照表（2026最新·可直接打印Excel版）.pdf

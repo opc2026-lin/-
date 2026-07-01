@@ -1,6 +1,13 @@
 ---
-title: Materials Index
+title: "index"
+date: "2026-06-30"
 tags: [talos, materials]
+type: "index"
+status: "draft"
+summary: "入口 - Context Principles"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 ## 入口

@@ -1,6 +1,15 @@
 ---
+title: "装过上百个Skill后，推荐这16个"
+date: "2026-07-01"
 tags: [AI, AI Agent, AI Skill]
+type: "note"
+status: "draft"
+summary: "装过上百个Skill后，推荐这16个"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 装过上百个Skill后，推荐这16个
 
 > 作者：起哥的AI实战

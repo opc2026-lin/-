@@ -1,6 +1,13 @@
 ---
+title: "「一人公司」可落地方案（Nelson博主体系）.docx"
+date: "2026-07-01"
 tags: [Word]
-type: file
+type: "file"
+status: "draft"
+summary: "「一人公司」可落地方案（Nelson博主体系）.docx"
+verified: "unverified"
+importance: 2
+verifier_type: "auto"
 ---
 
 # 「一人公司」可落地方案（Nelson博主体系）.docx

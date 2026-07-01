@@ -1,6 +1,15 @@
 ---
+title: "OPC AI 知识库 · Wiki Schema"
+date: "2026-07-01"
 tags: [AI, Claude, 售电, 综合能源]
+type: "rules"
+status: "draft"
+summary: "OPC AI 知识库 · Wiki Schema"
+verified: "unverified"
+importance: 5
+verifier_type: "auto"
 ---
+
 # OPC AI 知识库 · Wiki Schema
 
 > 本文件是 LLM 操作外脑的宪法。LLM 在每次操作前必须先读取此文件。

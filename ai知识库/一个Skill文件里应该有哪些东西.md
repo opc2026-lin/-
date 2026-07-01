@@ -1,6 +1,15 @@
 ---
+title: "一个Skill文件里应该有哪些东西"
+date: "2026-07-01"
 tags: [AI, AI Skill]
+type: "note"
+status: "draft"
+summary: "一个Skill文件里应该有哪些东西"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 一个Skill文件里应该有哪些东西
 
 > 作者：宇哥AI职场落地-培腾AI

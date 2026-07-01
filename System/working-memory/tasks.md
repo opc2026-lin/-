@@ -1,6 +1,13 @@
 ---
-title: Tasks
+title: "tasks"
+date: "2026-07-01"
 tags: [opc-ai, working-memory]
+type: "rules"
+status: "draft"
+summary: "焦点"
+verified: "unverified"
+importance: 5
+verifier_type: "auto"
 ---
 
 ## 焦点

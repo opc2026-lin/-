@@ -1,6 +1,15 @@
 ---
+title: "为什么你的 Vibe Coding 做不出高级感？"
+date: "2026-07-01"
 tags: [AI, VibeCoding, 开源]
+type: "note"
+status: "draft"
+summary: "为什么你的 Vibe Coding 做不出高级感？"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # 为什么你的 Vibe Coding 做不出高级感？
 
 ## 视频信息

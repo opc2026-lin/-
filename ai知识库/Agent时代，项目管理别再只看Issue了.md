@@ -1,6 +1,15 @@
 ---
+title: "Agent时代，项目管理别再只看Issue了"
+date: "2026-07-01"
 tags: [AI, AI Agent, AI工具, Claude, 开源]
+type: "note"
+status: "draft"
+summary: "Agent时代，项目管理别再只看Issue了"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Agent时代，项目管理别再只看Issue了
 
 > 作者：一个分享AI的小土豆

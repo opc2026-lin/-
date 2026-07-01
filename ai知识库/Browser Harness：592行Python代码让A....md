@@ -1,6 +1,15 @@
 ---
+title: "Browser Harness：592行Python代码让AI拥有浏览器完全控制权"
+date: "2026-07-01"
 tags: [AI, AI Agent, 开源]
+type: "note"
+status: "draft"
+summary: "Browser Harness：592行Python代码让AI拥有浏览器完全控制权"
+verified: "unverified"
+importance: 3
+verifier_type: "auto"
 ---
+
 # Browser Harness：592行Python代码让AI拥有浏览器完全控制权
 
 ## 视频信息
