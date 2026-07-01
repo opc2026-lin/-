@@ -406,8 +406,8 @@ Hermes 的 Attribose RL
 
 ## 双链笔记
 
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[Agent时代，项目管理别再只看Issue了]]
 - [[Browser Harness：592行Python代码让A... (1)]]
 - [[Browser Harness：592行Python代码让A...]]
-- [[codex+obsidian]]

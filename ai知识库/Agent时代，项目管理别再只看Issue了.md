@@ -124,8 +124,8 @@ tags: [AI, AI Agent, AI工具, Claude, 开源]
 
 ## 双链笔记
 
-- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[Open Design AI技能探究]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 几分钟教你远控家里 Mac 上的 AI Agents]]
-- [[7.5万，AI知识库开发]]

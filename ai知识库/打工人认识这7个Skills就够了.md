@@ -180,5 +180,5 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 - [[Open Design AI技能探究]]
 - [[让AI真正懂你：把设计做成Skill，AI的审美直接升级]]
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[7.5万，AI知识库开发]]
-- [[Hermes skill]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]

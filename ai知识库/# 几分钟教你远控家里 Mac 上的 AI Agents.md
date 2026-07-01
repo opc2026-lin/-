@@ -395,6 +395,6 @@ Mac mini 现在不是不好买吗
 
 - [[Next Codex—— 不是要替代谁，而是要和 Claud...]]
 - [[Open Design AI技能探究]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[7.5万，AI知识库开发]]
-- [[Agent时代，项目管理别再只看Issue了]]

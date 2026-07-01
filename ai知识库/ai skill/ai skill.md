@@ -16,3 +16,13 @@ tags: [AI, AI Agent, AI Skill]
 ![](attachment/2.jpg)
 
 ​
+
+---
+
+## 双链笔记
+
+- [[ai知识库/7.5万，AI知识库开发]]
+- [[ai知识库/Hermes skill]]
+- [[ai知识库/Open Design AI技能探究]]
+- [[ai知识库/一条视频搞懂API_CLI_Prompt_MCP_Skill...]]
+- [[ai知识库/终于找到了免费的AI大模型，文字_图片_视频都能生成]]

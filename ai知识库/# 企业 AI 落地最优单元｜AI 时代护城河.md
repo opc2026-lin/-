@@ -414,7 +414,7 @@ AI 落地单元一共三个层级
 ## 双链笔记
 
 - [[7.5万，AI知识库开发]]
+- [[# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
 - [[# Obsidian 10 大 Skill 盘点，你用过吗？]]
-- [[ai 核心文件claude和settings.json...]]
-- [[codex+obsidian]]
-- [[普通人也能用！Openclaw超强使用场景！]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 几分钟教你远控家里 Mac 上的 AI Agents]]

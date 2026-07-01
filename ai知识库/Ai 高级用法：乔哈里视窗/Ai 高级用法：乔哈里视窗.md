@@ -108,3 +108,13 @@ tags: [AI]
 > 本文档由 video-transcript Skill 自动生成
 > 转录引擎：Whisper
 > 总结生成：手动整理
+
+---
+
+## 双链笔记
+
+- [[ai知识库/# AI 短剧爆发？我亲测了下！【小云雀 2.0 实测】]]
+- [[ai知识库/# Obsidian 10 大 Skill 盘点，你用过吗？]]
+- [[ai知识库/# OpenClaw, Hermes, Codex 横向评测]]
+- [[ai知识库/# 企业 AI 落地最优单元｜AI 时代护城河]]
+- [[ai知识库/# 几分钟教你远控家里 Mac 上的 AI Agents]]

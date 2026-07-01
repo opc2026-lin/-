@@ -136,7 +136,7 @@ _笔记由AI自动生成，内容基于视频语音转录，仅供参考。_
 ## 双链笔记
 
 - [[Hermes skill]]
+- [[# OpenClaw, Hermes, Codex 横向评测]]
+- [[# 斯坦福的课程太夯了！CSE146S 全解析]]
 - [[# 胡彦斌 App 被拆出 5 个 Vibe Coding ...]]
-- [[Vibe Coding 02 _ 小白做产品，先跑通主线流程...]]
-- [[vibecoding項目該怎麼做]]
-- [[用Codex开发一个APP：从0到1上架APP全攻略]]
+- [[Agent时代，项目管理别再只看Issue了]]

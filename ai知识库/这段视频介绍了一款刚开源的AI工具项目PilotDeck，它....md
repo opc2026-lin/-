@@ -188,5 +188,5 @@ apiKey: sk-你的豆包APIKey
 - [[Hermes skill]]
 - [[# OpenClaw, Hermes, Codex 横向评测]]
 - [[# 斯坦福的课程太夯了！CSE146S 全解析]]
+- [[7.5万，AI知识库开发]]
 - [[Agent时代，项目管理别再只看Issue了]]
-- [[Browser Harness：592行Python代码让A... (1)]]
